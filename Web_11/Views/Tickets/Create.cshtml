@@ -1,0 +1,51 @@
+﻿@model Web_11.Models.Ticket
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>Ticket</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="IdVe" class="control-label"></label>
+                <input asp-for="IdVe" class="form-control" />
+                <span asp-validation-for="IdVe" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdLoaiVe" class="control-label"></label>
+                <select asp-for="IdLoaiVe" class ="form-control" asp-items="ViewBag.IdLoaiVe"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="DoiNha" class="control-label"></label>
+                <select asp-for="DoiNha" class ="form-control" asp-items="ViewBag.DoiNha"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="DoiKhach" class="control-label"></label>
+                <select asp-for="DoiKhach" class ="form-control" asp-items="ViewBag.DoiKhach"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="ThoiGianBatDau" class="control-label"></label>
+                <input asp-for="ThoiGianBatDau" class="form-control" />
+                <span asp-validation-for="ThoiGianBatDau" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

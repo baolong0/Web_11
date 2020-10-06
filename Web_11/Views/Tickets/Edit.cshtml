@@ -1,0 +1,50 @@
+﻿@model Web_11.Models.Ticket
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>Ticket</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IdVe" />
+            <div class="form-group">
+                <label asp-for="IdLoaiVe" class="control-label"></label>
+                <select asp-for="IdLoaiVe" class="form-control" asp-items="ViewBag.IdLoaiVe"></select>
+                <span asp-validation-for="IdLoaiVe" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DoiNha" class="control-label"></label>
+                <select asp-for="DoiNha" class="form-control" asp-items="ViewBag.DoiNha"></select>
+                <span asp-validation-for="DoiNha" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DoiKhach" class="control-label"></label>
+                <select asp-for="DoiKhach" class="form-control" asp-items="ViewBag.DoiKhach"></select>
+                <span asp-validation-for="DoiKhach" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ThoiGianBatDau" class="control-label"></label>
+                <input asp-for="ThoiGianBatDau" class="form-control" />
+                <span asp-validation-for="ThoiGianBatDau" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
