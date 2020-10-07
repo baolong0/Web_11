@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Web_11.Models;
+using Web_11.Models.Data;
 
 namespace Web_11.Controllers
 {

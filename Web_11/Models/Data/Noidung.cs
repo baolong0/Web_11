@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Web_11.Models
+namespace Web_11.Models.Data
 {
     public partial class Noidung
     {
@@ -10,7 +10,7 @@ namespace Web_11.Models
             SubTintuc = new HashSet<SubTintuc>();
         }
 
-        public string IdNoiDung { get; set; }
+        public int IdNoiDung { get; set; }
         public string TextNoiDung { get; set; }
 
         public virtual ICollection<SubTintuc> SubTintuc { get; set; }

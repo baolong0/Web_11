@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Web_11.Models
+namespace Web_11.Models.Data
 {
     public partial class Hashtag
     {
@@ -10,7 +10,7 @@ namespace Web_11.Models
             SubTintuc = new HashSet<SubTintuc>();
         }
 
-        public string IdHashtag { get; set; }
+        public int IdHashtag { get; set; }
         public string Hashtag1 { get; set; }
 
         public virtual ICollection<SubTintuc> SubTintuc { get; set; }

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Web_11.Models
+namespace Web_11.Models.Data
 {
     public partial class Thongtincoban
     {

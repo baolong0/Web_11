@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Web_11.Models
+namespace Web_11.Models.Data
 {
     public partial class Cauthu
     {
@@ -13,6 +13,7 @@ namespace Web_11.Models
 
         public string IdCauThu { get; set; }
         public string TenCauThu { get; set; }
+        public string SourceHact { get; set; }
 
         public virtual ICollection<Banthang> Banthang { get; set; }
         public virtual ICollection<SubCauthu> SubCauthu { get; set; }

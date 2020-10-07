@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Web_11.Models
+namespace Web_11.Models.Data
 {
     public partial class Hinhanh
     {
@@ -10,11 +10,9 @@ namespace Web_11.Models
             SubTintuc = new HashSet<SubTintuc>();
         }
 
-        public string IdHinhAnh { get; set; }
+        public int IdHinhAnh { get; set; }
         public string SourceHinhAnh { get; set; }
-        public string IdLoaiHinhAnh { get; set; }
 
-        public virtual Loaihinhanh IdLoaiHinhAnhNavigation { get; set; }
         public virtual ICollection<SubTintuc> SubTintuc { get; set; }
     }
 }

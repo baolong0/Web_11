@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Web_11.Models
+namespace Web_11.Models.Data
 {
     public partial class Taitro
     {
@@ -12,9 +12,7 @@ namespace Web_11.Models
 
         public string IdTaiTro { get; set; }
         public string SourceLogo { get; set; }
-        public string IdLoaiHinhAnh { get; set; }
 
-        public virtual Loaihinhanh IdLoaiHinhAnhNavigation { get; set; }
         public virtual ICollection<SubTaitro> SubTaitro { get; set; }
     }
 }

@@ -2,14 +2,19 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace Web_11.Models
+namespace Web_11.Models.Data
 {
     public partial class FootballNewsContext : DbContext
     {
+        public FootballNewsContext()
+        {
+        }
+
         public FootballNewsContext(DbContextOptions<FootballNewsContext> options)
             : base(options)
         {
         }
+
         public virtual DbSet<Banthang> Banthang { get; set; }
         public virtual DbSet<Cauthu> Cauthu { get; set; }
         public virtual DbSet<Cthd> Cthd { get; set; }
@@ -18,7 +23,6 @@ namespace Web_11.Models
         public virtual DbSet<Hinhanh> Hinhanh { get; set; }
         public virtual DbSet<Hoadon> Hoadon { get; set; }
         public virtual DbSet<Khachhang> Khachhang { get; set; }
-        public virtual DbSet<Loaihinhanh> Loaihinhanh { get; set; }
         public virtual DbSet<Loaithanhtich> Loaithanhtich { get; set; }
         public virtual DbSet<Loaive> Loaive { get; set; }
         public virtual DbSet<Noidung> Noidung { get; set; }
@@ -37,7 +41,7 @@ namespace Web_11.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Server=LONGPC;Database=FootballNews;Trusted_Connection=True;");
+                optionsBuilder.UseSqlServer("Server=tcp:mvcmovies.database.windows.net,1433;Initial Catalog=FootballNews;Persist Security Info=False;User ID=baolong0;Password=adminbl@1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
             }
         }
 
@@ -46,7 +50,7 @@ namespace Web_11.Models
             modelBuilder.Entity<Banthang>(entity =>
             {
                 entity.HasKey(e => e.IdBanThang)
-                    .HasName("PK__BANTHANG__7FEA492835225476");
+                    .HasName("PK__BANTHANG__7FEA4928482C0395");
 
                 entity.ToTable("BANTHANG");
 
@@ -76,19 +80,19 @@ namespace Web_11.Models
                     .WithMany(p => p.Banthang)
                     .HasForeignKey(d => d.IdCauThu)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__BANTHANG__ID_Cau__52593CB8");
+                    .HasConstraintName("FK__BANTHANG__ID_Cau__06CD04F7");
 
                 entity.HasOne(d => d.IdTranDauNavigation)
                     .WithMany(p => p.Banthang)
                     .HasForeignKey(d => d.IdTranDau)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__BANTHANG__ID_Tra__534D60F1");
+                    .HasConstraintName("FK__BANTHANG__ID_Tra__07C12930");
             });
 
             modelBuilder.Entity<Cauthu>(entity =>
             {
                 entity.HasKey(e => e.IdCauThu)
-                    .HasName("PK__CAUTHU__C790527D9A63E94D");
+                    .HasName("PK__CAUTHU__C790527D75D21AFC");
 
                 entity.ToTable("CAUTHU");
 
@@ -97,6 +101,11 @@ namespace Web_11.Models
                     .HasMaxLength(15)
                     .IsUnicode(false)
                     .IsFixedLength();
+
+                entity.Property(e => e.SourceHact)
+                    .HasColumnName("Source_HACT")
+                    .HasMaxLength(2000)
+                    .IsUnicode(false);
 
                 entity.Property(e => e.TenCauThu).HasMaxLength(50);
             });
@@ -124,19 +133,19 @@ namespace Web_11.Models
                     .WithMany(p => p.Cthd)
                     .HasForeignKey(d => d.IdHoaDon)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__CTHD__ID_HoaDon__6383C8BA");
+                    .HasConstraintName("FK__CTHD__ID_HoaDon__17F790F9");
 
                 entity.HasOne(d => d.IdVeNavigation)
                     .WithMany(p => p.Cthd)
                     .HasForeignKey(d => d.IdVe)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__CTHD__ID_Ve__6477ECF3");
+                    .HasConstraintName("FK__CTHD__ID_Ve__18EBB532");
             });
 
             modelBuilder.Entity<Doibong>(entity =>
             {
                 entity.HasKey(e => e.IdDoiBong)
-                    .HasName("PK__DOIBONG__38B75167E0250F98");
+                    .HasName("PK__DOIBONG__38B7516720473A2B");
 
                 entity.ToTable("DOIBONG");
 
@@ -164,15 +173,11 @@ namespace Web_11.Models
             modelBuilder.Entity<Hashtag>(entity =>
             {
                 entity.HasKey(e => e.IdHashtag)
-                    .HasName("PK__HASHTAG__4E71A0E91D16ACF7");
+                    .HasName("PK__HASHTAG__4E71A0E965A5AA6D");
 
                 entity.ToTable("HASHTAG");
 
-                entity.Property(e => e.IdHashtag)
-                    .HasColumnName("ID_Hashtag")
-                    .HasMaxLength(15)
-                    .IsUnicode(false)
-                    .IsFixedLength();
+                entity.Property(e => e.IdHashtag).HasColumnName("ID_Hashtag");
 
                 entity.Property(e => e.Hashtag1)
                     .HasColumnName("Hashtag")
@@ -182,39 +187,22 @@ namespace Web_11.Models
             modelBuilder.Entity<Hinhanh>(entity =>
             {
                 entity.HasKey(e => e.IdHinhAnh)
-                    .HasName("PK__HINHANH__17EE707680DF578A");
+                    .HasName("PK__HINHANH__17EE707655695CB2");
 
                 entity.ToTable("HINHANH");
 
-                entity.Property(e => e.IdHinhAnh)
-                    .HasColumnName("ID_HinhAnh")
-                    .HasMaxLength(15)
-                    .IsUnicode(false)
-                    .IsFixedLength();
-
-                entity.Property(e => e.IdLoaiHinhAnh)
-                    .IsRequired()
-                    .HasColumnName("ID_LoaiHinhAnh")
-                    .HasMaxLength(15)
-                    .IsUnicode(false)
-                    .IsFixedLength();
+                entity.Property(e => e.IdHinhAnh).HasColumnName("ID_HinhAnh");
 
                 entity.Property(e => e.SourceHinhAnh)
                     .HasColumnName("Source_HinhAnh")
                     .HasMaxLength(2000)
                     .IsUnicode(false);
-
-                entity.HasOne(d => d.IdLoaiHinhAnhNavigation)
-                    .WithMany(p => p.Hinhanh)
-                    .HasForeignKey(d => d.IdLoaiHinhAnh)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__HINHANH__ID_Loai__2B3F6F97");
             });
 
             modelBuilder.Entity<Hoadon>(entity =>
             {
                 entity.HasKey(e => e.IdHoaDon)
-                    .HasName("PK__HOADON__14AFCFC5DF3C6BD9");
+                    .HasName("PK__HOADON__14AFCFC521BD3A53");
 
                 entity.ToTable("HOADON");
 
@@ -237,13 +225,13 @@ namespace Web_11.Models
                     .WithMany(p => p.Hoadon)
                     .HasForeignKey(d => d.IdKhachHang)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__HOADON__ID_Khach__59FA5E80");
+                    .HasConstraintName("FK__HOADON__ID_Khach__0E6E26BF");
             });
 
             modelBuilder.Entity<Khachhang>(entity =>
             {
                 entity.HasKey(e => e.IdKhachHang)
-                    .HasName("PK__KHACHHAN__263C4E85E1F31694");
+                    .HasName("PK__KHACHHAN__263C4E85DDC3D87F");
 
                 entity.ToTable("KHACHHANG");
 
@@ -264,26 +252,10 @@ namespace Web_11.Models
                     .IsFixedLength();
             });
 
-            modelBuilder.Entity<Loaihinhanh>(entity =>
-            {
-                entity.HasKey(e => e.IdLoaiHinhAnh)
-                    .HasName("PK__LOAIHINH__0A2B7B249C029D46");
-
-                entity.ToTable("LOAIHINHANH");
-
-                entity.Property(e => e.IdLoaiHinhAnh)
-                    .HasColumnName("ID_LoaiHinhAnh")
-                    .HasMaxLength(15)
-                    .IsUnicode(false)
-                    .IsFixedLength();
-
-                entity.Property(e => e.TenLoaiHinhAnh).HasMaxLength(50);
-            });
-
             modelBuilder.Entity<Loaithanhtich>(entity =>
             {
                 entity.HasKey(e => e.IdLoaiThanhTich)
-                    .HasName("PK__LOAITHAN__5129CA25AC6A0F00");
+                    .HasName("PK__LOAITHAN__5129CA25BB71303B");
 
                 entity.ToTable("LOAITHANHTICH");
 
@@ -299,7 +271,7 @@ namespace Web_11.Models
             modelBuilder.Entity<Loaive>(entity =>
             {
                 entity.HasKey(e => e.IdLoaiVe)
-                    .HasName("PK__LOAIVE__D746A2FF4F4966A1");
+                    .HasName("PK__LOAIVE__D746A2FFD579A937");
 
                 entity.ToTable("LOAIVE");
 
@@ -315,34 +287,34 @@ namespace Web_11.Models
             modelBuilder.Entity<Noidung>(entity =>
             {
                 entity.HasKey(e => e.IdNoiDung)
-                    .HasName("PK__NOIDUNG__E4A7B607429872CF");
+                    .HasName("PK__NOIDUNG__E4A7B6077FDD78A9");
 
                 entity.ToTable("NOIDUNG");
 
-                entity.Property(e => e.IdNoiDung)
-                    .HasColumnName("ID_NoiDung")
-                    .HasMaxLength(15)
-                    .IsUnicode(false)
-                    .IsFixedLength();
+                entity.Property(e => e.IdNoiDung).HasColumnName("ID_NoiDung");
 
                 entity.Property(e => e.TextNoiDung).HasColumnName("Text_NoiDung");
             });
 
             modelBuilder.Entity<SubCauthu>(entity =>
             {
-                entity.HasKey(e => new { e.IdDoiBong, e.IdCauThu })
-                    .HasName("sub_CAUTHU_pk");
+                entity.HasKey(e => e.IdSubCt)
+                    .HasName("PK__sub_CAUT__1CD2B838FE682239");
 
                 entity.ToTable("sub_CAUTHU");
 
-                entity.Property(e => e.IdDoiBong)
-                    .HasColumnName("ID_DoiBong")
+                entity.Property(e => e.IdSubCt).HasColumnName("ID_sub_CT");
+
+                entity.Property(e => e.IdCauThu)
+                    .IsRequired()
+                    .HasColumnName("ID_CauThu")
                     .HasMaxLength(15)
                     .IsUnicode(false)
                     .IsFixedLength();
 
-                entity.Property(e => e.IdCauThu)
-                    .HasColumnName("ID_CauThu")
+                entity.Property(e => e.IdDoiBong)
+                    .IsRequired()
+                    .HasColumnName("ID_DoiBong")
                     .HasMaxLength(15)
                     .IsUnicode(false)
                     .IsFixedLength();
@@ -351,29 +323,33 @@ namespace Web_11.Models
                     .WithMany(p => p.SubCauthu)
                     .HasForeignKey(d => d.IdCauThu)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__sub_CAUTH__ID_Ca__4BAC3F29");
+                    .HasConstraintName("FK__sub_CAUTH__ID_Ca__00200768");
 
                 entity.HasOne(d => d.IdDoiBongNavigation)
                     .WithMany(p => p.SubCauthu)
                     .HasForeignKey(d => d.IdDoiBong)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__sub_CAUTH__ID_Do__4AB81AF0");
+                    .HasConstraintName("FK__sub_CAUTH__ID_Do__7F2BE32F");
             });
 
             modelBuilder.Entity<SubTaitro>(entity =>
             {
-                entity.HasKey(e => new { e.IdDoiBong, e.IdTaiTro })
-                    .HasName("sub_TAITRO_pk");
+                entity.HasKey(e => e.IdSubTt)
+                    .HasName("PK__sub_TAIT__F422BD2E8B651495");
 
                 entity.ToTable("sub_TAITRO");
 
+                entity.Property(e => e.IdSubTt).HasColumnName("ID_Sub_TT");
+
                 entity.Property(e => e.IdDoiBong)
+                    .IsRequired()
                     .HasColumnName("ID_DoiBong")
                     .HasMaxLength(15)
                     .IsUnicode(false)
                     .IsFixedLength();
 
                 entity.Property(e => e.IdTaiTro)
+                    .IsRequired()
                     .HasColumnName("ID_TaiTro")
                     .HasMaxLength(15)
                     .IsUnicode(false)
@@ -383,21 +359,29 @@ namespace Web_11.Models
                     .WithMany(p => p.SubTaitro)
                     .HasForeignKey(d => d.IdDoiBong)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__sub_TAITR__ID_Do__44FF419A");
+                    .HasConstraintName("FK__sub_TAITR__ID_Do__797309D9");
 
                 entity.HasOne(d => d.IdTaiTroNavigation)
                     .WithMany(p => p.SubTaitro)
                     .HasForeignKey(d => d.IdTaiTro)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__sub_TAITR__ID_Ta__45F365D3");
+                    .HasConstraintName("FK__sub_TAITR__ID_Ta__7A672E12");
             });
 
             modelBuilder.Entity<SubTintuc>(entity =>
             {
-                entity.HasKey(e => new { e.IdTintuc, e.IdHinhAnh, e.IdNoiDung, e.IdHashtag })
-                    .HasName("sub_TINTUC_pk");
+                entity.HasKey(e => e.IdSubTt)
+                    .HasName("PK__sub_TINT__1CD40A5D1E63EE64");
 
                 entity.ToTable("sub_TINTUC");
+
+                entity.Property(e => e.IdSubTt).HasColumnName("ID_sub_TT");
+
+                entity.Property(e => e.IdHashtag).HasColumnName("ID_Hashtag");
+
+                entity.Property(e => e.IdHinhAnh).HasColumnName("ID_HinhAnh");
+
+                entity.Property(e => e.IdNoiDung).HasColumnName("ID_NoiDung");
 
                 entity.Property(e => e.IdTintuc)
                     .HasColumnName("ID_Tintuc")
@@ -405,53 +389,31 @@ namespace Web_11.Models
                     .IsUnicode(false)
                     .IsFixedLength();
 
-                entity.Property(e => e.IdHinhAnh)
-                    .HasColumnName("ID_HinhAnh")
-                    .HasMaxLength(15)
-                    .IsUnicode(false)
-                    .IsFixedLength();
-
-                entity.Property(e => e.IdNoiDung)
-                    .HasColumnName("ID_NoiDung")
-                    .HasMaxLength(15)
-                    .IsUnicode(false)
-                    .IsFixedLength();
-
-                entity.Property(e => e.IdHashtag)
-                    .HasColumnName("ID_Hashtag")
-                    .HasMaxLength(15)
-                    .IsUnicode(false)
-                    .IsFixedLength();
-
                 entity.HasOne(d => d.IdHashtagNavigation)
                     .WithMany(p => p.SubTintuc)
                     .HasForeignKey(d => d.IdHashtag)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__sub_TINTU__ID_Ha__34C8D9D1");
+                    .HasConstraintName("FK__sub_TINTU__ID_Ha__6A30C649");
 
                 entity.HasOne(d => d.IdHinhAnhNavigation)
                     .WithMany(p => p.SubTintuc)
                     .HasForeignKey(d => d.IdHinhAnh)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__sub_TINTU__ID_Hi__32E0915F");
+                    .HasConstraintName("FK__sub_TINTU__ID_Hi__68487DD7");
 
                 entity.HasOne(d => d.IdNoiDungNavigation)
                     .WithMany(p => p.SubTintuc)
                     .HasForeignKey(d => d.IdNoiDung)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__sub_TINTU__ID_No__33D4B598");
+                    .HasConstraintName("FK__sub_TINTU__ID_No__693CA210");
 
                 entity.HasOne(d => d.IdTintucNavigation)
                     .WithMany(p => p.SubTintuc)
                     .HasForeignKey(d => d.IdTintuc)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__sub_TINTU__ID_Ti__31EC6D26");
+                    .HasConstraintName("FK__sub_TINTU__ID_Ti__6754599E");
             });
 
             modelBuilder.Entity<Taitro>(entity =>
             {
                 entity.HasKey(e => e.IdTaiTro)
-                    .HasName("PK__TAITRO__7411763CF9F7F98E");
+                    .HasName("PK__TAITRO__7411763C482E4A29");
 
                 entity.ToTable("TAITRO");
 
@@ -461,29 +423,16 @@ namespace Web_11.Models
                     .IsUnicode(false)
                     .IsFixedLength();
 
-                entity.Property(e => e.IdLoaiHinhAnh)
-                    .IsRequired()
-                    .HasColumnName("ID_LoaiHinhAnh")
-                    .HasMaxLength(15)
-                    .IsUnicode(false)
-                    .IsFixedLength();
-
                 entity.Property(e => e.SourceLogo)
                     .HasColumnName("Source_Logo")
                     .HasMaxLength(2000)
                     .IsUnicode(false);
-
-                entity.HasOne(d => d.IdLoaiHinhAnhNavigation)
-                    .WithMany(p => p.Taitro)
-                    .HasForeignKey(d => d.IdLoaiHinhAnh)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__TAITRO__ID_LoaiH__4222D4EF");
             });
 
             modelBuilder.Entity<TbUser>(entity =>
             {
                 entity.HasKey(e => e.IdUser)
-                    .HasName("PK__tb_USER__ED4DE4421757B6AB");
+                    .HasName("PK__tb_USER__ED4DE442CD8B0760");
 
                 entity.ToTable("tb_USER");
 
@@ -517,7 +466,7 @@ namespace Web_11.Models
             modelBuilder.Entity<Thanhtich>(entity =>
             {
                 entity.HasKey(e => e.IdThanhTich)
-                    .HasName("PK__THANHTIC__A7B7F3831F05D51F");
+                    .HasName("PK__THANHTIC__A7B7F38305121A84");
 
                 entity.ToTable("THANHTICH");
 
@@ -547,19 +496,19 @@ namespace Web_11.Models
                     .WithMany(p => p.Thanhtich)
                     .HasForeignKey(d => d.IdDoiBong)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__THANHTICH__ID_Do__3F466844");
+                    .HasConstraintName("FK__THANHTICH__ID_Do__74AE54BC");
 
                 entity.HasOne(d => d.IdLoaiThanhTichNavigation)
                     .WithMany(p => p.Thanhtich)
                     .HasForeignKey(d => d.IdLoaiThanhTich)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__THANHTICH__ID_Lo__3E52440B");
+                    .HasConstraintName("FK__THANHTICH__ID_Lo__73BA3083");
             });
 
             modelBuilder.Entity<Thongtincoban>(entity =>
             {
                 entity.HasKey(e => e.IdThongTin)
-                    .HasName("PK__THONGTIN__BB9645AF626F1EBA");
+                    .HasName("PK__THONGTIN__BB9645AFF61C5921");
 
                 entity.ToTable("THONGTINCOBAN");
 
@@ -615,13 +564,13 @@ namespace Web_11.Models
                     .WithMany(p => p.Thongtincoban)
                     .HasForeignKey(d => d.IdDoiBong)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__THONGTINC__ID_Do__398D8EEE");
+                    .HasConstraintName("FK__THONGTINC__ID_Do__6EF57B66");
             });
 
             modelBuilder.Entity<Ticket>(entity =>
             {
                 entity.HasKey(e => e.IdVe)
-                    .HasName("PK__TICKET__8B63A19C2A58DBA4");
+                    .HasName("PK__TICKET__8B63A19C84EE70D1");
 
                 entity.ToTable("TICKET");
 
@@ -656,25 +605,25 @@ namespace Web_11.Models
                     .WithMany(p => p.TicketDoiKhachNavigation)
                     .HasForeignKey(d => d.DoiKhach)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__TICKET__DoiKhach__60A75C0F");
+                    .HasConstraintName("FK__TICKET__DoiKhach__151B244E");
 
                 entity.HasOne(d => d.DoiNhaNavigation)
                     .WithMany(p => p.TicketDoiNhaNavigation)
                     .HasForeignKey(d => d.DoiNha)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__TICKET__DoiNha__5FB337D6");
+                    .HasConstraintName("FK__TICKET__DoiNha__14270015");
 
                 entity.HasOne(d => d.IdLoaiVeNavigation)
                     .WithMany(p => p.Ticket)
                     .HasForeignKey(d => d.IdLoaiVe)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__TICKET__ID_LoaiV__5EBF139D");
+                    .HasConstraintName("FK__TICKET__ID_LoaiV__1332DBDC");
             });
 
             modelBuilder.Entity<Tintuc>(entity =>
             {
                 entity.HasKey(e => e.IdTinTuc)
-                    .HasName("PK__TINTUC__D3B238FE877E62CB");
+                    .HasName("PK__TINTUC__D3B238FE79448AB0");
 
                 entity.ToTable("TINTUC");
 
@@ -699,7 +648,7 @@ namespace Web_11.Models
             modelBuilder.Entity<Trandau>(entity =>
             {
                 entity.HasKey(e => e.IdTranDau)
-                    .HasName("PK__TRANDAU__4DCE68F42A9B9527");
+                    .HasName("PK__TRANDAU__4DCE68F4CB216D19");
 
                 entity.ToTable("TRANDAU");
 
@@ -733,13 +682,13 @@ namespace Web_11.Models
                     .WithMany(p => p.TrandauDoiKhachNavigation)
                     .HasForeignKey(d => d.DoiKhach)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__TRANDAU__DoiKhac__4F7CD00D");
+                    .HasConstraintName("FK__TRANDAU__DoiKhac__03F0984C");
 
                 entity.HasOne(d => d.DoiNhaNavigation)
                     .WithMany(p => p.TrandauDoiNhaNavigation)
                     .HasForeignKey(d => d.DoiNha)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__TRANDAU__DoiNha__4E88ABD4");
+                    .HasConstraintName("FK__TRANDAU__DoiNha__02FC7413");
             });
 
             OnModelCreatingPartial(modelBuilder);
