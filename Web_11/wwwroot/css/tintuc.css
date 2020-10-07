@@ -115,10 +115,15 @@ img.img-responsive{
 
 /* footer */
 div.container-fluid.text-center.text-md-left{
-  background-color:#20c997 !important ;
+  background-color: #3399ff !important ;
 }
 div.footer-copyright.text-center.py-3{
-  background-color: #28a745 !important;
+  background-color:  #338ffa!important;
+  color: white;
+}
+div.footer-copyright.text-center.py-3 a:hover{
+color: #000 !important;
+text-decoration: none;
 }
 /* ------------- */
   @media only screen and (min-width: 720px) and (max-width:1180px){
