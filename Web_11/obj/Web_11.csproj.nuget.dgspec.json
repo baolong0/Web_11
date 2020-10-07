@@ -1,25 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\A\\Desktop\\WEB-ST001-Group11\\Web_11\\Web_11\\Web_11.csproj": {}
+    "C:\\Users\\chinh\\OneDrive\\Documents\\GitHub\\Web_11\\Web_11\\Web_11.csproj": {}
   },
   "projects": {
-    "C:\\Users\\A\\Desktop\\WEB-ST001-Group11\\Web_11\\Web_11\\Web_11.csproj": {
+    "C:\\Users\\chinh\\OneDrive\\Documents\\GitHub\\Web_11\\Web_11\\Web_11.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\A\\Desktop\\WEB-ST001-Group11\\Web_11\\Web_11\\Web_11.csproj",
+        "projectUniqueName": "C:\\Users\\chinh\\OneDrive\\Documents\\GitHub\\Web_11\\Web_11\\Web_11.csproj",
         "projectName": "Web_11",
-        "projectPath": "C:\\Users\\A\\Desktop\\WEB-ST001-Group11\\Web_11\\Web_11\\Web_11.csproj",
-        "packagesPath": "C:\\Users\\A\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\A\\Desktop\\WEB-ST001-Group11\\Web_11\\Web_11\\obj\\",
+        "projectPath": "C:\\Users\\chinh\\OneDrive\\Documents\\GitHub\\Web_11\\Web_11\\Web_11.csproj",
+        "packagesPath": "C:\\Users\\chinh\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\chinh\\OneDrive\\Documents\\GitHub\\Web_11\\Web_11\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\A\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\chinh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -83,7 +79,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
         }
       }
     }
