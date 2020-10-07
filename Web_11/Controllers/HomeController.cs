@@ -24,15 +24,26 @@ namespace Web_11.Controllers
             return View(homeModel);
         }
 
-        public IActionResult Privacy()
+        public IActionResult TinTuc()
+        {
+            
+            HomeModel homeModel = new HomeModel();
+            homeModel.Tintucs = _context.Tintuc.ToArray();
+            return View(homeModel);
+        }
+        public IActionResult BXH()
         {
             return View();
         }
-        public IActionResult DoanhThu()
+        public IActionResult LichThiDau()
         {
             return View();
         }
-        public IActionResult VeBan()
+        public IActionResult MuaVe()
+        {
+            return View();
+        }
+        public IActionResult ThongTinDoiBong()
         {
             return View();
         }

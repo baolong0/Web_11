@@ -1,0 +1,45 @@
+/* .team-logo img{
+    width: 100%;
+} */
+.schedule{
+    text-align: center;
+}
+.banner{
+    margin: auto;
+}
+/* #carouselExampleIndicators{
+    margin: 25px 100px 25px;
+} */
+.logo img{
+    width: 80%;
+}
+.logo {
+    text-align: center;
+}
+.logo figure{
+    margin: auto;
+}
+.news figure{
+    margin: auto;
+}
+.schedule-item{
+    display: flex;
+    list-style: none;
+    margin: auto;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0px;
+}
+.img-logo{
+    width: 80px;
+    height: 80px;
+}
+.news-main{
+    margin: auto;
+}
+
+@media only screen and (min-width:740px) and (max-width: 1023px){
+    /* .hidden-md{
+        display: none;
+    } */
+}

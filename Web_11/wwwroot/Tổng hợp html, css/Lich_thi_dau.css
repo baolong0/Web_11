@@ -1,0 +1,70 @@
+#datepicker {
+    text-align: left;
+    color: red;
+}
+.table-responsive-md {
+    text-align: center;   
+   
+}
+.table-responsive-md thead {
+    background: green;
+    color: white;     
+    border-style: groove;
+    border-color: gray;
+}
+.table-responsive-md table, th, td{
+    border-style: groove;
+    border-color: gray;
+}
+.table{
+    width: 100%;
+}
+/* .col-xs-3 h2{
+    text-align: center;
+    color: red;
+} */
+
+.lich{
+    align-items: right;
+    
+}
+
+/* .card{
+    width: 90%;
+} */
+/* .card-img-top{
+    align-items: center;  
+    width: 100%;  
+} */
+.card-title{
+    align-items: center;
+}
+.img-TT{
+    height: 220px;
+}
+
+/* .card{
+    width: 250px;
+    height:250px;
+} */
+.card-header{
+    font-weight: 700;
+    font-size: 1rem;
+}
+.jumbotron{
+    margin-top: 20px;
+}
+.Lien-He{
+    text-align: right;
+    padding-top: 90px;
+}
+.SAN_SALE{
+    margin: auto;
+    color: red;
+}   
+@media only screen and (min-width:768px) and (max-width: 1023px){
+    .sale{
+        margin-top: 40px;
+    }
+    
+}

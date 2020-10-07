@@ -3,112 +3,64 @@
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
-    int stt = 1;
 }
-<div class="row">
-    <div class=" header-data container-fluid ">
-        <form class="form-inline" action="#">
-            <h1>Quản trị tin tức</h1>
-            <input class="form-control ml-auto d-none d-sm-block " type="text" placeholder="Search"
-                   style="width: 30% !important;border-radius: 8px; display:inline-block;">
-            <button class="btn btn-success d-none d-sm-block" type="submit">Search</button>
-        </form>
-    </div>
-    <!--Table Data-->
-    <div class="container-fluid" style="font:menu">
-        <div class="row padding">
-            <div class="">
-                <div class="form-group">
-                    <label for="sel1">Thời gian:</label>
-                    <select class="form-control" id="sel1" style="font-size: x-small;">
-                        <option>Tuần này</option>
-                        <option>Tháng này</option>
-                        <option>Quý này</option>
-                        <option>Năm này</option>
-                        <option>Tất cả</option>
-                    </select>
-                </div>
-            </div>
-            <div class="">
-                <div class="form-group">
-                    <label for="sel2">Trạng thái:</label>
-                    <select class="form-control" id="sel2" style="font-size: x-small;">
-                        <option>Đang hiển thị</option>
-                        <option>Không hiển thị</option>
-                        <option>Tất cả</option>
-                    </select>
-                </div>
-            </div>
-            <div class="">
-                <div class="form-group">
-                    <label for="sel3">Sắp xếp theo:</label>
-                    <select class="form-control" id="sel3" style="font-size: x-small;">
-                        <option>Lượt tương tác</option>
-                        <option>Lượt tương tác giảm dần</option>
-                        <option>Tất cả</option>
-                    </select>
-                </div>
-            </div>
-            <div class="ml-auto"></div>
-            <div class="ml-auto">
-                <button type="button" class=" btn btn-outline-dark ml-auto " id="btn-refresh-new">
-                    <i class="fas fa-sync"></i> Cập Nhật
-                </button>
-                <button type="button" class=" btn btn-outline-success ml-auto" id="btn-refresh-new">
-                    <i class="far fa-plus-square"></i> Thêm tin mới
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
+
+<h1>Index</h1>
+
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<div class="container col-md-12">
-    <div class="table-responsive">
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th>STT</th>
-                    <th>ID</th>
-                    <th>Tiêu Đề</th>
-                    <th>Nội Dung</th>
-                    <th>Trạng Thái</th>
-                    <th>Lượt tương tác</th>
-                    <th>Hành động</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model)
-                {
-                    <tr>
-                        <td>
-                            @stt
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.IdTinTuc)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.TieuDe)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.TomTat)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.TrangThaiHienThi)
-
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.LuotTuongTac)
-                        </td>
-                        <td>
-                            <a asp-action="Edit" asp-route-id="@item.IdTinTuc">Edit</a> |
-                            <a asp-action="Details" asp-route-id="@item.IdTinTuc">Details</a> |
-                            <a asp-action="Delete" asp-route-id="@item.IdTinTuc">Delete</a>
-                        </td>
-                    </tr>
-                }
-            </tbody>
-        </table>
-    </div>
-</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TieuDe)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Avatar)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TomTat)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LuotTuongTac)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LuotXem)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TrangThaiHienThi)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TieuDe)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Avatar)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TomTat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LuotTuongTac)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LuotXem)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TrangThaiHienThi)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdTinTuc">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdTinTuc">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdTinTuc">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

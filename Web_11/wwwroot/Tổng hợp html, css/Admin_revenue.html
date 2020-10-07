@@ -1,0 +1,411 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Admin_revenue</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navication -->
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <div class="container navbar-left ">
+            <div class="navbar-header">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
+                    aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <img src="./img/logo.png"
+                        alt="Responsive image" height="50">
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index (1).html"><i class="far fa-newspaper"></i>Tin tức<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Admin_revenue.html"><i class="far fa-chart-bar"></i>Doanh Thu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Admin_Ticket.html"><i class="fas fa-ticket-alt"></i>Vé Bán</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fas fa-futbol"></i>Giải đấu</a>
+                    </li>
+                </ul>
+            </div>
+            <form class="form-inline my-2 my-lg-0">
+                <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Nội dung tìm kiếm"
+                        aria-label="Recipient's username" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                        <span class="input-group-text" id="basic-addon2"><i class="fas fa-search"></i></span>
+                    </div>
+                </div>
+            </form>
+            <div class="dropdown ml-3">
+                <button class="btn btn-secondary fas fa-user" type="button" id="dropdownMenu2" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false"></button>
+                <div class="dropdown-menu mt-2" aria-labelledby="dropdownMenu2">
+                    <button class="dropdown-item btn btn-primary" type="button">Đăng nhập</button>
+                    <button class="dropdown-item btn btn-success" type="button">Đăng kí</button>
+                    <button class="dropdown-item" type="button">Đăng nhập bằng <i
+                            class="fab fa-facebook-square"></i></button>
+                    <button class="dropdown-item" type="button">Đăng nhập bằng <i class="fab fa-google"></i></button>
+                </div>
+            </div>
+        </div>
+    </nav>
+</body>
+<div class="row">
+    <span class="container-fluid col-12 col-sm-11 col-ml-11 col-lg-11 ">
+        <div class=" header-data container-fluid ">
+            <form class="form-inline" action="#">
+                <h3 class>Quản trị tin tức</h3>
+                <input class="form-control ml-auto d-none d-sm-block " type="text" placeholder="Search"
+                    style="width: 30% !important;border-radius: 8px; display:inline-block;">
+                <button class="btn btn-success d-none d-sm-block" type="submit">Search</button>
+            </form>
+        </div>
+        <!--Table Data-->
+        <div class="container-fluid" style="font:menu">
+            <div class="row padding">
+                <div class="">
+                    <div class="form-group">
+                        <label for="sel1">Thời gian:</label>
+                        <select class="form-control" id="sel1" style="font-size: x-small;">
+                            <option>Tuần này</option>
+                            <option>Tháng này</option>
+                            <option>Quý này</option>
+                            <option>Năm này</option>
+                            <option>Tất cả</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="">
+                    <div class="form-group">
+                        <label for="sel2">Trạng thái:</label>
+                        <select class="form-control" id="sel2" style="font-size: x-small;">
+                            <option>Đang hiển thị</option>
+                            <option>Không hiển thị</option>
+                            <option>Tất cả</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="">
+                    <div class="form-group">
+                        <label for="sel3">Sắp xếp theo:</label>
+                        <select class="form-control" id="sel3" style="font-size: x-small;">
+                            <option>Lượt tương tác</option>
+                            <option>Lượt tương tác giảm dần</option>
+                            <option>Tất cả</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="ml-auto"></div>
+                <div class="ml-auto">
+                    <button type="button" class=" btn btn-outline-dark ml-auto " id="btn-refresh-new"><i
+                            class="fas fa-sync"></i> Cập Nhật</button>
+                    <button type="button" class=" btn btn-outline-success ml-auto" id="btn-refresh-new"><i
+                            class="far fa-plus-square"></i> Thêm tin mới</button>
+                </div>
+            </div>
+        </div>
+        <div class="container col-md-12">
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>STT</th>
+                            <th>ID</th>
+                            <th>Tiêu Đề</th>
+                            <th>Nội Dung</th>
+                            <th>Trạng Thái</th>
+                            <th>Lượt tương tác</th>
+                            <th>Hành động</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>000001</td>
+                            <td>Tiêu đề tin 1</td>
+                            <td>Nội dung của dòng đầu tin 1</td>
+                            <td>
+                                <div class="form-check-inline">
+                                    <label class="form-check-label">
+                                        <input type="checkbox" class="form-check-input active" value="">Hiển thị
+                                    </label>
+                                </div>
+                            </td>
+                            <td>100</td>
+                            <td>
+                                <div>
+                                    <button type="button" class="btn btn-outline-dark ml-auto"><i
+                                            class="far fa-edit"></i> Sửa</button>
+                                    <button type="button" class="btn btn-outline-danger ml-auto"><i
+                                            class="fas fa-trash-alt"></i> Xoá</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>000002</td>
+                            <td>Tiêu đề tin 1</td>
+                            <td>Nội dung của dòng đầu tin 1</td>
+                            <td>
+                                <div class="form-check-inline">
+                                    <label class="form-check-label">
+                                        <input type="checkbox" class="form-check-input active" value="">Hiển thị
+                                    </label>
+                                </div>
+                            </td>
+                            <td>100</td>
+                            <td>
+                                <div>
+                                    <button type="button" class="btn btn-outline-dark ml-auto"><i
+                                            class="far fa-edit"></i> Sửa</button>
+                                    <button type="button" class="btn btn-outline-danger ml-auto"><i
+                                            class="fas fa-trash-alt"></i> Xoá</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>000001</td>
+                            <td>Tiêu đề tin 1</td>
+                            <td>Nội dung của dòng đầu tin 1</td>
+                            <td>
+                                <div class="form-check-inline">
+                                    <label class="form-check-label">
+                                        <input type="checkbox" class="form-check-input active" value="">Hiển thị
+                                    </label>
+                                </div>
+                            </td>
+                            <td>100</td>
+                            <td>
+                                <div>
+                                    <button type="button" class="btn btn-outline-dark ml-auto"><i
+                                            class="far fa-edit"></i> Sửa</button>
+                                    <button type="button" class="btn btn-outline-danger ml-auto"><i
+                                            class="fas fa-trash-alt"></i> Xoá</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>000001</td>
+                            <td>Tiêu đề tin 1</td>
+                            <td>Nội dung của dòng đầu tin 1</td>
+                            <td>
+                                <div class="form-check-inline">
+                                    <label class="form-check-label">
+                                        <input type="checkbox" class="form-check-input active" value="">Hiển thị
+                                    </label>
+                                </div>
+                            </td>
+                            <td>100</td>
+                            <td>
+                                <div>
+                                    <button type="button" class="btn btn-outline-dark ml-auto"><i
+                                            class="far fa-edit"></i> Sửa</button>
+                                    <button type="button" class="btn btn-outline-danger ml-auto"><i
+                                            class="fas fa-trash-alt"></i> Xoá</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>000001</td>
+                            <td>Tiêu đề tin 1</td>
+                            <td>Nội dung của dòng đầu tin 1</td>
+                            <td>
+                                <div class="form-check-inline">
+                                    <label class="form-check-label">
+                                        <input type="checkbox" class="form-check-input active" value="">Hiển thị
+                                    </label>
+                                </div>
+                            </td>
+                            <td>100</td>
+                            <td>
+                                <div>
+                                    <button type="button" class="btn btn-outline-dark ml-auto"><i
+                                            class="far fa-edit"></i> Sửa</button>
+                                    <button type="button" class="btn btn-outline-danger ml-auto"><i
+                                            class="fas fa-trash-alt"></i> Xoá</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>000001</td>
+                            <td>Tiêu đề tin 1</td>
+                            <td>Nội dung của dòng đầu tin 1</td>
+                            <td>
+                                <div class="form-check-inline">
+                                    <label class="form-check-label">
+                                        <input type="checkbox" class="form-check-input active" value="">Hiển thị
+                                    </label>
+                                </div>
+                            </td>
+                            <td>100</td>
+                            <td>
+                                <div>
+                                    <button type="button" class="btn btn-outline-dark ml-auto"><i
+                                            class="far fa-edit"></i> Sửa</button>
+                                    <button type="button" class="btn btn-outline-danger ml-auto"><i
+                                            class="fas fa-trash-alt"></i> Xoá</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>000001</td>
+                            <td>Tiêu đề tin 1</td>
+                            <td>Nội dung của dòng đầu tin 1</td>
+                            <td>
+                                <div class="form-check-inline">
+                                    <label class="form-check-label">
+                                        <input type="checkbox" class="form-check-input active" value="">Hiển thị
+                                    </label>
+                                </div>
+                            </td>
+                            <td>100</td>
+                            <td>
+                                <div>
+                                    <button type="button" class="btn btn-outline-dark ml-auto"><i
+                                            class="far fa-edit"></i> Sửa</button>
+                                    <button type="button" class="btn btn-outline-danger ml-auto"><i
+                                            class="fas fa-trash-alt"></i> Xoá</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>000001</td>
+                            <td>Tiêu đề tin 1</td>
+                            <td>Nội dung của dòng đầu tin 1</td>
+                            <td>
+                                <div class="form-check-inline">
+                                    <label class="form-check-label">
+                                        <input type="checkbox" class="form-check-input active" value="">Hiển thị
+                                    </label>
+                                </div>
+                            </td>
+                            <td>100</td>
+                            <td>
+                                <div>
+                                    <button type="button" class="btn btn-outline-dark ml-auto"><i
+                                            class="far fa-edit"></i> Sửa</button>
+                                    <button type="button" class="btn btn-outline-danger ml-auto"><i
+                                            class="fas fa-trash-alt"></i> Xoá</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>000001</td>
+                            <td>Tiêu đề tin 1</td>
+                            <td>Nội dung của dòng đầu tin 1</td>
+                            <td>
+                                <div class="form-check-inline">
+                                    <label class="form-check-label">
+                                        <input type="checkbox" class="form-check-input active" value="">Hiển thị
+                                    </label>
+                                </div>
+                            </td>
+                            <td>100</td>
+                            <td>
+                                <div>
+                                    <button type="button" class="btn btn-outline-dark ml-auto"><i
+                                            class="far fa-edit"></i> Sửa</button>
+                                    <button type="button" class="btn btn-outline-danger ml-auto"><i
+                                            class="fas fa-trash-alt"></i> Xoá</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>000001</td>
+                            <td>Tiêu đề tin 1</td>
+                            <td>Nội dung của dòng đầu tin 1</td>
+                            <td>
+                                <div class="form-check-inline">
+                                    <label class="form-check-label">
+                                        <input type="checkbox" class="form-check-input active" value="">Hiển thị
+                                    </label>
+                                </div>
+                            </td>
+                            <td>100</td>
+                            <td>
+                                <div>
+                                    <button type="button" class="btn btn-outline-dark ml-auto"><i
+                                            class="far fa-edit"></i> Sửa</button>
+                                    <button type="button" class="btn btn-outline-danger ml-auto"><i
+                                            class="fas fa-trash-alt"></i> Xoá</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!--Table navi-->
+            <div class="ml-auto col-11 col-md-8">
+                <ul class="pagination">
+                    <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                </ul>
+            </div>
+        </div>
+    </span>
+</div>
+<hr>
+<!-- Footer-->
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                <h1 class="display-4">Tin Tức Thể Thao</h1>
+                <a class="navbar-brand" href="#">
+                    <img src="https://secureservercdn.net/166.62.108.43/bns.d72.myftpupload.com/wp-content/uploads/2018/12/BongdaEx_2.png"
+                        alt="Responsive image" height="50" width="100">
+                </a>
+                <p>Tòa soạn: 59c Nguyễn Đình Chiểu, Q.3 ,TP.Hồ Chí Minh</p>
+                <p>Cơ sở chủ quản: Hội xuất bản Việt Nam</p>
+                <p>&#64; 2020 Copyright: QuanLiBongDa.com</p>
+            </div>
+
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 Lien-He">
+                <p>HotLine: <b>0523364071</b></p>
+                <p>Liên Hệ Quảng Cáo: <b>0979528720</b></p>
+                <p>Liên Kết Qua Các Ứng Dụng</p>
+                <a class="navbar-brand" href="#">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png"
+                        alt="Responsive image" height="50" width="50">
+                </a>
+                <a class="navbar-brand" href="#">
+                    <img src="https://seoiclick.com/content/uploads/googleplus.png" alt="Responsive image" height="50"
+                        width="50">
+                </a>
+            </div>
+
+
+        </div>
+
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+.achievement{
+    list-style: none;
+}
+.achievement-small{
+    list-style: none;
+}
+.achievement-small li{
+    margin-left: 25px;
+}
+.hidden-lg{
+    display: none;
+}
+.player-profile p{
+    text-align: center;
+    font-size: 75%;
+}
+.team-achievement .inside{
+    list-style: circle;
+}
+.team-achievement .main-inside{
+    list-style: disc;
+}
+.sponsor-1 .donor-item{
+    display: flex;
+    list-style: none;
+    margin: auto;
+    width: 60%;
+    justify-content: space-between;
+    padding: 0px;
+}
+.sponsor-2 .donor-item{
+    display: flex;
+    list-style: none;
+    margin: auto;
+    width: 75%;
+    justify-content: space-between;
+    padding: 0px;
+}
+.contact-item{
+    display: flex;
+    list-style: none;
+    margin: auto;
+    width: 50%;
+    justify-content: space-between;
+    padding: 0px;
+}
+@media only screen and (max-width:738px){
+    .player-profile img{
+        width: 80%;
+    }
+    .player-profile img{
+        margin: auto;
+    }
+    .player-profile{
+        text-align: center;
+        font-size: 100%;
+    }
+}

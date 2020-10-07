@@ -17,11 +17,13 @@ namespace Web_11.Controllers
         {
             _context = context;
         }
+
         // GET: Tintucs
         public async Task<IActionResult> Index()
         {
             return View(await _context.Tintuc.ToListAsync());
         }
+
         // GET: Tintucs/Details/5
         public async Task<IActionResult> Details(string id)
         {

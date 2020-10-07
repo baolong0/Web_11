@@ -1,0 +1,41 @@
+﻿.navbar{
+    background-color: rgba(60, 179, 113, 0.9) !important ;
+}
+.navbar li a
+{
+    color: white !important;
+}
+.navbar li a:hover
+{
+    color:black !important;
+}
+.list-group{margin-top: 5px;
+}
+.list-group-item {
+    position: relative;
+    display: block;
+ padding: 5px;
+    background-color: #fff;
+    border: 1px solid rgba(0,0,0,.125);
+}
+.list-group-item:first-child {
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+    background-color: lightgray;
+    font-size:xx-small;
+    text-align: center;
+}
+.btn-group-admin{ 
+    background-color: rgba(60, 179, 113, 0.9);
+    border-radius: 8px !important;
+    color: white;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 7px 0px;
+}
+.btn-group-admin i { font-size: 1em; margin-right: 5px;}
+.header-data{margin-top: 10px;}
+#btn-refresh-new{ margin:20px; font-size: small;}
