@@ -1,11 +1,50 @@
 /* .team-logo img{
     width: 100%;
 } */
+/* navbar */
+.navbar-brand img{
+    height: 4rem;
+    }
+    .navbar{
+      font-size: 1.15rem;
+      font-weight: 700;
+      box-shadow: 0 0.5rem 0.5rem rgba(0, 0,0, .2);
+      z-index: 1;
+    }
+    nav-item{
+      padding: .5rem;
+    }
+    .nav-link{
+      color:white !important;
+    }
+    .nav-link.active,
+    .nav-link:hover{
+      color:#32CD32 !important;
+    }
 .schedule{
     text-align: center;
 }
 .banner{
     margin: auto;
+}
+.HA_KM{
+    background: linear-gradient(270deg,#84d48f7a 30%,#2ddd2d) #1a7503 !important;
+    /* margin: 10px 10px; */
+}
+.HA-CĐ{
+    margin: 10px;
+}
+.margin-HA-CĐ{
+    margin-bottom: 10px;
+}
+.margin-HA-CĐ-main{
+    top: -10px;
+}
+.img-QC{
+    height: 390px;
+}
+.img-HA-CĐ{
+    height: 200px;
 }
 /* #carouselExampleIndicators{
     margin: 25px 100px 25px;
