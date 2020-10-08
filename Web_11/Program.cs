@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -15,7 +15,7 @@ namespace Web_11
         {
             CreateHostBuilder(args).Build().Run();
         }
-
+        // ví dụ ở đây có thay đổi, tức là m có sửa file này. thay đổi xong là app github nó tự cập nhật thay đổi
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
