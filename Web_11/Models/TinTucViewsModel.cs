@@ -8,10 +8,12 @@ namespace Web_11.Models
 {
     public class TinTucViewsModel
     {
+        public IList<SubTintuc> subTintucs { get; set; }
         public IList<Tintuc> Tintucs { get; set; }
         public IList<Hashtag> Hashtags { get; set; }
         public IList<Tintuc> TintucHots { get; set; }
         public IList<Tintuc> TintucTrongTuans { get; set; }
         public IList<Tintuc> TintucChuyenNhuongs { get; set; }
+        public IList<Noidung> NoiDungs { get; set; }
     }
 }

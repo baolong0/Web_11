@@ -298,6 +298,11 @@ C:\Users\A\Desktop\WEB-ST001-Group11\Web_11\Web_11\obj\Debug\netcoreapp3.1\Razor
 C:\Users\A\Desktop\WEB-ST001-Group11\Web_11\Web_11\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Details.cshtml.g.cs
 C:\Users\A\Desktop\WEB-ST001-Group11\Web_11\Web_11\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Edit.cshtml.g.cs
 C:\Users\A\Desktop\WEB-ST001-Group11\Web_11\Web_11\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Index.cshtml.g.cs
-C:\Users\A\Desktop\WEB-ST001-Group11\Web_11\Web_11\obj\Debug\netcoreapp3.1\Web_11.csprojAssemblyReference.cache
 C:\Users\A\Desktop\WEB-ST001-Group11\Web_11\Web_11\obj\Debug\netcoreapp3.1\Razor\Views\Tintuc\Details.cshtml.g.cs
 C:\Users\A\Desktop\WEB-ST001-Group11\Web_11\Web_11\obj\Debug\netcoreapp3.1\Razor\Views\Tintuc\Index.cshtml.g.cs
+C:\Users\A\Desktop\WEB-ST001-Group11\Web_11\Web_11\obj\Debug\netcoreapp3.1\Razor\Views\Thongtincobans\Create.cshtml.g.cs
+C:\Users\A\Desktop\WEB-ST001-Group11\Web_11\Web_11\obj\Debug\netcoreapp3.1\Razor\Views\Thongtincobans\Delete.cshtml.g.cs
+C:\Users\A\Desktop\WEB-ST001-Group11\Web_11\Web_11\obj\Debug\netcoreapp3.1\Razor\Views\Thongtincobans\Details.cshtml.g.cs
+C:\Users\A\Desktop\WEB-ST001-Group11\Web_11\Web_11\obj\Debug\netcoreapp3.1\Razor\Views\Thongtincobans\Edit.cshtml.g.cs
+C:\Users\A\Desktop\WEB-ST001-Group11\Web_11\Web_11\obj\Debug\netcoreapp3.1\Razor\Views\Thongtincobans\Index.cshtml.g.cs
+C:\Users\A\Desktop\WEB-ST001-Group11\Web_11\Web_11\obj\Debug\netcoreapp3.1\Web_11.csprojAssemblyReference.cache

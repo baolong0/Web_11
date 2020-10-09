@@ -1,16 +1,9 @@
-﻿@model Web_11.Models.Data.Tintuc
-
+﻿@model TinTucChiTietModel;
 
 @{
     ViewData["Title"] = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-
-
-
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -37,11 +30,15 @@
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-10">
                     <article>
                         <p>
-                            <p>
-                            @*@foreach (var item in Model.Hashtags)
+                        <p>
+                            @foreach (var item in Model.HashtagTin)
                             {
-                                <a href=""type="button" class="btn btn-outline-primary btn-sm">@item.Hashtag1</a>
-                            }*@
+                                if (item.value != null)
+                                {
+                                    <a href="" type="button" class="btn btn-outline-primary btn-sm">@item.display</a>
+                                }
+
+                            }
                         </p>
                         </p>
 
@@ -63,25 +60,21 @@
                 <div class="row">
                     <section>
                         <div class="row">
-                            <h1>@Model.TieuDe</h1>
+                            <h1>@Model.Tintucs.TieuDe</h1>
                             <br>
-                            <h4 class="">@Model.TomTat</h4>
-
+                            <h4 class="">@Model.Tintucs.TomTat</h4>
                         </div>
-
                         <div class="row">
-                            <h4>Sai lầm của Kepa trước Liverpool (Bản quyền K+)</h4>
-                            <iframe src="https://www.youtube.com/embed/w5-LuhAknNo" class="mb-3" width="95%" height="400px"></iframe>
-                            <p>
-                                Trong trận cầu đinh với Liverpool tại vòng 2 Ngoại hạng Anh, Chelsea thiệt quân cuối hiệp 1 và bị đối thủ vươn lên dẫn trước. Trong tình cảnh khó khăn ấy, Kepa lại mắc thêm sai lầm tai hại khi chuyền bóng thẳng vào chân của Sadio Mane, tạo điều kiện cho tiền đạo người Senegal dễ dàng ghi bàn thứ hai cho Liverpool.
-                            </p>
-                            <img src="https://cdn.24h.com.vn/upload/3-2020/images/2020-09-21/Trieu-fan-Chelsea-doi-tong-co-Kepa-HLV-Lampard-sap-co-nguoi-thay-the-c2--1--1600651384-982-width660height428.jpg" class="img-fluid mt-3 mb-3 img" alt="">
+                            @foreach (var item in Model.NoiDungTin)
+                            {
+                                <p>@item.display</p>
 
-                            <p>Chứng kiến tình huống đó, nhiều cổ động viên Chelsea không giữ nổi sự bình tĩnh và muốn tống khứ thủ thành này đi ngay lập tức. “Kepa Arrizabalaga đã để thủng lưới 11 bàn sau 16 cú sút trúng đích gần nhất mà anh ta phải đối mặt”. Một bình luận khác cho biết. “Đúng là một cú sốc, Sane đã nhận món quà. Thật tiếc Mendy không đến sớm hơn”.</p>
-                            <p>Thậm chí có những lời chia sẻ còn gay gắt hơn: “Kepa là thủ môn tệ nhất tôi từng thấy ở Premier League”. Một cổ động viên lên tiếng: “Thủ môn đắt giá nhất thế giới thế giới không cản nổi những cú sút xa và còn mắc sai lầm ngay cả một thủ môn 10 tuổi cũng sẽ không mắc phải. Anh ta cần phải ra đi và tôi không cần quan tâm số tiền chuyển nhượng là bao nhiêu.”</p>
-                            <p>Sau trận đấu này, HLV Frank Lampard cũng thừa nhận Kepa đã phạm sai lầm tai hại: “Đối với trường hợp của Kepa, cậu ấy rõ ràng đã mắc lỗi lớn. Một sai lầm đã khiến chúng tôi phải trả giá vào thời điểm đó.</p>
-                            <p>Tuy nhiên, chúng tôi vẫn phải tiếp tục làm việc, và cá nhân Kepa cũng vậy. Cậu ấy vẫn sẽ nhận được sự ủng hộ của cả đội, đặc biệt là từ tôi. Chẳng ai cố tình mắc lỗi cả. Kepa vẫn ở đây, cậu ấy là thủ môn của chúng tôi và tôi hài lòng với cậu ấy". Lampard chia sẻ.</p>
-                            <p>Nhưng khi được hỏi liệu có sử dụng thủ môn dự bị Willy Caballero ở trận gặp Barnsley tại vòng 3 Cúp Liên Đoàn sắp tới hay không, nhà cầm quân người Anh thẳng thắn trả lời: "Tôi có thể nói luôn từ bây giờ là Willy Caballero sẽ ra sân và tôi nghĩ cậu ấy sẽ thi đấu trong trận đấu ấy trước cả ngày hôm nay.”</p>
+                            }
+                            @foreach (var itemm in Model.HinhAnhTin)
+                            {
+                                <img src="@itemm.display" class="img-fluid mt-3 mb-3 img" alt="">
+                            }
+
                         </div>
                     </section>
                 </div>
@@ -345,88 +338,3 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div>
-    <h4>Tintuc</h4>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TieuDe)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TieuDe)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Avatar)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Avatar)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TomTat)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TomTat)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.LuotTuongTac)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.LuotTuongTac)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.LuotXem)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.LuotXem)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TrangThaiHienThi)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TrangThaiHienThi)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.IdTinTuc">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
