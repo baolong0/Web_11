@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" href="tintuc.css">
+    <link rel="stylesheet" href="~/css/tintuc.css">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
@@ -28,7 +28,7 @@
                         <p>
                             @foreach (var item in Model.Hashtags)
                             {
-                                <a href=""type="button" class="btn btn-outline-primary btn-sm">@item.Hashtag1</a>
+                                <a href="" type="button" class="btn btn-outline-primary btn-sm">@item.Hashtag1</a>
                             }
                         </p>
                     </article>
@@ -43,7 +43,6 @@
     </div>
 
     <!-- 3.Tin hot -->
-
     <div class="sectionTH box">
         <div class="TĐ">
             <h3>Tin hot</h3>
@@ -53,18 +52,77 @@
         <div class="row Tinhot ">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 Tinhot">
                 <div class="row">
-                    @for (int i = 0; i < 5; i++)
-                    {
-                        var item = Model.TintucHots[i];
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+
                         <div class="row">
                             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                 <div class="card">
-                                    <a asp-action="Details" asp-route-id="@item.IdTinTuc">
-                                        <img src="@item.Avatar" class="img-fluid" height="370" class="card-img-top" alt="Tin hot">
+                                    <a asp-action="Details" asp-route-id="@Model.TintucHots[0].IdTinTuc">
+                                        <img src="@Model.TintucHots[0].Avatar" class="img-fluid" height="370" class="card-img-top" alt="Tin hot">
                                         <div class="card-body">
                                             <p class="card-text">
-                                                @item.TieuDe
+                                                @Model.TintucHots[0].TieuDe
+                                            </p>
+                                        </div>
+                                    </a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+
+                        <div class="row">
+
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                <div class="card mb-3">
+                                    <a asp-action="Details" asp-route-id="@Model.TintucHots[1].IdTinTuc">
+                                        <img src="@Model.TintucHots[1].Avatar" class="img-fluid" height="370" class="card-img-top" alt="Tin hot">
+                                        <div class="card-body">
+                                            <p class="card-text">
+                                                @Model.TintucHots[1].TieuDe
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                <div class="card mb-33">
+                                    <a asp-action="Details" asp-route-id="@Model.TintucHots[2].IdTinTuc">
+                                        <img src="@Model.TintucHots[2].Avatar" class="img-fluid" height="370" class="card-img-top" alt="Tin hot">
+                                        <div class="card-body">
+                                            <p class="card-text">
+                                                @Model.TintucHots[2].TieuDe
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                <div class="card mb-33 ">
+                                    <a asp-action="Details" asp-route-id="@Model.TintucHots[3].IdTinTuc">
+                                        <img src="@Model.TintucHots[3].Avatar" class="img-fluid" height="370" class="card-img-top" alt="Tin hot">
+                                        <div class="card-body">
+                                            <p class="card-text">
+                                                @Model.TintucHots[3].TieuDe
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                <div class="card mb-3 ">
+                                    <a asp-action="Details" asp-route-id="@Model.TintucHots[4].IdTinTuc">
+                                        <img src="@Model.TintucHots[4].Avatar" class="img-fluid" height="370" class="card-img-top" alt="Tin hot">
+                                        <div class="card-body">
+                                            <p class="card-text">
+                                                @Model.TintucHots[4].TieuDe
                                             </p>
                                         </div>
                                     </a>
@@ -72,7 +130,6 @@
                             </div>
                         </div>
                     </div>
-                    }       
                 </div>
             </div>
         </div>
@@ -94,11 +151,11 @@
                                 <a href="">
                                     <div class="row no-gutters mt-3 ml-3">
                                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                            <h5 class="card-title">Barca thanh lý Suarez: Koeman tranh Cavani với Real, trợ chiến Messi.</h5>
+                                            <h5 class="card-title">@Model.TintucTrongTuans[0].TieuDe</h5>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-10 mb-1">
-                                                <img src="https://cdn.24h.com.vn/upload/3-2020/images/2020-09-22/medium/1600740504-377-thumbnail-width640height480.jpg" height="100%" width="100%" class="card-img img-fluid" alt="...">
+                                                <img src="@Model.TintucTrongTuans[0].Avatar" height="100%" width="100%" class="card-img img-fluid" alt="...">
                                             </div>
                                         </div>
                                     </div>
@@ -108,11 +165,11 @@
                                 <a href="">
                                     <div class="row no-gutters mt-3 ml-3">
                                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                            <h5 class="card-title">Chelsea mua siêu thủ môn Ligue 1, MU cay đắng săn hụt Son Heung Min. </h5>
+                                            <h5 class="card-title">@Model.TintucTrongTuans[1].TieuDe</h5>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-10 mb-1">
-                                                <img src="https://cdn.24h.com.vn/upload/3-2020/images/2020-09-22/medium/clip-ava-1600771095-216-width640height480.jpg" height="100%" width="100%" class="card-img img-fluid" alt="...">
+                                                <img src="@Model.TintucTrongTuans[1].Avatar" height="100%" width="100%" class="card-img img-fluid" alt="...">
                                             </div>
                                         </div>
                                     </div>
@@ -127,11 +184,11 @@
                                 <a href="">
                                     <div class="row no-gutters mt-3 ml-3">
                                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                            <h5 class="card-title">Trọng tài trẻ và bạn gái mỹ nhân bị sát hại gây chấn động bóng đá Ý.</h5>
+                                            <h5 class="card-title">@Model.TintucTrongTuans[2].TieuDe</h5>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-10 mb-1">
-                                                <img src="https://cdn.24h.com.vn/upload/3-2020/images/2020-09-22/medium/1600749606-499-thumbnail-width640height480.jpg" height="100%" width="100%" class="card-img img-fluid" alt="...">
+                                                <img src="@Model.TintucTrongTuans[2].Avatar" height="100%" width="100%" class="card-img img-fluid" alt="...">
                                             </div>
                                         </div>
                                     </div>
@@ -141,11 +198,11 @@
                                 <a href="">
                                     <div class="row no-gutters mt-3 ml-3">
                                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                            <h5 class="card-title">Khốn khổ Barca: Messi dễ lỡ Siêu kinh điển đấu Real, Koeman tính sao?</h5>
+                                            <h5 class="card-title">@Model.TintucTrongTuans[3].TieuDe</h5>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-10 mb-1">
-                                                <img src="https://cdn.24h.com.vn/upload/3-2020/images/2020-09-17/medium/1582900958_522512_1582901120_noticia_normal-6440-1600315743-424-width640height480.jpg" height="100%" width="100%" class="card-img img-fluid" alt="...">
+                                                <img src="@Model.TintucTrongTuans[3].Avatar" height="100%" width="100%" class="card-img img-fluid" alt="...">
                                             </div>
                                         </div>
                                     </div>
@@ -182,9 +239,9 @@
                             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                 <div class="card">
                                     <a href="#">
-                                        <img src="https://cdn.24h.com.vn/upload/3-2020/images/2020-09-23//vv234-1600829527-535-width640height480.jpg" height="370" class="card-img-top img-fluid" alt="Tin hot">
+                                        <img src="@Model.TintucChuyenNhuongs[0].Avatar" height="370" class="card-img-top img-fluid" alt="Tin hot">
                                         <div class="card-body">
-                                            <p class="card-text">MU từ bỏ Sancho, học Tottenham mượn “bom tấn” 135 triệu bảng của Barca</p>
+                                            <p class="card-text">@Model.TintucChuyenNhuongs[0].TieuDe</p>
                                         </div>
                                     </a>
 
@@ -200,9 +257,9 @@
                             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                                 <div class="card mb-3">
                                     <a href="#">
-                                        <img src="https://cdn.24h.com.vn/upload/3-2020/images/2020-09-29/medium/1601379790-927-thumbnail-width640height480.jpg" height="140" class="card-img-top img-fluid" alt="Tin hot">
+                                        <img src="@Model.TintucChuyenNhuongs[1].Avatar" height="140" class="card-img-top img-fluid" alt="Tin hot">
                                         <div class="card-body">
-                                            <p class="card-text">Chuyển nhượng MU 29/9: "Quỷ đỏ" tranh SAO vô địch cúp C1 với Man City.</p>
+                                            <p class="card-text">@Model.TintucChuyenNhuongs[1].TieuDe</p>
                                         </div>
                                     </a>
                                 </div>
@@ -210,10 +267,10 @@
                             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                                 <div class="card mb-3">
                                     <a href="#">
-                                        <img src="https://cdn.24h.com.vn/upload/3-2020/images/2020-09-23//1600829612-978-thumbnail-width640height480.jpg" height="140" class="card-img-top img-fluid" alt="Tin hot">
+                                        <img src="@Model.TintucChuyenNhuongs[2].Avatar" height="140" class="card-img-top img-fluid" alt="Tin hot">
                                         <div class="card-body">
                                             <p class="card-text ">
-                                                "Ông trùm" Barca đổi ý: Suarez tới Atletico Madrid, đối đầu Messi khi nào?
+                                                @Model.TintucChuyenNhuongs[2].TieuDe
                                             </p>
                                         </div>
                                     </a>
@@ -227,9 +284,9 @@
                             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                                 <div class="card mb-33 ">
                                     <a href="#">
-                                        <img src="https://cdn.24h.com.vn/upload/3-2020/images/2020-09-23/medium/1600831214-521-thumbnail-width640height480.jpg" height="140" class="card-img-top img-fluid" alt="Tin hot">
+                                        <img src="@Model.TintucChuyenNhuongs[3].Avatar" height="140" class="card-img-top img-fluid" alt="Tin hot">
                                         <div class="card-body">
-                                            <p class="card-text">Chuyển nhượng MU 23/9: "Quỷ đỏ" nhắm mua hậu vệ Ajax đồng hương Messi</p>
+                                            <p class="card-text">@Model.TintucChuyenNhuongs[3].TieuDe</p>
                                         </div>
                                     </a>
                                 </div>
@@ -237,9 +294,9 @@
                             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                                 <div class="card mb-3 ">
                                     <a href="#">
-                                        <img src="https://cdn.24h.com.vn/upload/3-2020/images/2020-09-22/medium/1-1600776937-217-width640height480.jpg" height="140" class="card-img-top img-fluid" alt="Tin hot">
+                                        <img src="@Model.TintucChuyenNhuongs[4].Avatar" height="140" class="card-img-top img-fluid" alt="Tin hot">
                                         <div class="card-body">
-                                            <p class="card-text">Tin HOT bóng đá tối 22/9: Chelsea sắp có thủ thành Mendy thay Kepa</p>
+                                            <p class="card-text">@Model.TintucChuyenNhuongs[4].TieuDe</p>
                                         </div>
                                     </a>
                                 </div>
