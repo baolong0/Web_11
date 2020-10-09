@@ -295,9 +295,6 @@ C:\Users\A\Desktop\WEB-ST001-Group11\Web_11\Web_11\obj\Debug\netcoreapp3.1\Razor
 C:\Users\A\Desktop\WEB-ST001-Group11\Web_11\Web_11\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout_Admin.cshtml.g.cs
 C:\Users\A\Desktop\WEB-ST001-Group11\Web_11\Web_11\obj\Debug\netcoreapp3.1\Razor\Views\Tintuc\Details.cshtml.g.cs
 C:\Users\A\Desktop\WEB-ST001-Group11\Web_11\Web_11\obj\Debug\netcoreapp3.1\Razor\Views\Tintuc\Index.cshtml.g.cs
-C:\Users\A\Desktop\WEB-ST001-Group11\Web_11\Web_11\obj\Debug\netcoreapp3.1\Razor\Views\Tickets\Create.cshtml.g.cs
-C:\Users\A\Desktop\WEB-ST001-Group11\Web_11\Web_11\obj\Debug\netcoreapp3.1\Razor\Views\Tickets\Delete.cshtml.g.cs
 C:\Users\A\Desktop\WEB-ST001-Group11\Web_11\Web_11\obj\Debug\netcoreapp3.1\Razor\Views\Tickets\Details.cshtml.g.cs
-C:\Users\A\Desktop\WEB-ST001-Group11\Web_11\Web_11\obj\Debug\netcoreapp3.1\Razor\Views\Tickets\Edit.cshtml.g.cs
 C:\Users\A\Desktop\WEB-ST001-Group11\Web_11\Web_11\obj\Debug\netcoreapp3.1\Razor\Views\Tickets\Index.cshtml.g.cs
 C:\Users\A\Desktop\WEB-ST001-Group11\Web_11\Web_11\obj\Debug\netcoreapp3.1\Web_11.csprojAssemblyReference.cache

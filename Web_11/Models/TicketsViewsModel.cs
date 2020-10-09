@@ -9,6 +9,7 @@ namespace Web_11.Models
     public class TicketsViewsModel
     {
         public (string IDve, string srcLogoDoiNha, string srcLogoDoiKhach, DateTime? Thoigian)[] ListVeVsLogo { get; set; }
+        public (string IDve, string srcLogoDoiNha, string srcLogoDoiKhach, DateTime? Thoigian) VeDuocChon { get; set; }
         public List<HinhanhQc> hinhanhQcs { get; set; }
         public List<Trandau> trandaus { get; set; }
         public List<Ticket> tickets { get; set; }
