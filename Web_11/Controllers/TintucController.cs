@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Web_11.Models;
-using Web_11.Models.Data;
+using Web_11.Models.data;
 
 namespace Web_11.Controllers
 {
@@ -37,10 +37,33 @@ namespace Web_11.Controllers
             tinTucViewsModel.subTintucs = _context.SubTintuc.ToArray();
             tinTucViewsModel.Tintucs = _context.Tintuc.ToArray();
             tinTucViewsModel.Hashtags = _context.Hashtag.ToArray();
-            tinTucViewsModel.TintucHots = _context.Tintuc.ToArray();
+            tinTucViewsModel.TintucHots = (from s in _context.Tintuc orderby s.LuotXem select s).Take(5).ToArray();
             tinTucViewsModel.TintucTrongTuans = _context.Tintuc.ToArray();
-            tinTucViewsModel.TintucChuyenNhuongs = _context.Tintuc.ToArray();
+            tinTucViewsModel.TintucChuyenNhuongs = GetTinChuyenNhuong();            
             return View(tinTucViewsModel);
+        }
+        public List<Tintuc> GetTinChuyenNhuong() 
+        {
+            List<string> ListIdChuyenNhuong = new List<string>();
+            List<Tintuc> ListTin = new List<Tintuc>();
+            int temp = 0;
+            foreach (var item in _context.SubTintuc)
+            {
+                if (item.IdHashtag == 1)
+                {
+                    ListIdChuyenNhuong.Add(item.IdTintuc);
+                }
+            }
+            ListIdChuyenNhuong.Add("");
+            foreach (var item in _context.Tintuc)
+            {
+                if (item.IdTinTuc == ListIdChuyenNhuong[temp])
+                { 
+                    ListTin.Add(item);
+                    temp++;
+                }
+            }
+            return ListTin;
         }
 
         // GET: Tintuc/Details/5
@@ -135,7 +158,7 @@ namespace Web_11.Controllers
                 }
             }
 
-        temp = 0;
+            temp = 0;
             foreach (var item in Hashtags)
             {
                 if (item.IdHashtag == listIDHashtag[temp])

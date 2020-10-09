@@ -9,8 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Web_11.Models;
-using Web_11.Models.Data;
+using Web_11.Models.data;
 
 namespace Web_11
 {

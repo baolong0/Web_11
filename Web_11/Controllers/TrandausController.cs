@@ -5,27 +5,27 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using Web_11.Models.Data;
+using Web_11.Models.data;
 
 namespace Web_11.Controllers
 {
-    public class ThongtincobansController : Controller
+    public class TrandausController : Controller
     {
         private readonly FootballNewsContext _context;
 
-        public ThongtincobansController(FootballNewsContext context)
+        public TrandausController(FootballNewsContext context)
         {
             _context = context;
         }
 
-        // GET: Thongtincobans
+        // GET: Trandaus
         public async Task<IActionResult> Index()
         {
-            var footballNewsContext = _context.Thongtincoban.Include(t => t.IdDoiBongNavigation);
+            var footballNewsContext = _context.Trandau.Include(t => t.DoiKhachNavigation).Include(t => t.DoiNhaNavigation);
             return View(await footballNewsContext.ToListAsync());
         }
 
-        // GET: Thongtincobans/Details/5
+        // GET: Trandaus/Details/5
         public async Task<IActionResult> Details(string id)
         {
             if (id == null)
@@ -33,42 +33,45 @@ namespace Web_11.Controllers
                 return NotFound();
             }
 
-            var thongtincoban = await _context.Thongtincoban
-                .Include(t => t.IdDoiBongNavigation)
-                .FirstOrDefaultAsync(m => m.IdThongTin == id);
-            if (thongtincoban == null)
+            var trandau = await _context.Trandau
+                .Include(t => t.DoiKhachNavigation)
+                .Include(t => t.DoiNhaNavigation)
+                .FirstOrDefaultAsync(m => m.IdTranDau == id);
+            if (trandau == null)
             {
                 return NotFound();
             }
 
-            return View(thongtincoban);
+            return View(trandau);
         }
 
-        // GET: Thongtincobans/Create
+        // GET: Trandaus/Create
         public IActionResult Create()
         {
-            ViewData["IdDoiBong"] = new SelectList(_context.Doibong, "IdDoiBong", "IdDoiBong");
+            ViewData["DoiKhach"] = new SelectList(_context.Doibong, "IdDoiBong", "IdDoiBong");
+            ViewData["DoiNha"] = new SelectList(_context.Doibong, "IdDoiBong", "IdDoiBong");
             return View();
         }
 
-        // POST: Thongtincobans/Create
+        // POST: Trandaus/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IdThongTin,DiaChi,Hotline,Email,Website,SanVanDong,SucChua,ChuTichClb,Gđdh,Hlvtruong,Gđkt,NhaTaiTro,IdDoiBong")] Thongtincoban thongtincoban)
+        public async Task<IActionResult> Create([Bind("IdTranDau,DoiNha,DoiKhach,ThoiGianThiDau,SanThiDau,TiSo")] Trandau trandau)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(thongtincoban);
+                _context.Add(trandau);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdDoiBong"] = new SelectList(_context.Doibong, "IdDoiBong", "IdDoiBong", thongtincoban.IdDoiBong);
-            return View(thongtincoban);
+            ViewData["DoiKhach"] = new SelectList(_context.Doibong, "IdDoiBong", "IdDoiBong", trandau.DoiKhach);
+            ViewData["DoiNha"] = new SelectList(_context.Doibong, "IdDoiBong", "IdDoiBong", trandau.DoiNha);
+            return View(trandau);
         }
 
-        // GET: Thongtincobans/Edit/5
+        // GET: Trandaus/Edit/5
         public async Task<IActionResult> Edit(string id)
         {
             if (id == null)
@@ -76,23 +79,24 @@ namespace Web_11.Controllers
                 return NotFound();
             }
 
-            var thongtincoban = await _context.Thongtincoban.FindAsync(id);
-            if (thongtincoban == null)
+            var trandau = await _context.Trandau.FindAsync(id);
+            if (trandau == null)
             {
                 return NotFound();
             }
-            ViewData["IdDoiBong"] = new SelectList(_context.Doibong, "IdDoiBong", "IdDoiBong", thongtincoban.IdDoiBong);
-            return View(thongtincoban);
+            ViewData["DoiKhach"] = new SelectList(_context.Doibong, "IdDoiBong", "IdDoiBong", trandau.DoiKhach);
+            ViewData["DoiNha"] = new SelectList(_context.Doibong, "IdDoiBong", "IdDoiBong", trandau.DoiNha);
+            return View(trandau);
         }
 
-        // POST: Thongtincobans/Edit/5
+        // POST: Trandaus/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("IdThongTin,DiaChi,Hotline,Email,Website,SanVanDong,SucChua,ChuTichClb,Gđdh,Hlvtruong,Gđkt,NhaTaiTro,IdDoiBong")] Thongtincoban thongtincoban)
+        public async Task<IActionResult> Edit(string id, [Bind("IdTranDau,DoiNha,DoiKhach,ThoiGianThiDau,SanThiDau,TiSo")] Trandau trandau)
         {
-            if (id != thongtincoban.IdThongTin)
+            if (id != trandau.IdTranDau)
             {
                 return NotFound();
             }
@@ -101,12 +105,12 @@ namespace Web_11.Controllers
             {
                 try
                 {
-                    _context.Update(thongtincoban);
+                    _context.Update(trandau);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ThongtincobanExists(thongtincoban.IdThongTin))
+                    if (!TrandauExists(trandau.IdTranDau))
                     {
                         return NotFound();
                     }
@@ -117,11 +121,12 @@ namespace Web_11.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdDoiBong"] = new SelectList(_context.Doibong, "IdDoiBong", "IdDoiBong", thongtincoban.IdDoiBong);
-            return View(thongtincoban);
+            ViewData["DoiKhach"] = new SelectList(_context.Doibong, "IdDoiBong", "IdDoiBong", trandau.DoiKhach);
+            ViewData["DoiNha"] = new SelectList(_context.Doibong, "IdDoiBong", "IdDoiBong", trandau.DoiNha);
+            return View(trandau);
         }
 
-        // GET: Thongtincobans/Delete/5
+        // GET: Trandaus/Delete/5
         public async Task<IActionResult> Delete(string id)
         {
             if (id == null)
@@ -129,31 +134,32 @@ namespace Web_11.Controllers
                 return NotFound();
             }
 
-            var thongtincoban = await _context.Thongtincoban
-                .Include(t => t.IdDoiBongNavigation)
-                .FirstOrDefaultAsync(m => m.IdThongTin == id);
-            if (thongtincoban == null)
+            var trandau = await _context.Trandau
+                .Include(t => t.DoiKhachNavigation)
+                .Include(t => t.DoiNhaNavigation)
+                .FirstOrDefaultAsync(m => m.IdTranDau == id);
+            if (trandau == null)
             {
                 return NotFound();
             }
 
-            return View(thongtincoban);
+            return View(trandau);
         }
 
-        // POST: Thongtincobans/Delete/5
+        // POST: Trandaus/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(string id)
         {
-            var thongtincoban = await _context.Thongtincoban.FindAsync(id);
-            _context.Thongtincoban.Remove(thongtincoban);
+            var trandau = await _context.Trandau.FindAsync(id);
+            _context.Trandau.Remove(trandau);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool ThongtincobanExists(string id)
+        private bool TrandauExists(string id)
         {
-            return _context.Thongtincoban.Any(e => e.IdThongTin == id);
+            return _context.Trandau.Any(e => e.IdTranDau == id);
         }
     }
 }

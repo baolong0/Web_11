@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using Web_11.Models.Data;
+using Web_11.Models.data;
 
 namespace Web_11.Models
 {
