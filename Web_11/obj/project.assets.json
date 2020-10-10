@@ -9228,11 +9228,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\A\\Desktop\\WEB-ST001-Group11\\Web_11\\Web_11\\Web_11.csproj",
+      "projectUniqueName": "C:\\Users\\A\\Desktop\\TestCLone\\Web_11\\Web_11\\Web_11.csproj",
       "projectName": "Web_11",
-      "projectPath": "C:\\Users\\A\\Desktop\\WEB-ST001-Group11\\Web_11\\Web_11\\Web_11.csproj",
+      "projectPath": "C:\\Users\\A\\Desktop\\TestCLone\\Web_11\\Web_11\\Web_11.csproj",
       "packagesPath": "C:\\Users\\A\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\A\\Desktop\\WEB-ST001-Group11\\Web_11\\Web_11\\obj\\",
+      "outputPath": "C:\\Users\\A\\Desktop\\TestCLone\\Web_11\\Web_11\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
