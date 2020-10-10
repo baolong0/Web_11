@@ -17,6 +17,7 @@ namespace Web_11.Controllers
         {
             _context = context;
         }
+        // có thay đổi ở đâyy
 
         // GET: Trandaus
         public async Task<IActionResult> Index()
