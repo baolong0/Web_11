@@ -13,6 +13,7 @@ namespace Web_11.Models.data
         public string IdLoaiVe { get; set; }
         public string TenLoaiVe { get; set; }
         public int? SoLuong { get; set; }
+        public int? GiaVe { get; set; }
 
         public virtual ICollection<Ticket> Ticket { get; set; }
     }

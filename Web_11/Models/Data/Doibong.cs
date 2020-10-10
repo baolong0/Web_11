@@ -7,7 +7,7 @@ namespace Web_11.Models.data
     {
         public Doibong()
         {
-            SubCauthu = new HashSet<SubCauthu>();
+            Cauthu = new HashSet<Cauthu>();
             SubTaitro = new HashSet<SubTaitro>();
             Thanhtich = new HashSet<Thanhtich>();
             Thongtincoban = new HashSet<Thongtincoban>();
@@ -22,7 +22,7 @@ namespace Web_11.Models.data
         public string SourceLogo { get; set; }
         public string SourceBanner { get; set; }
 
-        public virtual ICollection<SubCauthu> SubCauthu { get; set; }
+        public virtual ICollection<Cauthu> Cauthu { get; set; }
         public virtual ICollection<SubTaitro> SubTaitro { get; set; }
         public virtual ICollection<Thanhtich> Thanhtich { get; set; }
         public virtual ICollection<Thongtincoban> Thongtincoban { get; set; }
