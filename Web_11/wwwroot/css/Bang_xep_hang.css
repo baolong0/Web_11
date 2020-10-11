@@ -79,33 +79,22 @@ h1{
     text-align: center;
     color: red;
 }
+
 .card img{
     width: 100%;
-
 }
-@media only screen and (width:768px){
-    .hide{
+@media only screen and (min-width:375px) and (max-width:768px){
+    .container .hide{
         display: none;
     }
-    .card{
-        width: 80%;
-    }
-    .Hien img{
-        height: 150px;
-    }
-}
-
-@media only screen and (width:576px) {
     
-    .Hien{
+}
+@media only screen and (min-width:1020px) {
+    .container .hien{
         display: none;
     }
 }
-@media only screen and (width:1023px){
-    .Hien{
-        display: none;
-    }
-}
+
 .jumbotron{
     margin-top: 20px;
 }

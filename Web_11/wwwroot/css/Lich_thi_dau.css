@@ -63,8 +63,8 @@
     color: red;
 }   
 @media only screen and (min-width:768px) and (max-width: 1023px){
-    .sale{
-        margin-top: 40px;
-    }
+   table .table{
+       margin: auto;
+   }
     
 }
