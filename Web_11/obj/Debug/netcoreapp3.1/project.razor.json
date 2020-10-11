@@ -1,5 +1,5 @@
 {
-  "FilePath": "c:\\Users\\chinh\\Web_11\\Web_11-1\\Web_11\\Web_11.csproj",
+  "FilePath": "c:\\Users\\chinh\\OneDrive\\Documents\\Web_11\\Web_11\\Web_11.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "3.0",
@@ -14392,83 +14392,83 @@
   "RootNamespace": "Web_11",
   "Documents": [
     {
-      "FilePath": "c:\\Users\\chinh\\Web_11\\Web_11-1\\Web_11\\Views\\Home\\MuaVe.cshtml",
-      "TargetPath": "Views\\Home\\MuaVe.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\chinh\\Web_11\\Web_11-1\\Web_11\\Views\\Home\\BXH.cshtml",
-      "TargetPath": "Views\\Home\\BXH.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\chinh\\Web_11\\Web_11-1\\Web_11\\Views\\Home\\Index.cshtml",
-      "TargetPath": "Views\\Home\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\chinh\\Web_11\\Web_11-1\\Web_11\\Views\\Shared\\_Layout.cshtml",
-      "TargetPath": "Views\\Shared\\_Layout.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\chinh\\Web_11\\Web_11-1\\Web_11\\Views\\_ViewStart.cshtml",
-      "TargetPath": "Views\\_ViewStart.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\chinh\\Web_11\\Web_11-1\\Web_11\\Views\\Admin\\Delete.cshtml",
-      "TargetPath": "Views\\Admin\\Delete.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\chinh\\Web_11\\Web_11-1\\Web_11\\Views\\_ViewImports.cshtml",
-      "TargetPath": "Views\\_ViewImports.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\chinh\\Web_11\\Web_11-1\\Web_11\\Views\\Admin\\Edit.cshtml",
-      "TargetPath": "Views\\Admin\\Edit.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\chinh\\Web_11\\Web_11-1\\Web_11\\Views\\Home\\TinTuc.cshtml",
-      "TargetPath": "Views\\Home\\TinTuc.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\chinh\\Web_11\\Web_11-1\\Web_11\\Views\\Admin\\Create.cshtml",
-      "TargetPath": "Views\\Admin\\Create.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\chinh\\Web_11\\Web_11-1\\Web_11\\Views\\Shared\\Error.cshtml",
-      "TargetPath": "Views\\Shared\\Error.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\chinh\\Web_11\\Web_11-1\\Web_11\\Views\\Home\\ThongTinDoiBong.cshtml",
-      "TargetPath": "Views\\Home\\ThongTinDoiBong.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\chinh\\Web_11\\Web_11-1\\Web_11\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-      "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\chinh\\Web_11\\Web_11-1\\Web_11\\Views\\Admin\\TinTuc.cshtml",
-      "TargetPath": "Views\\Admin\\TinTuc.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\chinh\\Web_11\\Web_11-1\\Web_11\\Views\\Admin\\Details.cshtml",
+      "FilePath": "c:\\Users\\chinh\\OneDrive\\Documents\\Web_11\\Web_11\\Views\\Admin\\Details.cshtml",
       "TargetPath": "Views\\Admin\\Details.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\chinh\\Web_11\\Web_11-1\\Web_11\\Views\\Home\\LichThiDau.cshtml",
+      "FilePath": "c:\\Users\\chinh\\OneDrive\\Documents\\Web_11\\Web_11\\Views\\Shared\\_Layout.cshtml",
+      "TargetPath": "Views\\Shared\\_Layout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\chinh\\OneDrive\\Documents\\Web_11\\Web_11\\Views\\_ViewStart.cshtml",
+      "TargetPath": "Views\\_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\chinh\\OneDrive\\Documents\\Web_11\\Web_11\\Views\\Home\\MuaVe.cshtml",
+      "TargetPath": "Views\\Home\\MuaVe.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\chinh\\OneDrive\\Documents\\Web_11\\Web_11\\Views\\Admin\\Delete.cshtml",
+      "TargetPath": "Views\\Admin\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\chinh\\OneDrive\\Documents\\Web_11\\Web_11\\Views\\Home\\ThongTinDoiBong.cshtml",
+      "TargetPath": "Views\\Home\\ThongTinDoiBong.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\chinh\\OneDrive\\Documents\\Web_11\\Web_11\\Views\\Home\\LichThiDau.cshtml",
       "TargetPath": "Views\\Home\\LichThiDau.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\chinh\\OneDrive\\Documents\\Web_11\\Web_11\\Views\\Shared\\Error.cshtml",
+      "TargetPath": "Views\\Shared\\Error.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\chinh\\OneDrive\\Documents\\Web_11\\Web_11\\Views\\Home\\Index.cshtml",
+      "TargetPath": "Views\\Home\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\chinh\\OneDrive\\Documents\\Web_11\\Web_11\\Views\\Admin\\Edit.cshtml",
+      "TargetPath": "Views\\Admin\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\chinh\\OneDrive\\Documents\\Web_11\\Web_11\\Views\\Admin\\Create.cshtml",
+      "TargetPath": "Views\\Admin\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\chinh\\OneDrive\\Documents\\Web_11\\Web_11\\Views\\Admin\\TinTuc.cshtml",
+      "TargetPath": "Views\\Admin\\TinTuc.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\chinh\\OneDrive\\Documents\\Web_11\\Web_11\\Views\\Home\\BXH.cshtml",
+      "TargetPath": "Views\\Home\\BXH.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\chinh\\OneDrive\\Documents\\Web_11\\Web_11\\Views\\Home\\TinTuc.cshtml",
+      "TargetPath": "Views\\Home\\TinTuc.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\chinh\\OneDrive\\Documents\\Web_11\\Web_11\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\chinh\\OneDrive\\Documents\\Web_11\\Web_11\\Views\\_ViewImports.cshtml",
+      "TargetPath": "Views\\_ViewImports.cshtml",
       "FileKind": "mvc"
     }
   ],
