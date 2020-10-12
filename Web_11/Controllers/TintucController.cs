@@ -13,14 +13,20 @@ namespace Web_11.Controllers
     public class TintucController : Controller
     {
         private readonly FootballNewsContext _context;
+        private IList<SubTinVideo> subTinVideos { get; set; }
+        private IList<Video> Videos { get; set; }
+        private TinVideo TinVideo { get; set; }
         private IList<SubTintuc> subTintucs { get; set; }
         private IList<Hashtag> Hashtags { get; set; }
         private Tintuc Tintucs { get; set; }
+        public Video[] Video { get; private set; }
         private IList<Noidung> NoiDungs { get; set; }
         private IList<Hinhanh> Hinhanhs { get; set; }
+        int?[] listIDVideo = new int?[100];
         int?[] listIDnoiDung = new int?[100];
         int?[] listIDHinhAnh = new int?[100];
         int?[] listIDHashtag = new int?[100];
+        public (string value, string display)[] VideoTinVideo { get; set; }
         public (string value, string display)[] NoiDungTin { get; set; }
         public (string value, string display)[] HashtagTin { get; set; }
         public (string value, string display)[] HinhAnhTin { get; set; }
@@ -34,6 +40,8 @@ namespace Web_11.Controllers
         public async Task<IActionResult> Index()
         {
             TinTucViewsModel tinTucViewsModel = new TinTucViewsModel();
+            tinTucViewsModel.subTinVideos = _context.SubTinVideo.ToArray();
+            tinTucViewsModel.tinVideos = _context.TinVideo.ToArray();
             tinTucViewsModel.subTintucs = _context.SubTintuc.ToArray();
             tinTucViewsModel.Tintucs = _context.Tintuc.ToArray();
             tinTucViewsModel.Hashtags = _context.Hashtag.ToArray();
@@ -65,6 +73,17 @@ namespace Web_11.Controllers
             }
             return ListTin;
         }
+        public async Task<IActionResult> DetailsVideo(string id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            TinTucChiTietModel tinTucChiTietModel = new TinTucChiTietModel();
+            tinTucChiTietModel.TinVideo = GetTinVideo(id);
+            tinTucChiTietModel.VideoTinVideo = GetVideo(id);
+            return View(tinTucChiTietModel);
+        }
 
         // GET: Tintuc/Details/5
         public async Task<IActionResult> Details(string id)
@@ -80,6 +99,17 @@ namespace Web_11.Controllers
             tinTucChiTietModel.HinhAnhTin = GetHinhAnhTintuc(id);
             tinTucChiTietModel.HashtagTin = GetHashTagTintuc(id);
             return View(tinTucChiTietModel);
+        }
+        public TinVideo GetTinVideo(string id)
+        {
+            foreach (var item in _context.TinVideo)
+            {
+                if (item.IdTinVideo == id)
+                {
+                    TinVideo = item;
+                }
+            }
+            return TinVideo;
         }
         public Tintuc GetTintuc(string id)
         {
@@ -147,7 +177,7 @@ namespace Web_11.Controllers
         {
             int temp = 0;
             HashtagTin = new (string value, string display)[100];
-            subTintucs = _context.SubTintuc.ToArray();
+            //subTintucs = _context.SubTintuc.ToArray();
             Hashtags = _context.Hashtag.ToArray();
             foreach (var item in _context.SubTintuc)
             {
@@ -168,6 +198,33 @@ namespace Web_11.Controllers
                 }
             }
             return HashtagTin;
+        }
+        public (string value, string display)[] GetVideo(string id)
+        {
+            int temp = 0;
+            VideoTinVideo = new (string value, string display)[100];
+            subTinVideos = _context.SubTinVideo.ToArray();
+            Videos = _context.Video.ToArray();
+            foreach (var item in _context.SubTinVideo)
+            {
+                if (item.IdTinVideo == id )
+                {
+                    listIDVideo[temp] = item.IdVideo;
+                    temp++;
+                }
+            }
+
+            temp = 0;
+            foreach (var item in Videos)
+            {
+                if (item.IdVideo == listIDVideo[temp])
+                {
+                    
+                    VideoTinVideo[temp] = (item.IdVideo.ToString(), item.SourceVideo);
+                    temp++;
+                }
+            }
+            return VideoTinVideo;
         }
 
 
