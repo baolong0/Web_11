@@ -83,7 +83,7 @@ namespace Web_11.Controllers
             ticketsViewsModel.trandaus = _context.Trandau.ToList();
             ticketsViewsModel.doibongs = _context.Doibong.ToList();
             ticketsViewsModel.ListVeVsLogo = GetListVe();
-            ticketsViewsModel.VeDuocChon = GetTicket(id, ListVeVsLogo);
+            ticketsViewsModel.VeDuocChon = GetTicket(id,ListVeVsLogo);
 
             return View(ticketsViewsModel);
         }

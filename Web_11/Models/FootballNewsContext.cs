@@ -44,7 +44,7 @@ namespace Web_11.Models.data
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Server=LONGPC;Database=FootballNews;User Id=admin;Password=admin;");
+                optionsBuilder.UseSqlServer("Server=21AK22-COM\\SQLEXPRESS;Database=FootballNews_5;Trusted_Connection=True;");
             }
         }
 

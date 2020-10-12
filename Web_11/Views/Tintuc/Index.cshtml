@@ -325,18 +325,18 @@
 
                         <div class="row">
                             <div class="card mb-3" style="max-width: 540px;">
-                                <a href="">
+                                <a asp-action="DetailsVideo" asp-route-id="@Model.tinVideos[0].IdTinVideo">
                                     <div class="row no-gutters mt-3 ml-3">
                                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                            <h5 class="card-title">Video highlight trận Wolves - Man City: Đôi công mãn nhãn, ấn định phút 90+5</h5>
+                                            <h5 class="card-title">@Model.tinVideos[0].TieuDeVideo</h5>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-4 mb-1">
-                                                <img src="https://cdn.24h.com.vn/upload/3-2020/images/2020-09-22/medium/640x480-1600724058-916-width640height480.jpg" height="100%" width="100%" class="card-img img-fluid" alt="...">
+                                                <img src="@Model.tinVideos[0].AvatarVideo" height="100%" width="100%" class="card-img img-fluid" alt="...">
                                             </div>
                                             <div class="col-md-8">
                                                 <div class="card-body">
-                                                    <p class="card-text">Man City bắt đầu hành trình Ngoại hạng Anh bằng chuyến hành quân đến sân Wolves.</p>
+                                                    <p class="card-text">@Model.tinVideos[0].TomTatVideo</p>
                                                     <p class="card-text"><small class="text-muted">Last updated time</small></p>
                                                 </div>
                                             </div>
@@ -345,18 +345,18 @@
                                 </a>
                             </div>
                             <div class="card mb-3" style="max-width: 540px;">
-                                <a href="">
+                                <a asp-action="DetailsVideo" asp-route-id="@Model.tinVideos[1].IdTinVideo">
                                     <div class="row no-gutters mt-3 ml-3">
                                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                            <h5 class="card-title">Video highlight trận AC Milan - Bologna: Ibrahimovic rực rỡ, thách thức Ronaldo</h5>
+                                            <h5 class="card-title">@Model.tinVideos[1].TieuDeVideo</h5>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-4 mb-1">
-                                                <img src="https://cdn.24h.com.vn/upload/3-2020/images/2020-09-22/medium/sdfsdafsdfsdaf-1600722059-799-width640height480.jpg" height="100%" width="100%" class="card-img img-fluid" alt="...">
+                                                <img src="@Model.tinVideos[1].AvatarVideo" height="100%" width="100%" class="card-img img-fluid" alt="...">
                                             </div>
                                             <div class="col-md-8">
                                                 <div class="card-body">
-                                                    <p class="card-text">"Lão tướng" 38 tuổi trở thành người hùng trong ngày ra quân của AC Milan.</p>
+                                                    <p class="card-text">"@Model.tinVideos[0].TomTatVideo</p>
                                                     <p class="card-text"><small class="text-muted">Last updated time</small></p>
                                                 </div>
                                             </div>
@@ -370,18 +370,18 @@
 
                         <div class="row">
                             <div class="card mb-3" style="max-width: 540px;">
-                                <a href="">
+                                <a asp-action="DetailsVideo" asp-route-id="@Model.tinVideos[2].IdTinVideo">
                                     <div class="row no-gutters mt-3 ml-3">
                                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                            <h5 class="card-title">Trực tiếp bóng đá Wolves - Man City: Bàn thắng ấn định phút bù giờ (Hết giờ)</h5>
+                                            <h5 class="card-title">@Model.tinVideos[2].TieuDeVideo</h5>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-4 mb-1">
-                                                <img src="https://cdn.24h.com.vn/upload/3-2020/images/2020-09-22/medium/640-1600724044-890-width640height480.jpg" height="100%" width="100%" class="card-img img-fluid" alt="...">
+                                                <img src="@Model.tinVideos[2].AvatarVideo" height="100%" width="100%" class="card-img img-fluid" alt="...">
                                             </div>
                                             <div class="col-md-8">
                                                 <div class="card-body">
-                                                    <p class="card-text">Gabriel Jesus giúp cho Man City đảm bảo chiến thắng, với pha lập công phút bù giờ cuối cùng</p>
+                                                    <p class="card-text">@Model.tinVideos[2].TomTatVideo</p>
                                                     <p class="card-text"><small class="text-muted">Last updated time</small></p>
                                                 </div>
                                             </div>
@@ -390,18 +390,18 @@
                                 </a>
                             </div>
                             <div class="card mb-3" style="max-width: 540px;">
-                                <a href="">
+                                <a asp-action="DetailsVideo" asp-route-id="@Model.tinVideos[3].IdTinVideo">
                                     <div class="row no-gutters mt-3 ml-3">
                                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                            <h5 class="card-title">Video highlight trận Aston Villa - Sheffield United: Thẻ đỏ tai hại, người hùng 11m</h5>
+                                            <h5 class="card-title">@Model.tinVideos[3].TieuDeVideo</h5>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-4 mb-1">
-                                                <img src="https://cdn.24h.com.vn/upload/3-2020/images/2020-09-22/medium/sdfadsdsf-1600715418-831-width640height480.jpg" height="100%" width="100%" class="card-img img-fluid" alt="...">
+                                                <img src="@Model.tinVideos[3].AvatarVideo" height="100%" width="100%" class="card-img img-fluid" alt="...">
                                             </div>
                                             <div class="col-md-8">
                                                 <div class="card-body">
-                                                    <p class="card-text">Thẻ đỏ, phạt đền và khoảnh khắc bùng nổ ở phút 63 đã định đoạt trận đấu.</p>
+                                                    <p class="card-text">@Model.tinVideos[3].TomTatVideo</p>
                                                     <p class="card-text"><small class="text-muted">Last updated time</small></p>
                                                 </div>
                                             </div>

@@ -10,9 +10,11 @@ using Web_11.Models.data;
 
 namespace Web_11.Controllers
 {
-    public class TintucController : Controller
+    public class ThongtincobansController : Controller
     {
-        private readonly FootballNewsContext _context;
+        private Thongtincoban thongtincoban { get; set; }
+        private Doibong Doibong { get; set; }
+        private IList<Thanhtich> Thanhtiches { get; set; }
         private IList<SubTinVideo> subTinVideos { get; set; }
         private IList<Video> Videos { get; set; }
         private TinVideo TinVideo { get; set; }
@@ -26,67 +28,97 @@ namespace Web_11.Controllers
         int?[] listIDnoiDung = new int?[100];
         int?[] listIDHinhAnh = new int?[100];
         int?[] listIDHashtag = new int?[100];
+        string[] listIDThanhTichloai1 = new string[100];
+        string[] listIDThanhTichloai2 = new string[100];
+
         public (string value, string display)[] VideoTinVideo { get; set; }
         public (string value, string display)[] NoiDungTin { get; set; }
         public (string value, string display)[] HashtagTin { get; set; }
         public (string value, string display)[] HinhAnhTin { get; set; }
+        public(string value, string display)[] ThanhTichLoai1 { get; set; }
+        public (string value, string display)[] ThanhTichLoai2 { get; set; }
+        public List<Doibong> doibongs { get; set; }
+        public (string IDTranDau, string srcLogoDoiNha, string srcLogoDoiKhach, DateTime? Thoigian ,string SanVanDong)[] ListLichThiDau { get; set; }
+        private readonly FootballNewsContext _context; 
 
-        public TintucController(FootballNewsContext context)
+        public ThongtincobansController(FootballNewsContext context)
         {
             _context = context;
         }
-
-        // GET: Tintuc
         public async Task<IActionResult> Index()
         {
-            TinTucViewsModel tinTucViewsModel = new TinTucViewsModel();
-            tinTucViewsModel.subTinVideos = _context.SubTinVideo.ToArray();
-            tinTucViewsModel.tinVideos = _context.TinVideo.ToArray();
-            tinTucViewsModel.subTintucs = _context.SubTintuc.ToArray();
-            tinTucViewsModel.Tintucs = _context.Tintuc.ToArray();
-            tinTucViewsModel.Hashtags = _context.Hashtag.ToArray();
-            tinTucViewsModel.TintucHots = (from s in _context.Tintuc orderby s.LuotXem select s).Take(5).ToArray();
-            tinTucViewsModel.TintucTrongTuans = _context.Tintuc.ToArray();
-            tinTucViewsModel.TintucChuyenNhuongs = GetTinChuyenNhuong();            
-            return View(tinTucViewsModel);
+            ThongTinCoBanViewModel thongTinCoBanViewModel = new ThongTinCoBanViewModel();
+            thongTinCoBanViewModel.doibongs = _context.Doibong.ToArray();
+            thongTinCoBanViewModel.trandaus = _context.Trandau.ToArray();
+            thongTinCoBanViewModel.HinhanhQcs = _context.HinhanhQc.ToArray();
+            thongTinCoBanViewModel.Tintucs = _context.Tintuc.ToArray();
+            thongTinCoBanViewModel.tinVideos = _context.TinVideo.ToArray();
+            thongTinCoBanViewModel.ListLichThiDau = Getlichthidau();
+            return View (thongTinCoBanViewModel);
         }
-        public List<Tintuc> GetTinChuyenNhuong() 
+        public (string IDTranDau, string srcLogoDoiNha, string srcLogoDoiKhach, DateTime? Thoigian , string SanVanDong)[] Getlichthidau()
         {
-            List<string> ListIdChuyenNhuong = new List<string>();
-            List<Tintuc> ListTin = new List<Tintuc>();
+            List<Trandau> tempTranDau = _context.Trandau.ToList();
             int temp = 0;
-            foreach (var item in _context.SubTintuc)
+            ListLichThiDau = new (string IDTranDau, string srcLogoDoiNha, string srcLogoDoiKhach, DateTime? Thoigian, string SanVanDong)[100];
+            foreach(var item in tempTranDau)
             {
-                if (item.IdHashtag == 1)
-                {
-                    ListIdChuyenNhuong.Add(item.IdTintuc);
-                }
+                ListLichThiDau[temp] = (item.IdTranDau, GetLogoSrc(item.DoiNha), GetLogoSrc(item.DoiKhach), item.ThoiGianThiDau ,item.SanThiDau);
+                temp++;
             }
-            ListIdChuyenNhuong.Add("");
-            foreach (var item in _context.Tintuc)
-            {
-                if (item.IdTinTuc == ListIdChuyenNhuong[temp])
-                { 
-                    ListTin.Add(item);
-                    temp++;
-                }
-            }
-            return ListTin;
+            return ListLichThiDau;
+
         }
-        public async Task<IActionResult> DetailsVideo(string id)
+        public string GetLogoSrc(string id)
+        {
+            string temp = "";
+            foreach (var item in _context.Doibong)
+            {
+                if (item.IdDoiBong == id)
+                {
+                    temp = item.SourceLogo;
+                }
+
+            }
+            return temp;
+        }
+        public Thongtincoban GetThongtincoban(string id)
+        {
+            foreach(var item in _context.Thongtincoban)
+            {
+                if (item.IdDoiBong == id)
+                {
+                    thongtincoban = item;
+                }
+            }
+            return thongtincoban;
+        }
+        public Doibong GetDoibong(string id)
+        {
+            foreach(var item in _context.Doibong)
+            {
+                if (item.IdDoiBong == id)
+                {
+                    Doibong = item;
+                }
+            }
+            return Doibong;
+        }
+        public async Task<IActionResult> DetailsTTDB(string id)
         {
             if (id == null)
             {
                 return NotFound();
             }
-            TinTucChiTietModel tinTucChiTietModel = new TinTucChiTietModel();
-            tinTucChiTietModel.TinVideo = GetTinVideo(id);
-            tinTucChiTietModel.VideoTinVideo = GetVideo(id);
-            return View(tinTucChiTietModel);
-        }
+            ChitietthongtincobanModel chitietthongtincobanModel = new ChitietthongtincobanModel();
+            chitietthongtincobanModel.thongtincoban = GetThongtincoban(id);
+            chitietthongtincobanModel.Doibong = GetDoibong(id);
+            chitietthongtincobanModel.ThanhTichLoai1 = GetThanhTichLoai1(id);
+            chitietthongtincobanModel.ThanhTichLoai2 = GetThanhTichLoai2(id);
+            return View(chitietthongtincobanModel);
 
-        // GET: Tintuc/Details/5
-        public async Task<IActionResult> Details(string id)
+        }
+        public async Task<IActionResult> DetailsTinTuc(string id)
         {
             if (id == null)
             {
@@ -199,35 +231,57 @@ namespace Web_11.Controllers
             }
             return HashtagTin;
         }
-        public (string value, string display)[] GetVideo(string id)
+
+        public (string value, string display)[] GetThanhTichLoai1(string id)
         {
             int temp = 0;
-            VideoTinVideo = new (string value, string display)[100];
-            subTinVideos = _context.SubTinVideo.ToArray();
-            Videos = _context.Video.ToArray();
-            foreach (var item in _context.SubTinVideo)
+            ThanhTichLoai1 = new (string value, string display)[100];
+            Thanhtiches= _context.Thanhtich.ToArray();
+            foreach (var item in _context.Thanhtich)
             {
-                if (item.IdTinVideo == id )
+                if (item.IdDoiBong == id & item.IdLoaiThanhTich == "LOAITHANHTICH01")
                 {
-                    listIDVideo[temp] = item.IdVideo;
+                    listIDThanhTichloai1[temp] = item.IdThanhTich;
                     temp++;
                 }
             }
 
             temp = 0;
-            foreach (var item in Videos)
+            foreach (var item in Thanhtiches)
             {
-                if (item.IdVideo == listIDVideo[temp])
+                if (item.IdThanhTich == listIDThanhTichloai1[temp])
                 {
-                    
-                    VideoTinVideo[temp] = (item.IdVideo.ToString(), item.SourceVideo);
+                    temp++;
+                    ThanhTichLoai1[temp] = (item.IdThanhTich, item.TenThanhTich);
+                }
+            }
+            return ThanhTichLoai1;
+        }
+
+        public (string value, string display)[] GetThanhTichLoai2(string id)
+        {
+            int temp = 0;
+            ThanhTichLoai2 = new (string value, string display)[100];           
+            Thanhtiches = _context.Thanhtich.ToArray();
+            foreach (var item in _context.Thanhtich)
+            {
+                if (item.IdDoiBong == id & item.IdLoaiThanhTich == "LOAITHANHTICH02")
+                {
+                    listIDThanhTichloai2[temp] = item.IdThanhTich;
                     temp++;
                 }
             }
-            return VideoTinVideo;
+
+            temp = 0;
+            foreach (var item in Thanhtiches)
+            {
+                if (item.IdThanhTich == listIDThanhTichloai2[temp])
+                {
+                    temp++;
+                    ThanhTichLoai2[temp] = (item.IdThanhTich, item.TenThanhTich);
+                }
+            }
+            return ThanhTichLoai2;
         }
-
-
     }
-
 }
