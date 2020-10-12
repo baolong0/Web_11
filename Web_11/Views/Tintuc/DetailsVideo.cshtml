@@ -34,7 +34,10 @@
                             <div class="row">
                                 @foreach (var itemm in Model.VideoTinVideo)
                                 {
-                                    <iframe src="@itemm.display" class="img-fluid mt-3 mb-3 img" alt=""></iframe>
+                                    if (itemm.value!=null)
+                                    {
+                                        <iframe src="@itemm.display" class="img-fluid mt-3 mb-3 img" alt=""></iframe>
+                                    }
                                 }
                             </div>
                         </section>

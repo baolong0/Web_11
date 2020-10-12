@@ -43,7 +43,11 @@
                                     <h5>1. Đội tuyển 1 SLNA:</h5>
                                     @foreach (var item in Model.ThanhTichLoai1)
                                     {
-                                        <li class="main-inside">@item.display</li>
+                                        if (item.value != null)
+                                        {
+                                            <li class="main-inside">@item.display</li>
+                                        }
+
 
                                     }
 
@@ -55,7 +59,10 @@
                                     <h5>2. Tập thể CLB:</h5>
                                     @foreach (var item in Model.ThanhTichLoai2)
                                     {
-                                        <li class="main-inside">@item.display</li>
+                                        if (item.value != null)
+                                        {
+                                            <li class="main-inside">@item.display</li>
+                                        }
 
                                     }
                                 </ul>
