@@ -1,4 +1,4 @@
-/*.achievement{
+/* .achievement{
     list-style: none;
 }
 .achievement-small{
@@ -6,7 +6,60 @@
 }
 .achievement-small li{
     margin-left: 25px;
-}*/
+} */
+
+
+
+
+/* Thông tin đội bóng */
+div.container .TTDB {
+    width: 100%;  
+    margin: auto;  
+}
+/* định dạng thẻ div chưa các button tab */
+div.tab {
+    overflow: hidden; 
+    border: 2px solid ; 
+    background-color: #f1f1f1; 
+}
+
+/* định dạng các button tab */
+div.tab button {
+    background-color: inherit; 
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.2s;
+    font-size: 17px;
+}
+
+/* đổi màu khi một button tab được hover */
+div.tab button:hover {
+    background-color: #8ce88c;
+}
+
+/* đổi màu nền cho tab đang được hiển thị nội dung */
+div.tab button.active {
+    background-color: #33d633;
+}
+
+/* định dạng nội dung hiển thị */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 2px solid #ccc;
+    border-top: none;
+    /* height:750px; */
+
+}
+/* ----------------- */
+
+
+
+
+
 .hidden-lg{
     display: none;
 }
@@ -14,12 +67,12 @@
     text-align: center;
     font-size: 75%;
 }
-.team-achievement .inside{
+/* .team-achievement .inside{
     list-style: circle;
 }
-/*.team-achievement .main-inside{
+.team-achievement .main-inside{
     list-style: disc;
-}*/
+} */
 .sponsor-1 .donor-item{
     display: flex;
     list-style: none;
@@ -55,46 +108,4 @@
         text-align: center;
         font-size: 100%;
     }
-}
-
-
-.Chinh .con {
-    width: 100%;  
-    margin: auto;  
-}
-/* định dạng thẻ div chưa các button tab */
-div.tab {
-    overflow: hidden; 
-    border: 1px solid #ccc; 
-    background-color: #f1f1f1; 
-}
-
-/* định dạng các button tab */
-div.tab button {
-    background-color: inherit; 
-    float: left;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 14px 16px;
-    transition: 0.3s;
-    font-size: 17px;
-}
-
-/* đổi màu khi một button tab được hover */
-div.tab button:hover {
-    background-color: #ddd;
-}
-
-/* đổi màu nền cho tab đang được hiển thị nội dung */
-div.tab button.active {
-    background-color: #ccc;
-}
-
-/* định dạng nội dung hiển thị */
-.tabcontent {
-    display: none;
-    padding: 6px 12px;
-    border: 1px solid #ccc;
-    border-top: none;
 }
