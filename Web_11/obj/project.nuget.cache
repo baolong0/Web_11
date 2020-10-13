@@ -1,14 +1,8 @@
 {
   "version": 2,
-<<<<<<< HEAD
-  "dgSpecHash": "Y/5hrWBNNnn+YU40ibqxN4wES7kCvwd1b8yWmb1/Q/Fh7Yo/vzu5oRFuAxlpsFq/dbvX3/lEvQFAUjTHHvvj6g==",
+  "dgSpecHash": "UF9h+CIwrIFGoUeTGlm/U4bkoLCYu9/UXpm0JGu1aG1nOwOKbbGasq8q5RPZuWy6RZN/6R4EEY9TAM+tHJaMIA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Administrator\\Desktop\\WEB\\Web_Group_11\\Web_11\\Web_11\\Web_11.csproj",
-=======
-  "dgSpecHash": "fSmPNYoZLDXEItO69K1mC230TQyMLdwHcX39mfBqYAwH4swmZuZD3DblDZp5r+QlxkzNCYinEWS+bugzCH3hWw==",
-  "success": true,
-  "projectFilePath": "C:\\Users\\Administrator\\Documents\\GitHub\\Web_11\\Web_11\\Web_11.csproj",
->>>>>>> e54bac4e53bf589dd061fa5471321156b8a64703
+  "projectFilePath": "C:\\Users\\Administrator\\Desktop\\WEB\\Web_Group_11\\Web_11\\Long\\Web_11\\Web_11\\Web_11.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Administrator\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
@@ -186,5 +180,12 @@
     "C:\\Users\\Administrator\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\Administrator\\Desktop\\WEB\\Web_Group_11\\Web_11\\Long\\Web_11\\Web_11\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
