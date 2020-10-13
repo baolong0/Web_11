@@ -33,7 +33,6 @@ namespace Web_11.Models.data
         public virtual DbSet<Taitro> Taitro { get; set; }
         public virtual DbSet<TbUser> TbUser { get; set; }
         public virtual DbSet<Thanhtich> Thanhtich { get; set; }
-        public virtual DbSet<ThongTinXepHang> ThongTinXepHang { get; set; }
         public virtual DbSet<Thongtincoban> Thongtincoban { get; set; }
         public virtual DbSet<Ticket> Ticket { get; set; }
         public virtual DbSet<TinVideo> TinVideo { get; set; }
@@ -45,8 +44,7 @@ namespace Web_11.Models.data
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Server=21AK22-COM\\SQLEXPRESS;Database=FootballNews_5;;Trusted_Connection=True;");
+                optionsBuilder.UseSqlServer("Server=LONGPC;Database=FootballNews;User Id=admin;Password=admin;");
             }
         }
 
@@ -55,7 +53,7 @@ namespace Web_11.Models.data
             modelBuilder.Entity<Banthang>(entity =>
             {
                 entity.HasKey(e => e.IdBanThang)
-                    .HasName("PK__BANTHANG__7FEA492827FB600D");
+                    .HasName("PK__BANTHANG__7FEA4928C24A3FA9");
 
                 entity.ToTable("BANTHANG");
 
@@ -97,7 +95,7 @@ namespace Web_11.Models.data
             modelBuilder.Entity<Cauthu>(entity =>
             {
                 entity.HasKey(e => e.IdCauThu)
-                    .HasName("PK__CAUTHU__C790527DD36D986A");
+                    .HasName("PK__CAUTHU__C790527DFA7D25F1");
 
                 entity.ToTable("CAUTHU");
 
@@ -163,7 +161,7 @@ namespace Web_11.Models.data
             modelBuilder.Entity<Doibong>(entity =>
             {
                 entity.HasKey(e => e.IdDoiBong)
-                    .HasName("PK__DOIBONG__38B75167EA61123A");
+                    .HasName("PK__DOIBONG__38B751675D0A8EA5");
 
                 entity.ToTable("DOIBONG");
 
@@ -191,7 +189,7 @@ namespace Web_11.Models.data
             modelBuilder.Entity<Hashtag>(entity =>
             {
                 entity.HasKey(e => e.IdHashtag)
-                    .HasName("PK__HASHTAG__4E71A0E990B18010");
+                    .HasName("PK__HASHTAG__4E71A0E92E1D2776");
 
                 entity.ToTable("HASHTAG");
 
@@ -205,7 +203,7 @@ namespace Web_11.Models.data
             modelBuilder.Entity<Hinhanh>(entity =>
             {
                 entity.HasKey(e => e.IdHinhAnh)
-                    .HasName("PK__HINHANH__17EE70760D727CD8");
+                    .HasName("PK__HINHANH__17EE70768BACD7EB");
 
                 entity.ToTable("HINHANH");
 
@@ -236,7 +234,7 @@ namespace Web_11.Models.data
             modelBuilder.Entity<Hoadon>(entity =>
             {
                 entity.HasKey(e => e.IdHoaDon)
-                    .HasName("PK__HOADON__14AFCFC5E4C6B1F1");
+                    .HasName("PK__HOADON__14AFCFC5B044752B");
 
                 entity.ToTable("HOADON");
 
@@ -265,7 +263,7 @@ namespace Web_11.Models.data
             modelBuilder.Entity<Khachhang>(entity =>
             {
                 entity.HasKey(e => e.IdKhachHang)
-                    .HasName("PK__KHACHHAN__263C4E85A7CF55EF");
+                    .HasName("PK__KHACHHAN__263C4E85716E7C66");
 
                 entity.ToTable("KHACHHANG");
 
@@ -289,7 +287,7 @@ namespace Web_11.Models.data
             modelBuilder.Entity<Loaithanhtich>(entity =>
             {
                 entity.HasKey(e => e.IdLoaiThanhTich)
-                    .HasName("PK__LOAITHAN__5129CA25AF8B0219");
+                    .HasName("PK__LOAITHAN__5129CA25F0D0EF14");
 
                 entity.ToTable("LOAITHANHTICH");
 
@@ -305,7 +303,7 @@ namespace Web_11.Models.data
             modelBuilder.Entity<Loaive>(entity =>
             {
                 entity.HasKey(e => e.IdLoaiVe)
-                    .HasName("PK__LOAIVE__D746A2FF7AF472C2");
+                    .HasName("PK__LOAIVE__D746A2FF2FBAD37B");
 
                 entity.ToTable("LOAIVE");
 
@@ -321,7 +319,7 @@ namespace Web_11.Models.data
             modelBuilder.Entity<Noidung>(entity =>
             {
                 entity.HasKey(e => e.IdNoiDung)
-                    .HasName("PK__NOIDUNG__E4A7B6073E4108DC");
+                    .HasName("PK__NOIDUNG__E4A7B607B146D847");
 
                 entity.ToTable("NOIDUNG");
 
@@ -333,7 +331,7 @@ namespace Web_11.Models.data
             modelBuilder.Entity<SubTaitro>(entity =>
             {
                 entity.HasKey(e => e.IdSubTt)
-                    .HasName("PK__sub_TAIT__F422BD2EB71FEB40");
+                    .HasName("PK__sub_TAIT__F422BD2E648C8B2C");
 
                 entity.ToTable("sub_TAITRO");
 
@@ -369,7 +367,7 @@ namespace Web_11.Models.data
             modelBuilder.Entity<SubTinVideo>(entity =>
             {
                 entity.HasKey(e => e.IdSubTinVideo)
-                    .HasName("PK__sub_TIN___BAB009E6BD948442");
+                    .HasName("PK__sub_TIN___BAB009E69A311F06");
 
                 entity.ToTable("sub_TIN_VIDEO");
 
@@ -386,18 +384,18 @@ namespace Web_11.Models.data
                 entity.HasOne(d => d.IdTinVideoNavigation)
                     .WithMany(p => p.SubTinVideo)
                     .HasForeignKey(d => d.IdTinVideo)
-                    .HasConstraintName("FK__sub_TIN_V__ID_TI__797309D9");
+                    .HasConstraintName("FK__sub_TIN_V__ID_TI__68487DD7");
 
                 entity.HasOne(d => d.IdVideoNavigation)
                     .WithMany(p => p.SubTinVideo)
                     .HasForeignKey(d => d.IdVideo)
-                    .HasConstraintName("FK__sub_TIN_V__ID_VI__7A672E12");
+                    .HasConstraintName("FK__sub_TIN_V__ID_VI__693CA210");
             });
 
             modelBuilder.Entity<SubTintuc>(entity =>
             {
                 entity.HasKey(e => e.IdSubTt)
-                    .HasName("PK__sub_TINT__1CD40A5D79DCCE8A");
+                    .HasName("PK__sub_TINT__1CD40A5DDA011E2E");
 
                 entity.ToTable("sub_TINTUC");
 
@@ -439,7 +437,7 @@ namespace Web_11.Models.data
             modelBuilder.Entity<Taitro>(entity =>
             {
                 entity.HasKey(e => e.IdTaiTro)
-                    .HasName("PK__TAITRO__7411763C242AA9F4");
+                    .HasName("PK__TAITRO__7411763CE63635F3");
 
                 entity.ToTable("TAITRO");
 
@@ -458,7 +456,7 @@ namespace Web_11.Models.data
             modelBuilder.Entity<TbUser>(entity =>
             {
                 entity.HasKey(e => e.IdUser)
-                    .HasName("PK__tb_USER__ED4DE4422964A1B4");
+                    .HasName("PK__tb_USER__ED4DE442B1710AC8");
 
                 entity.ToTable("tb_USER");
 
@@ -492,7 +490,7 @@ namespace Web_11.Models.data
             modelBuilder.Entity<Thanhtich>(entity =>
             {
                 entity.HasKey(e => e.IdThanhTich)
-                    .HasName("PK__THANHTIC__A7B7F3836549456D");
+                    .HasName("PK__THANHTIC__A7B7F3832E549C3F");
 
                 entity.ToTable("THANHTICH");
 
@@ -531,36 +529,10 @@ namespace Web_11.Models.data
                     .HasConstraintName("FK__THANHTICH__ID_Lo__3B75D760");
             });
 
-            modelBuilder.Entity<ThongTinXepHang>(entity =>
-            {
-                entity.HasKey(e => e.IdThuTu)
-                    .HasName("PK__Thong_Ti__C17BB7F5DB3F8F61");
-
-                entity.ToTable("Thong_Tin_Xep_Hang");
-
-                entity.Property(e => e.IdThuTu).HasColumnName("ID_Thu_Tu");
-
-                entity.Property(e => e.HieuSo)
-                    .HasMaxLength(10)
-                    .IsUnicode(false)
-                    .IsFixedLength();
-
-                entity.Property(e => e.IdDoiBong)
-                    .HasColumnName("ID_DoiBong")
-                    .HasMaxLength(15)
-                    .IsUnicode(false)
-                    .IsFixedLength();
-
-                entity.HasOne(d => d.IdDoiBongNavigation)
-                    .WithMany(p => p.ThongTinXepHang)
-                    .HasForeignKey(d => d.IdDoiBong)
-                    .HasConstraintName("FK__Thong_Tin__ID_Do__02FC7413");
-            });
-
             modelBuilder.Entity<Thongtincoban>(entity =>
             {
                 entity.HasKey(e => e.IdThongTin)
-                    .HasName("PK__THONGTIN__BB9645AF772BA28C");
+                    .HasName("PK__THONGTIN__BB9645AF35039433");
 
                 entity.ToTable("THONGTINCOBAN");
 
@@ -622,7 +594,7 @@ namespace Web_11.Models.data
             modelBuilder.Entity<Ticket>(entity =>
             {
                 entity.HasKey(e => e.IdVe)
-                    .HasName("PK__TICKET__8B63A19C941700F4");
+                    .HasName("PK__TICKET__8B63A19CD5F4105F");
 
                 entity.ToTable("TICKET");
 
@@ -675,7 +647,7 @@ namespace Web_11.Models.data
             modelBuilder.Entity<TinVideo>(entity =>
             {
                 entity.HasKey(e => e.IdTinVideo)
-                    .HasName("PK__TIN_VIDE__A06CCD67C655BC2A");
+                    .HasName("PK__TIN_VIDE__A06CCD679924C91A");
 
                 entity.ToTable("TIN_VIDEO");
 
@@ -710,7 +682,7 @@ namespace Web_11.Models.data
             modelBuilder.Entity<Tintuc>(entity =>
             {
                 entity.HasKey(e => e.IdTinTuc)
-                    .HasName("PK__TINTUC__D3B238FE7213B615");
+                    .HasName("PK__TINTUC__D3B238FE8BABB4B9");
 
                 entity.ToTable("TINTUC");
 
@@ -735,7 +707,7 @@ namespace Web_11.Models.data
             modelBuilder.Entity<Trandau>(entity =>
             {
                 entity.HasKey(e => e.IdTranDau)
-                    .HasName("PK__TRANDAU__4DCE68F403EA5ED8");
+                    .HasName("PK__TRANDAU__4DCE68F40754169C");
 
                 entity.ToTable("TRANDAU");
 
@@ -781,7 +753,7 @@ namespace Web_11.Models.data
             modelBuilder.Entity<Video>(entity =>
             {
                 entity.HasKey(e => e.IdVideo)
-                    .HasName("PK__VIDEO__161E88203CACB230");
+                    .HasName("PK__VIDEO__161E88207C62835E");
 
                 entity.ToTable("VIDEO");
 
