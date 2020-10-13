@@ -4,65 +4,6 @@
     
 }
 
-
-/*.row .col-xs-12 h1{
-    text-align: center;
-    padding-top: 10px;
-}
-.table-responsive-md {
-    text-align: center;   
-    border-style: groove;
-    border-color: gray;
-}
-.table-responsive-md thead {
-    background: green;
-    color: white;     
-}
-
-.col-xs-0 h2{
-    text-align: center;
-    color: rgb(158, 12, 12);
-}
-.row .col-xs-0 img{
-    width: 100%;
-    height: 15%;
-    display: inline-block;
-    align-content: center;
-    align-items: center;
-
-}
-.figure{
-    display: block;
-    border: 1px;
-
-}
-.figcaption{
-    display: block; 
-    border: 1px;
-    padding: 3px;
-    margin: 3px;
-    text-align: center;
-}
-.table2{
-    width: 100%;
-    text-align: center;
-    border-style: groove;
-    border-color: gray;
-}
-.table2 thead{
-    background: green;
-    color: white; 
-    text-align: center;
-}
-
-.San-sale{
-    text-align: center;
-    color: red;
-}
-.card-header{
-    font-weight: 700;
-    font-size: 1rem;
-}*/
 h1{
     text-align: center;
     padding: 10px;
@@ -79,17 +20,21 @@ h1{
     text-align: center;
     color: red;
 }
+ tbody tr:hover{
+    background-color:gainsboro;
+}
+
 
 .card img{
     width: 100%;
 }
-@media only screen and (min-width:375px) and (max-width:768px){
+@media only screen and (min-width:375px) and (max-width:767px){
     .container .hide{
         display: none;
     }
     
 }
-@media only screen and (min-width:1020px) {
+@media only screen and (min-width:768px) and (max-width:1024px) {
     .container .hien{
         display: none;
     }
