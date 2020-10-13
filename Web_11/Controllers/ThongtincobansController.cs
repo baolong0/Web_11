@@ -12,6 +12,7 @@ namespace Web_11.Controllers
 {
     public class ThongtincobansController : Controller
     {
+        private IList<Cauthu> Cauthus { get; set; }
         private Thongtincoban thongtincoban { get; set; }
         private Doibong Doibong { get; set; }
         private IList<Thanhtich> Thanhtiches { get; set; }
@@ -30,6 +31,7 @@ namespace Web_11.Controllers
         int?[] listIDHashtag = new int?[100];
         string[] listIDThanhTichloai1 = new string[100];
         string[] listIDThanhTichloai2 = new string[100];
+        string[] listCauThu = new string[100];
 
         public (string value, string display)[] VideoTinVideo { get; set; }
         public (string value, string display)[] NoiDungTin { get; set; }
@@ -37,6 +39,7 @@ namespace Web_11.Controllers
         public (string value, string display)[] HinhAnhTin { get; set; }
         public(string value, string display)[] ThanhTichLoai1 { get; set; }
         public (string value, string display)[] ThanhTichLoai2 { get; set; }
+        public (string ID_cauThu, string Ten_Cau_Thu, string HA_Cau_Thu)[] Cauthuteam { get; set; }
         public List<Doibong> doibongs { get; set; }
         public (string IDTranDau, string srcLogoDoiNha, string srcLogoDoiKhach, DateTime? Thoigian ,string SanVanDong)[] ListLichThiDau { get; set; }
         private readonly FootballNewsContext _context; 
@@ -104,6 +107,7 @@ namespace Web_11.Controllers
             }
             return Doibong;
         }
+        
         public async Task<IActionResult> DetailsTTDB(string id)
         {
             if (id == null)
@@ -115,6 +119,7 @@ namespace Web_11.Controllers
             chitietthongtincobanModel.Doibong = GetDoibong(id);
             chitietthongtincobanModel.ThanhTichLoai1 = GetThanhTichLoai1(id);
             chitietthongtincobanModel.ThanhTichLoai2 = GetThanhTichLoai2(id);
+            chitietthongtincobanModel.Cauthuteam = GetCauThuTeam(id);
             return View(chitietthongtincobanModel);
 
         }
@@ -282,6 +287,30 @@ namespace Web_11.Controllers
                 }
             }
             return ThanhTichLoai2;
+        }
+        public (string ID_cauThu, string Ten_Cau_Thu, string HA_Cau_Thu)[] GetCauThuTeam(string id)
+        {
+            int temp = 0;
+            Cauthuteam = new (string ID_cauThu, string Ten_Cau_Thu, string HA_Cau_Thu)[100];
+            Cauthus = _context.Cauthu.ToArray();
+            foreach(var item in _context.Cauthu)
+            {
+                if (item.IdDoiBong == id)
+                {
+                    listCauThu[temp] = item.IdCauThu;
+                    temp++;
+                }
+            }
+            temp = 0;
+            foreach(var item in Cauthus)
+            {
+                if (item.IdCauThu == listCauThu[temp])
+                {
+                    Cauthuteam[temp] = (item.IdCauThu, item.TenCauThu,item.SourceHact);
+                    temp++;
+                }
+            }
+            return Cauthuteam;
         }
     }
 }

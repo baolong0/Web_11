@@ -10,6 +10,7 @@ namespace Web_11.Models.data
             Cauthu = new HashSet<Cauthu>();
             SubTaitro = new HashSet<SubTaitro>();
             Thanhtich = new HashSet<Thanhtich>();
+            ThongTinXepHang = new HashSet<ThongTinXepHang>();
             Thongtincoban = new HashSet<Thongtincoban>();
             TicketDoiKhachNavigation = new HashSet<Ticket>();
             TicketDoiNhaNavigation = new HashSet<Ticket>();
@@ -25,6 +26,7 @@ namespace Web_11.Models.data
         public virtual ICollection<Cauthu> Cauthu { get; set; }
         public virtual ICollection<SubTaitro> SubTaitro { get; set; }
         public virtual ICollection<Thanhtich> Thanhtich { get; set; }
+        public virtual ICollection<ThongTinXepHang> ThongTinXepHang { get; set; }
         public virtual ICollection<Thongtincoban> Thongtincoban { get; set; }
         public virtual ICollection<Ticket> TicketDoiKhachNavigation { get; set; }
         public virtual ICollection<Ticket> TicketDoiNhaNavigation { get; set; }

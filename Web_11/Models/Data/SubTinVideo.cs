@@ -11,6 +11,5 @@ namespace Web_11.Models.data
 
         public virtual TinVideo IdTinVideoNavigation { get; set; }
         public virtual Video IdVideoNavigation { get; set; }
-        //làm thử xem
     }
 }

@@ -21,7 +21,7 @@ namespace Web_11.Controllers
         public IActionResult Index()
         {
             HomeModel homeModel = new HomeModel();
-            homeModel.Tintucs = _context.Tintuc.ToArray();
+            //homeModel.Tintucs = _context.Tintuc.ToArray();
             return View(homeModel);
         }
 
