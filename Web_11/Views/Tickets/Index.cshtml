@@ -4,6 +4,7 @@
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
     int temp = 0;
+     DateTime aDateTime = DateTime.Now;    
 }
 <link rel="stylesheet" href="~/css/Mua_Ve.css">
 <div class="container">
@@ -89,100 +90,108 @@
                             <li class="current">
                                 <div class="day">
                                     <span>
-                                        09
-                                    </span>
-                                    <em>
-                                        Thu
+                                        @aDateTime.Month
+                                        </span>
+                                    <em>                                        
+                                        @String.Format("{0:ddd}",aDateTime)
                                     </em>
-                                    <strong>24</strong>
+                                    <strong>@aDateTime.Day</strong>
                                 </div>
                             </li>
                             <li class="">
+                                @{aDateTime=aDateTime.AddDays(1);}
                                 <div class="day">
                                     <span>
-                                        09
-                                    </span>
-                                    <em>
-                                        Fri
+                                        @aDateTime.Month
+                                        </span>
+                                    <em>                                        
+                                        @String.Format("{0:ddd}",aDateTime)
                                     </em>
-                                    <strong>25</strong>
+                                    <strong>@aDateTime.Day</strong>
                                 </div>
                             </li>
                             <li>
+                                 @{aDateTime=aDateTime.AddDays(1);}
                                 <div class="day">
                                     <span>
-                                        09
-                                    </span>
-                                    <em>
-                                        Sat
+                                        @aDateTime.Month
+                                        </span>
+                                    <em>                                        
+                                        @String.Format("{0:ddd}",aDateTime)
                                     </em>
-                                    <strong>26</strong>
+                                    <strong>@aDateTime.Day</strong>
                                 </div>
                             </li>
                             <li>
+                                 @{aDateTime=aDateTime.AddDays(1);}
                                 <div class="day">
                                     <span>
-                                        09
-                                    </span>
-                                    <em>
-                                        Sun
+                                        @aDateTime.Month
+                                        </span>
+                                    <em>                                        
+                                        @String.Format("{0:ddd}",aDateTime)
                                     </em>
-                                    <strong>27</strong>
+                                    <strong>@aDateTime.Day</strong>
                                 </div>
                             </li>
                             <li class="hidden-sm">
+                                 @{aDateTime=aDateTime.AddDays(1);}
                                 <div class="day text-break">
                                     <span>
-                                        09
-                                    </span>
-                                    <em>
-                                        Mon
+                                        @aDateTime.Month
+                                        </span>
+                                    <em>                                        
+                                        @String.Format("{0:ddd}",aDateTime)
                                     </em>
-                                    <strong>28</strong>
+                                    <strong>@aDateTime.Day</strong>
                                 </div>
                             </li>
                             <li class="hidden-sm hidden-md">
+                                 @{aDateTime=aDateTime.AddDays(1);}
                                 <div class="day">
                                     <span>
-                                        09
-                                    </span>
-                                    <em>
-                                        Tue
+                                        @aDateTime.Month
+                                        </span>
+                                    <em>                                        
+                                        @String.Format("{0:ddd}",aDateTime)
                                     </em>
-                                    <strong>29</strong>
+                                    <strong>@aDateTime.Day</strong>
                                 </div>
                             </li>
                             <li class="hidden-sm hidden-md">
+                                 @{aDateTime=aDateTime.AddDays(1);}
                                 <div class="day">
-                                    <span>
-                                        09
-                                    </span>
-                                    <em>
-                                        Wed
+                                     <span>
+                                        @aDateTime.Month
+                                        </span>
+                                    <em>                                        
+                                        @String.Format("{0:ddd}",aDateTime)
                                     </em>
-                                    <strong>30</strong>
+                                    <strong>@aDateTime.Day</strong>
                                 </div>
                             </li>
                             <li class="last hidden-sm hidden-md">
+                                 @{aDateTime=aDateTime.AddDays(1);}
                                 <div class="day">
                                     <span>
-                                        10
-                                    </span>
-                                    <em>
-                                        Thu
+                                        @aDateTime.Month
+                                        </span>
+                                    <em>                                        
+                                        @String.Format("{0:ddd}",aDateTime)
                                     </em>
-                                    <strong>01</strong>
+                                    <strong>@aDateTime.Day</strong>
                                 </div>
                             </li>
                             <li class="last hidden-sm hidden-md">
+                                 @{aDateTime=aDateTime.AddDays(1);}
                                 <div class="day">
-                                    <span>
-                                        10
-                                    </span>
-                                    <em>
-                                        Fri
+                                     <span>
+                                        @aDateTime.Month
+                                        </span>
+                                    <em>                                        
+                                        @String.Format("{0:ddd}",aDateTime)
                                     </em>
-                                    <strong>02</strong>
+                                    <strong>@aDateTime.Day</strong>
                                 </div>
                             </li>
                         </ul>
