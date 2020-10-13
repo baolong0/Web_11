@@ -38,7 +38,7 @@ namespace Web_11.Controllers
             listbangxephang = new (string IDDoiBong, int? SoTran, int? Thang, int? Hoa, int? Thua, string HieuSo, int? Diem)[100];
             foreach (var item in tempBXH)
             {
-                listbangxephang[temp] = (GetTenDoiBong(item.IdDoiBong), item.SoTran,item.Thang,item.Hoa,item.Thua,item.HieuSo,item.Diem);
+                listbangxephang[temp] = (GetTenDoiBong(item.IdDoiBong), item.SoTran, item.Thang, item.Hoa, item.Thua, item.HieuSo, item.Diem);
                 temp++;
             }
             return listbangxephang;
@@ -61,7 +61,7 @@ namespace Web_11.Controllers
         {
             int temp = 0;
             DiemXepHang = new (string DoiBong, int? Diem)[100];
-             thongTinXepHangs= _context.ThongTinXepHang.ToArray();
+            thongTinXepHangs = _context.ThongTinXepHang.ToArray();
             foreach (var item in _context.ThongTinXepHang)
             {
                 listDiem[temp] = item.Diem;
@@ -72,7 +72,7 @@ namespace Web_11.Controllers
             {
                 if (item.Diem == listDiem[temp])
                 {
-                    DiemXepHang[temp] = (item.IdDoiBong, item.Diem= (item.Thang*3)+item.Hoa);
+                    DiemXepHang[temp] = (item.IdDoiBong, item.Diem = (item.Thang * 3) + item.Hoa);
                     temp++;
                 }
             }

@@ -1,7 +1,7 @@
-﻿Create Database FootballNews_4
+﻿Create Database FootballNews_5
 Go
 
-Use FootballNews_4
+Use FootballNews_5
 Go
 
 Create Table TINTUC
@@ -111,17 +111,10 @@ Create Table CAUTHU
 	ID_CauThu char(15) not null primary key,
 	TenCauThu nvarchar(50),
 	Source_HACT varchar(2000),
+	ID_DoiBong char(15) not null foreign key references DOIBONG(ID_DoiBong),
 )
 Go
 
-Create Table sub_CAUTHU
-(
-	ID_sub_CT int identity(1,1) primary key,
-	ID_DoiBong char(15) not null foreign key references DOIBONG(ID_DoiBong),
-	ID_CauThu char(15) not null foreign key references CAUTHU(ID_CauThu)
-	
-)
-Go
 
 Create Table TRANDAU
 (
@@ -175,7 +168,8 @@ Create Table LOAIVE
 (
 	ID_LoaiVe char(15) not null primary key,
 	TenLoaiVe nvarchar(50),	-- Vé khán đài A, vé khán đài B, vé khán đài C, vé khán đài D
-	SoLuong int		-- Tổng số lượng của loại vé đó là bao nhiêu
+	SoLuong int,	-- Tổng số lượng của loại vé đó là bao nhiêu
+	GiaVe int
 )
 Go
 
@@ -199,7 +193,7 @@ Create Table CTHD
 Go
 
 create table HINHANH_QC(
-ID_HA_QC int identity(1,1) primary key,
+ID_HA_QC int identity(1,1),
 Source_HinhAnh_QC varchar(2000)
 )
 go
@@ -211,4 +205,31 @@ Source_VIDEO varchar(2000)
 go
 
 
+create table TIN_VIDEO(
+ID_TIN_VIDEO char(15) primary key,
+TieuDe_VIDEO nvarchar(max) default N'No title',
+Avatar_VIDEO varchar(2000) default 'No picture',
+TomTat_VIDEO nvarchar(max),
+LuotTuongTac_VIDEO int,
+LuotXem_VIDEO int,
+TrangThaiHienThi_VIDEO nvarchar(20) default N'Hiển thị'
+)
+go
 
+create table sub_TIN_VIDEO(
+ID_sub_TIN_VIDEO int identity(1,1) primary key,
+ID_TIN_VIDEO char(15) foreign key references TIN_VIDEO(ID_TIN_VIDEO),
+ID_VIDEO int foreign key references VIDEO(ID_VIDEO)
+)
+go
+
+create table Thong_Tin_Xep_Hang(
+ID_Thu_Tu int identity(1,1) primary key,
+ID_DoiBong char(15) foreign key references DOIBONG(ID_DoiBong),
+SoTran int,
+Thang int,
+Hoa int,
+Thua int,
+HieuSo char(10),
+Diem int,
+)

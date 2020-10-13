@@ -1,4 +1,4 @@
-﻿use FootballNews_4
+﻿use FootballNews_5
 go
 Insert TINTUC values('TINTUC01',N'Cầu thủ HAGL không tham dự giải vô địch 7 người toàn quốc','https://znews-photo.zadn.vn/w480/Uploaded/yrfjpyvslyr/2020_10_05/minh_vuong_hagl.jpg',N'Ông Nguyễn Tấn Anh, trưởng đoàn kiêm giám đốc điều hành CLB Hoàng Anh Gia Lai (HAGL), tiết lộ cầu thủ của đội bóng này không thể tham gia giải phong trào lớn nhất Việt Nam.',1,2,'Hiển Thị')
 Insert TINTUC values('TINTUC02',N'CLB Hà Nội không còn bị cấm thi đấu ở AFC Cup','https://znews-photo.zadn.vn/w480/Uploaded/aopuoax/2020_06_24/thumb_quang_hai_binh_duong.jpg',N'Nhà vô địch Cúp Quốc gia 2020 đủ điều kiện tham dự V.League 2021 và các giải đấu cấp CLB do LĐBĐ châu Á (AFC)',1,2,'Hiển Thị')
@@ -15,7 +15,6 @@ Insert TINTUC values('TINTUC12',N'CLB Hà Nội không còn bị cấm thi đấ
 Insert TINTUC values('TINTUC13',N'Cầu thủ Khánh Hòa dọa bỏ trận đấu vì bị nợ lương','https://znews-photo.zadn.vn/w480/Uploaded/aopuoax/2020_10_05/cau_thu_khanh_hoa_bo_giai.JPG',N'Các cầu thủ Khánh Hòa không tập theo giáo án của HLV Võ Đình Tân vì bị nợ lương ',1,2,'Hiển Thị')
 Insert TINTUC values('TINTUC14',N'Oliver Kahn bị gạt khỏi danh sách thủ môn hay nhất mọi thời đại','https://znews-photo.zadn.vn/w480/Uploaded/ofh_huqfztmf/2020_10_06/kah1.jpg',N'Danh sách bình chọn thủ môn lọt vào đội hình hay nhất mọi thời đại của France Football đang gây ra không ít tranh cãi.',1,2,'Hiển Thị')
 Insert TINTUC values('TINTUC15',N'ÁC MỘNG HIỆN VỀ VỚI MARTIAL Ở MAN UNITED','https://znews-photo.zadn.vn/w480/Uploaded/bzcwvobl/2020_10_06/Martial_1.jpg',N'Chỗ đứng của tiền đạo Anthony Martial tại Manchester United đang bị đe dọa bởi Edinson Cavani',1,2,'Hiển Thị')
-
 go
 
 insert HINHANH values('https://znews-photo.zadn.vn/w660/Uploaded/yrfjpyvslyr/2020_10_05/minhvuon.jpg')
@@ -378,6 +377,8 @@ insert DOIBONG values('DOIBONG11',N'Hoàng Anh Gia Lai','https://seeklogo.com/im
 insert DOIBONG values('DOIBONG12',N'Hà Nội FC','https://upload.wikimedia.org/wikipedia/vi/thumb/5/5b/H%C3%A0_N%E1%BB%99i_FC_2020.svg/1200px-H%C3%A0_N%E1%BB%99i_FC_2020.svg.png','https://danviet.mediacdn.vn/upload/3-2019/images/2019-07-10/Vi-sao-Ha-Noi-FC-khong-cho-cau-thu-len-tap-trung-U23-Viet-Nam-hn-01-1562719062-width480height325.jpg')
 go
 
+go
+
 insert THONGTINCOBAN values('THONGTIN01',N'218/24 Nguyễn Duy Cung','0979528720','nguyenhongquan2310@gmail.com','https://www.facebook.com/haglfc.clb/','Pleiku','30000',N'Nguyễn Bảo Long',N'Nguyễn Hồng Quân',N'TRần TRung Chính',N'Phương Uyên',N'Vinamilk','DOIBONG01')
 insert THONGTINCOBAN values('THONGTIN02',N'218/24 Phạm Văn Chiêu','0523364071','nguyenhongquan2310@gmail.com','https://www.facebook.com/HanoiFootballClub.vn/','Pleiku','30000',N'Nguyễn Bảo Long',N'Nguyễn Hồng Quân',N'TRần TRung Chính',N'Phương Uyên',N'Vinamilk','DOIBONG02')
 insert THONGTINCOBAN values('THONGTIN03',N'218/24 Nguyễn Duy Cung','0979528720','nguyenhongquan2310@gmail.com','https://www.facebook.com/haglfc.clb/','Pleiku','30000',N'Nguyễn Bảo Long',N'Nguyễn Hồng Quân',N'TRần TRung Chính',N'Phương Uyên',N'Vinamilk','DOIBONG03')
@@ -409,7 +410,6 @@ insert THANHTICH values('THANHTICH09',N'Vô địch giải quốc gia năm 2020'
 insert THANHTICH values('THANHTICH10',N'cầu thủ xuất sắc nhất năm 2020','LOAITHANHTICH02','DOIBONG10')
 insert THANHTICH values('THANHTICH11',N'Vô địch giải quốc gia năm 2020','LOAITHANHTICH01','DOIBONG11')
 insert THANHTICH values('THANHTICH12',N'cầu thủ xuất sắc nhất năm 2020','LOAITHANHTICH02','DOIBONG12')
-
 go
 
 insert TAITRO values('NTT01','https://media.sohuutritue.net.vn/files/huongmi/2019/12/02/vnm-1006.jpg')
@@ -420,29 +420,30 @@ insert sub_TAITRO values('DOIBONG01','NTT01')
 insert sub_TAITRO values('DOIBONG02','NTT02')
 go
 
-insert CAUTHU values ('CAUTHU01',N'Nguyễn Quang Hải','https://media.thethao247.vn/upload/anhquan/2020/05/02/quang-hai-bat-ngo-nhan-mua-chi-trich-tu-nhm-viet-nam1584587676_1.jpg')
-insert CAUTHU values ('CAUTHU02',N'Nguyễn Quang Hải','https://media.thethao247.vn/upload/anhquan/2020/05/02/quang-hai-bat-ngo-nhan-mua-chi-trich-tu-nhm-viet-nam1584587676_1.jpg')
-insert CAUTHU values ('CAUTHU03',N'Nguyễn Quang Hải','https://media.thethao247.vn/upload/anhquan/2020/05/02/quang-hai-bat-ngo-nhan-mua-chi-trich-tu-nhm-viet-nam1584587676_1.jpg')
-insert CAUTHU values ('CAUTHU04',N'Nguyễn Quang Hải','https://media.thethao247.vn/upload/anhquan/2020/05/02/quang-hai-bat-ngo-nhan-mua-chi-trich-tu-nhm-viet-nam1584587676_1.jpg')
-insert CAUTHU values ('CAUTHU05',N'Nguyễn Quang Hải','https://media.thethao247.vn/upload/anhquan/2020/05/02/quang-hai-bat-ngo-nhan-mua-chi-trich-tu-nhm-viet-nam1584587676_1.jpg')
-insert CAUTHU values ('CAUTHU06',N'Nguyễn Quang Hải','https://media.thethao247.vn/upload/anhquan/2020/05/02/quang-hai-bat-ngo-nhan-mua-chi-trich-tu-nhm-viet-nam1584587676_1.jpg')
-insert CAUTHU values ('CAUTHU07',N'Nguyễn Quang Hải','https://media.thethao247.vn/upload/anhquan/2020/05/02/quang-hai-bat-ngo-nhan-mua-chi-trich-tu-nhm-viet-nam1584587676_1.jpg')
-insert CAUTHU values ('CAUTHU08',N'Nguyễn Quang Hải','https://media.thethao247.vn/upload/anhquan/2020/05/02/quang-hai-bat-ngo-nhan-mua-chi-trich-tu-nhm-viet-nam1584587676_1.jpg')
-insert CAUTHU values ('CAUTHU09',N'Nguyễn Quang Hải','https://media.thethao247.vn/upload/anhquan/2020/05/02/quang-hai-bat-ngo-nhan-mua-chi-trich-tu-nhm-viet-nam1584587676_1.jpg')
-insert CAUTHU values ('CAUTHU10',N'Nguyễn Quang Hải','https://media.thethao247.vn/upload/anhquan/2020/05/02/quang-hai-bat-ngo-nhan-mua-chi-trich-tu-nhm-viet-nam1584587676_1.jpg')
+insert CAUTHU values ('CAUTHU01',N'Nguyễn Quang Hải','https://media.thethao247.vn/upload/anhquan/2020/05/02/quang-hai-bat-ngo-nhan-mua-chi-trich-tu-nhm-viet-nam1584587676_1.jpg','DOIBONG01')
+insert CAUTHU values ('CAUTHU02',N'Nguyễn Quang Hải','https://media.thethao247.vn/upload/anhquan/2020/05/02/quang-hai-bat-ngo-nhan-mua-chi-trich-tu-nhm-viet-nam1584587676_1.jpg','DOIBONG01')
+insert CAUTHU values ('CAUTHU03',N'Nguyễn Quang Hải','https://media.thethao247.vn/upload/anhquan/2020/05/02/quang-hai-bat-ngo-nhan-mua-chi-trich-tu-nhm-viet-nam1584587676_1.jpg','DOIBONG01')
+insert CAUTHU values ('CAUTHU04',N'Nguyễn Quang Hải','https://media.thethao247.vn/upload/anhquan/2020/05/02/quang-hai-bat-ngo-nhan-mua-chi-trich-tu-nhm-viet-nam1584587676_1.jpg','DOIBONG01')
+insert CAUTHU values ('CAUTHU05',N'Nguyễn Quang Hải','https://media.thethao247.vn/upload/anhquan/2020/05/02/quang-hai-bat-ngo-nhan-mua-chi-trich-tu-nhm-viet-nam1584587676_1.jpg','DOIBONG01')
+insert CAUTHU values ('CAUTHU06',N'Nguyễn Quang Hải','https://media.thethao247.vn/upload/anhquan/2020/05/02/quang-hai-bat-ngo-nhan-mua-chi-trich-tu-nhm-viet-nam1584587676_1.jpg','DOIBONG01')
+insert CAUTHU values ('CAUTHU07',N'Nguyễn Quang Hải','https://media.thethao247.vn/upload/anhquan/2020/05/02/quang-hai-bat-ngo-nhan-mua-chi-trich-tu-nhm-viet-nam1584587676_1.jpg','DOIBONG02')
+insert CAUTHU values ('CAUTHU08',N'Nguyễn Quang Hải','https://media.thethao247.vn/upload/anhquan/2020/05/02/quang-hai-bat-ngo-nhan-mua-chi-trich-tu-nhm-viet-nam1584587676_1.jpg','DOIBONG02')
+insert CAUTHU values ('CAUTHU09',N'Nguyễn Quang Hải','https://media.thethao247.vn/upload/anhquan/2020/05/02/quang-hai-bat-ngo-nhan-mua-chi-trich-tu-nhm-viet-nam1584587676_1.jpg','DOIBONG02')
+insert CAUTHU values ('CAUTHU10',N'Nguyễn Quang Hải','https://media.thethao247.vn/upload/anhquan/2020/05/02/quang-hai-bat-ngo-nhan-mua-chi-trich-tu-nhm-viet-nam1584587676_1.jpg','DOIBONG02')
+insert CAUTHU values ('CAUTHU11',N'Nguyễn Quang Hải','https://media.thethao247.vn/upload/anhquan/2020/05/02/quang-hai-bat-ngo-nhan-mua-chi-trich-tu-nhm-viet-nam1584587676_1.jpg','DOIBONG02')
+insert CAUTHU values ('CAUTHU12',N'Nguyễn Quang Hải','https://media.thethao247.vn/upload/anhquan/2020/05/02/quang-hai-bat-ngo-nhan-mua-chi-trich-tu-nhm-viet-nam1584587676_1.jpg','DOIBONG03')
+insert CAUTHU values ('CAUTHU13',N'Nguyễn Quang Hải','https://media.thethao247.vn/upload/anhquan/2020/05/02/quang-hai-bat-ngo-nhan-mua-chi-trich-tu-nhm-viet-nam1584587676_1.jpg','DOIBONG03')
+insert CAUTHU values ('CAUTHU14',N'Nguyễn Quang Hải','https://media.thethao247.vn/upload/anhquan/2020/05/02/quang-hai-bat-ngo-nhan-mua-chi-trich-tu-nhm-viet-nam1584587676_1.jpg','DOIBONG03')
+insert CAUTHU values ('CAUTHU15',N'Nguyễn Quang Hải','https://media.thethao247.vn/upload/anhquan/2020/05/02/quang-hai-bat-ngo-nhan-mua-chi-trich-tu-nhm-viet-nam1584587676_1.jpg','DOIBONG03')
+insert CAUTHU values ('CAUTHU16',N'Nguyễn Quang Hải','https://media.thethao247.vn/upload/anhquan/2020/05/02/quang-hai-bat-ngo-nhan-mua-chi-trich-tu-nhm-viet-nam1584587676_1.jpg','DOIBONG04')
+insert CAUTHU values ('CAUTHU17',N'Nguyễn Quang Hải','https://media.thethao247.vn/upload/anhquan/2020/05/02/quang-hai-bat-ngo-nhan-mua-chi-trich-tu-nhm-viet-nam1584587676_1.jpg','DOIBONG04')
+insert CAUTHU values ('CAUTHU18',N'Nguyễn Quang Hải','https://media.thethao247.vn/upload/anhquan/2020/05/02/quang-hai-bat-ngo-nhan-mua-chi-trich-tu-nhm-viet-nam1584587676_1.jpg','DOIBONG04')
+insert CAUTHU values ('CAUTHU19',N'Nguyễn Quang Hải','https://media.thethao247.vn/upload/anhquan/2020/05/02/quang-hai-bat-ngo-nhan-mua-chi-trich-tu-nhm-viet-nam1584587676_1.jpg','DOIBONG04')
+insert CAUTHU values ('CAUTHU20',N'Nguyễn Quang Hải','https://media.thethao247.vn/upload/anhquan/2020/05/02/quang-hai-bat-ngo-nhan-mua-chi-trich-tu-nhm-viet-nam1584587676_1.jpg','DOIBONG04')
 go
 
-insert sub_CAUTHU values('DOIBONG01','CAUTHU01')
-insert sub_CAUTHU values('DOIBONG01','CAUTHU02')
-insert sub_CAUTHU values('DOIBONG01','CAUTHU03')
-insert sub_CAUTHU values('DOIBONG01','CAUTHU04')
-insert sub_CAUTHU values('DOIBONG01','CAUTHU05')
-insert sub_CAUTHU values('DOIBONG02','CAUTHU06')
-insert sub_CAUTHU values('DOIBONG02','CAUTHU07')
-insert sub_CAUTHU values('DOIBONG02','CAUTHU08')
-insert sub_CAUTHU values('DOIBONG02','CAUTHU09')
-insert sub_CAUTHU values('DOIBONG02','CAUTHU10')
-go
+
+
 
 insert TRANDAU values('TĐ01','DOIBONG01','DOIBONG02','2020-07-10 19:00',N'Thống Nhất','1-1')
 insert TRANDAU values('TĐ02','DOIBONG03','DOIBONG04','2020-07-10 19:00',N'Thống Nhất','1-1')
@@ -458,21 +459,50 @@ go
 
 insert BANTHANG values('BT01','CAUTHU01','TĐ01','2020-07-10 19:23')
 insert BANTHANG values('BT02','CAUTHU06','TĐ01','2020-07-10 19:23')
+insert BANTHANG values('BT03','CAUTHU12','TĐ02','2020-07-10 19:23')
+insert BANTHANG values('BT04','CAUTHU16','TĐ02','2020-07-10 19:23')
 go
 
 insert tb_USER values('US01',N'Hoàng Nam','hoangnam123','Nam25693','nguyenhoangnam123@gmail.com','0523365859')
 insert tb_USER values('US02',N'Minh Thiên','minhthien123','thien25693','minhthien123@gmail.com','0979528720')
 insert tb_USER values('US03',N'Minh Đức','minhduc123','duc25693','vuminhduc123@gmail.com','0979521259')
+insert tb_USER values('US04',N'Hoàng Nam','hoangnam123','Nam25693','nguyenhoangnam123@gmail.com','0523365859')
+insert tb_USER values('US05',N'Minh Thiên','minhthien123','thien25693','minhthien123@gmail.com','0979528720')
+insert tb_USER values('US06',N'Minh Đức','minhduc123','duc25693','vuminhduc123@gmail.com','0979521259')
+insert tb_USER values('US07',N'Hoàng Nam','hoangnam123','Nam25693','nguyenhoangnam123@gmail.com','0523365859')
+insert tb_USER values('US08',N'Minh Thiên','minhthien123','thien25693','minhthien123@gmail.com','0979528720')
+insert tb_USER values('US09',N'Minh Đức','minhduc123','duc25693','vuminhduc123@gmail.com','0979521259')
+insert tb_USER values('US10',N'Hoàng Nam','hoangnam123','Nam25693','nguyenhoangnam123@gmail.com','0523365859')
+insert tb_USER values('US11',N'Minh Thiên','minhthien123','thien25693','minhthien123@gmail.com','0979528720')
+insert tb_USER values('US012',N'Minh Đức','minhduc123','duc25693','vuminhduc123@gmail.com','0979521259')
 go
 
 insert KHACHHANG values('KH01','Phạm Thanh Thảo','215/58 Quang Trung','0523365859')
 insert KHACHHANG values('KH02','Đào Đức Nhật','215/58 Quang Trung','0523365859')
 insert KHACHHANG values('KH03','Lê Phú Hưng','215/58 Quang Trung','0523365859')
+insert KHACHHANG values('KH04','Phạm Thanh Thảo','215/58 Quang Trung','0523365859')
+insert KHACHHANG values('KH05','Đào Đức Nhật','215/58 Quang Trung','0523365859')
+insert KHACHHANG values('KH06','Lê Phú Hưng','215/58 Quang Trung','0523365859')
+insert KHACHHANG values('KH07','Phạm Thanh Thảo','215/58 Quang Trung','0523365859')
+insert KHACHHANG values('KH08','Đào Đức Nhật','215/58 Quang Trung','0523365859')
+insert KHACHHANG values('KH09','Lê Phú Hưng','215/58 Quang Trung','0523365859')
+insert KHACHHANG values('KH10','Phạm Thanh Thảo','215/58 Quang Trung','0523365859')
+insert KHACHHANG values('KH11','Đào Đức Nhật','215/58 Quang Trung','0523365859')
+insert KHACHHANG values('KH12','Lê Phú Hưng','215/58 Quang Trung','0523365859')
 go
 
 insert HOADON values('HD01','KH01','2020-07-10')
 insert HOADON values('HD02','KH02','2020-07-10')
 insert HOADON values('HD03','KH03','2020-07-10')
+insert HOADON values('HD04','KH04','2020-07-10')
+insert HOADON values('HD05','KH05','2020-07-10')
+insert HOADON values('HD06','KH06','2020-07-10')
+insert HOADON values('HD07','KH07','2020-07-10')
+insert HOADON values('HD08','KH08','2020-07-10')
+insert HOADON values('HD09','KH09','2020-07-10')
+insert HOADON values('HD10','KH10','2020-07-10')
+insert HOADON values('HD11','KH11','2020-07-10')
+insert HOADON values('HD12','KH12','2020-07-10')
 go
 
 
@@ -486,11 +516,28 @@ insert TICKET values('VE01','LOAIVE01','DOIBONG01','DOIBONG02','2020-07-10')
 insert TICKET values('VE02','LOAIVE02','DOIBONG01','DOIBONG02','2020-07-10')
 insert TICKET values('VE03','LOAIVE03','DOIBONG01','DOIBONG02','2020-07-10')
 insert TICKET values('VE04','LOAIVE04','DOIBONG01','DOIBONG02','2020-07-10')
+insert TICKET values('VE05','LOAIVE01','DOIBONG01','DOIBONG02','2020-07-10')
+insert TICKET values('VE06','LOAIVE02','DOIBONG01','DOIBONG02','2020-07-10')
+insert TICKET values('VE07','LOAIVE03','DOIBONG01','DOIBONG02','2020-07-10')
+insert TICKET values('VE08','LOAIVE04','DOIBONG01','DOIBONG02','2020-07-10')
+insert TICKET values('VE09','LOAIVE01','DOIBONG01','DOIBONG02','2020-07-10')
+insert TICKET values('VE10','LOAIVE02','DOIBONG01','DOIBONG02','2020-07-10')
+insert TICKET values('VE11','LOAIVE03','DOIBONG01','DOIBONG02','2020-07-10')
+insert TICKET values('VE12','LOAIVE04','DOIBONG01','DOIBONG02','2020-07-10')
 go
 
 insert CTHD values('HD01','VE01','2')
 insert CTHD values('HD02','VE02','2')
 insert CTHD values('HD03','VE03','2')
+insert CTHD values('HD04','VE04','2')
+insert CTHD values('HD05','VE05','2')
+insert CTHD values('HD06','VE06','2')
+insert CTHD values('HD07','VE07','2')
+insert CTHD values('HD08','VE08','2')
+insert CTHD values('HD09','VE09','2')
+insert CTHD values('HD10','VE10','2')
+insert CTHD values('HD11','VE11','2')
+insert CTHD values('HD12','VE12','2')
 go
 
 insert HINHANH_QC values('https://vnanet.vn/Data/Articles/2019/02/24/3733226/vna_potal_v_league_2019_cau_lac_bo_nam_dinh_danh_chien_thang_thuyet_phuc_tren_san_nha_stand.jpg')
@@ -518,6 +565,39 @@ insert VIDEO values('https://www.youtube.com/watch?v=hSB9-8bG7FI')
 insert VIDEO values('https://www.youtube.com/watch?v=hSB9-8bG7FI')
 insert VIDEO values('https://www.youtube.com/watch?v=hSB9-8bG7FI')
 go
+
+insert TIN_VIDEO values('TINVIDEO01',N'KHI NĂNG LỰC CỦA SOLSKJAER BỊ NGHI NGỜ','https://znews-photo.zadn.vn/w480/Uploaded/bpivpawv/2020_10_10/ole_1.jpg',N'Huấn luyện viên người Na Uy có thể đi vào vết xe đổ của Jose Mourinho, khi những tiếng xì xầm đã bắt đầu trong phòng thay đồ Manchester United.','2','1',N'Hiển Thị')
+insert TIN_VIDEO values('TINVIDEO02',N'KHI NĂNG LỰC CỦA SOLSKJAER BỊ NGHI NGỜ','https://znews-photo.zadn.vn/w480/Uploaded/bpivpawv/2020_10_10/ole_1.jpg',N'Huấn luyện viên người Na Uy có thể đi vào vết xe đổ của Jose Mourinho, khi những tiếng xì xầm đã bắt đầu trong phòng thay đồ Manchester United.','2','1',N'Hiển Thị')
+insert TIN_VIDEO values('TINVIDEO03',N'KHI NĂNG LỰC CỦA SOLSKJAER BỊ NGHI NGỜ','https://znews-photo.zadn.vn/w480/Uploaded/bpivpawv/2020_10_10/ole_1.jpg',N'Huấn luyện viên người Na Uy có thể đi vào vết xe đổ của Jose Mourinho, khi những tiếng xì xầm đã bắt đầu trong phòng thay đồ Manchester United.','2','1',N'Hiển Thị')
+insert TIN_VIDEO values('TINVIDEO04',N'KHI NĂNG LỰC CỦA SOLSKJAER BỊ NGHI NGỜ','https://znews-photo.zadn.vn/w480/Uploaded/bpivpawv/2020_10_10/ole_1.jpg',N'Huấn luyện viên người Na Uy có thể đi vào vết xe đổ của Jose Mourinho, khi những tiếng xì xầm đã bắt đầu trong phòng thay đồ Manchester United.','2','1',N'Hiển Thị')
+insert TIN_VIDEO values('TINVIDEO05',N'KHI NĂNG LỰC CỦA SOLSKJAER BỊ NGHI NGỜ','https://znews-photo.zadn.vn/w480/Uploaded/bpivpawv/2020_10_10/ole_1.jpg',N'Huấn luyện viên người Na Uy có thể đi vào vết xe đổ của Jose Mourinho, khi những tiếng xì xầm đã bắt đầu trong phòng thay đồ Manchester United.','2','1',N'Hiển Thị')
+insert TIN_VIDEO values('TINVIDEO06',N'KHI NĂNG LỰC CỦA SOLSKJAER BỊ NGHI NGỜ','https://znews-photo.zadn.vn/w480/Uploaded/bpivpawv/2020_10_10/ole_1.jpg',N'Huấn luyện viên người Na Uy có thể đi vào vết xe đổ của Jose Mourinho, khi những tiếng xì xầm đã bắt đầu trong phòng thay đồ Manchester United.','2','1',N'Hiển Thị')
+go
+
+insert sub_TIN_VIDEO values('TINVIDEO01',1)
+insert sub_TIN_VIDEO values('TINVIDEO02',2)
+insert sub_TIN_VIDEO values('TINVIDEO03',3)
+insert sub_TIN_VIDEO values('TINVIDEO04',4)
+insert sub_TIN_VIDEO values('TINVIDEO05',5)
+insert sub_TIN_VIDEO values('TINVIDEO06',6)
+go
+
+insert Thong_Tin_Xep_Hang values ('DOIBONG01',10,9,1,0,+10,'')
+insert Thong_Tin_Xep_Hang values ('DOIBONG02',10,8,2,0,+10,'')
+insert Thong_Tin_Xep_Hang values ('DOIBONG03',10,8,1,1,+9,'')
+insert Thong_Tin_Xep_Hang values ('DOIBONG04',10,8,1,1,+8,'')
+insert Thong_Tin_Xep_Hang values ('DOIBONG05',10,7,2,1,+8,'')
+insert Thong_Tin_Xep_Hang values ('DOIBONG06',10,7,1,2,+4,'')
+insert Thong_Tin_Xep_Hang values ('DOIBONG07',10,6,2,2,+3,'')
+insert Thong_Tin_Xep_Hang values ('DOIBONG08',10,6,1,3,+3,'')
+insert Thong_Tin_Xep_Hang values ('DOIBONG09',10,4,4,2,+0,'')
+insert Thong_Tin_Xep_Hang values ('DOIBONG10',10,3,5,2,-3,'')
+insert Thong_Tin_Xep_Hang values ('DOIBONG11',10,2,2,6,-8,'')
+insert Thong_Tin_Xep_Hang values ('DOIBONG12',10,2,1,7,-10,'')
+
+go
+
+
 
 
 
