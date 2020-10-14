@@ -1,0 +1,30 @@
+﻿@model TicketsViewsModel
+@{
+    ViewData["Title"] = "Các sản phẩm";
+}
+
+<div class="card-columns">
+    @foreach (var product in Model.tickets)
+    {
+        <div class=card>
+            <h3 class="card-header">@product.IdLoaiVeNavigation.TenLoaiVe</h3>
+            <div class="card-body" style="height: 150px;">
+                <div> 
+                    <img src ="@product.DoiNhaNavigation.SourceLogo"style="width:50px;"/>
+                    @product.DoiNhaNavigation.TenDoi
+                </div>
+                vs
+                <div>
+                    <img src="@product.DoiKhachNavigation.SourceLogo" style="width:50px;"/>
+                    @product.DoiKhachNavigation.TenDoi
+                </div>
+            </div>
+            <div class="card-footer">
+                <span class="text-muted">@(product.IdLoaiVeNavigation.GiaVe) VND</span>
+                <a asp-route="addcart"
+                   asp-route-productid="@product.IdVe"
+                   class="btn btn-secondary btn-sm float-right">Đặt hàng</a>
+            </div>
+        </div>
+    }
+</div>

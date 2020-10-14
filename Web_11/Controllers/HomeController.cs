@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using Web_11.Models;
 using Web_11.Models.data;
 
 namespace Web_11.Controllers
 {
+
     public class HomeController : Controller
     {
         private readonly FootballNewsContext _context;
