@@ -54,12 +54,17 @@
                     <button type="button" class=" btn btn-outline-dark ml-auto " id="btn-refresh-new">
                         <i class="fas fa-sync"></i> Cập Nhật
                     </button>
-                     <a asp-action="Create" class=" btn btn-outline-success ml-auto" id="btn-refresh-new">
+                    <a asp-action="CreateTinTuc" class=" btn btn-outline-success ml-auto">
                         <i class="far fa-plus-square"></i> Thêm tin mới
                     </a>
                 </div>
             </div>
         </div>
+        <a asp-action="CreateTinTuc" class=" btn btn-outline-success ml-auto">CreateTinTuc </a>
+        <a asp-action="CreateNoiDung" class=" btn btn-outline-success ml-auto"> CreateNoiDung</a>
+        <a asp-action="CreateHinhAnh" class=" btn btn-outline-success ml-auto"> HinhAnh</a>
+        <a asp-action="CreateHashtag" class=" btn btn-outline-success ml-auto"> HashTag</a>
+        <a asp-action="CreateSubTinTuc" class=" btn btn-outline-success ml-auto"> Subtt</a>
         <div class="container col-md-12">
             <div class="table-responsive">
                 <table class="table table-bordered">

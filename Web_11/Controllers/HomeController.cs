@@ -27,9 +27,11 @@ namespace Web_11.Controllers
 
         public IActionResult TinTuc()
         {
-            
-            HomeModel homeModel = new HomeModel();
-            homeModel.Tintucs = _context.Tintuc.ToArray();
+
+            HomeModel homeModel = new HomeModel
+            {
+                Tintucs = _context.Tintuc.ToArray()
+            };
             return View(homeModel);
         }
         public IActionResult BXH()
