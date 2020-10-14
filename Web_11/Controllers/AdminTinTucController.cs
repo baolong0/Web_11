@@ -8,7 +8,8 @@ using Web_11.Models;
 using Web_11.Models.data;
 
 namespace Web_11.Controllers
-{
+{ //aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+//aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
     public class AdminTinTucController : Controller
     {
         private readonly FootballNewsContext _context;
