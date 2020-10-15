@@ -105,24 +105,36 @@ namespace Web_11.Controllers
         }
         /// xóa item trong cart
         [Route("/removecart/{productid}", Name = "removecart")]
-        public IActionResult RemoveCart([FromRoute]string productid)
+        public IActionResult RemoveCart([FromRoute] string productid)
         {
+            var cart = GetCartItems();
+            var cartitem = cart.Find(p => p.product.IdVe == productid);
+            if (cartitem != null)
+            {
+                // Đã tồn tại, tăng thêm 1
+                cart.Remove(cartitem);
+            }
 
-            // Xử lý xóa một mục của Cart ...
+            SaveCartSession(cart);
             return RedirectToAction(nameof(Cart));
         }
-
         /// Cập nhật
         [Route("/updatecart", Name = "updatecart")]
         [HttpPost]
-        public IActionResult UpdateCart([FromForm]string productid, [FromForm]int quantity)
+        public IActionResult UpdateCart([FromForm] string productid, [FromForm] int quantity)
         {
             // Cập nhật Cart thay đổi số lượng quantity ...
-
-            return RedirectToAction(nameof(Cart));
+            var cart = GetCartItems();
+            var cartitem = cart.Find(p => p.product.IdVe == productid);
+            if (cartitem != null)
+            {
+                // Đã tồn tại, tăng thêm 1
+                cartitem.quantity = quantity;
+            }
+            SaveCartSession(cart);
+            // Trả về mã thành công (không có nội dung gì - chỉ để Ajax gọi)
+            return Ok();
         }
-
-
         // Hiện thị giỏ hàng
         [Route("/cart", Name = "cart")]
         public IActionResult Cart()

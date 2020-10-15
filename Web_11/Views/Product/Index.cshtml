@@ -1,4 +1,5 @@
 ﻿@model TicketsViewsModel
+@using Web_11.Models.data;
 @{
     ViewData["Title"] = "Các sản phẩm";
 }
@@ -6,7 +7,7 @@
 <div class="card-columns">
     @foreach (var product in Model.tickets)
     {
-        <div class=card>
+        <div class=card>          
             <h3 class="card-header">@product.IdLoaiVeNavigation.TenLoaiVe</h3>
             <div class="card-body" style="height: 150px;">
                 <div> 

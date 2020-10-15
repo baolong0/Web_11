@@ -1,4 +1,5 @@
 ﻿@model TicketsViewsModel
+@using Web_11.Models.data;
 
 <h2>GIỎ HÀNG</h2>
 
@@ -18,13 +19,14 @@
         </tr>
         @foreach (var cartitem in Model.cartItems)
         {
-            var thanhtien = cartitem.quantity * cartitem.product.IdLoaiVeNavigation.GiaVe;
+            Ticket TK = Model.tickets.First(m => m.IdVe == cartitem.product.IdVe);
+            var thanhtien = cartitem.quantity * TK.IdLoaiVeNavigation.GiaVe;
             total += thanhtien;
 
             <tr>
                 <td>@(stt++)</td>
-                <td>@cartitem.product.IdLoaiVeNavigation.TenLoaiVe</td>
-                <td>@(cartitem.product.IdLoaiVeNavigation.GiaVe)</td>
+                <td>@TK.IdLoaiVeNavigation.TenLoaiVe</td>
+                <td>@TK.IdLoaiVeNavigation.GiaVe VND</td>
                 <td><input asp-for="@cartitem.quantity" id="@($"quantity-{cartitem.product.IdVe}")" /></td>
                 <td>@(thanhtien)</td>
                 <td>

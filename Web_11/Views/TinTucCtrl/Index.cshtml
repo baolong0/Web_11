@@ -1,0 +1,73 @@
+﻿@model IEnumerable<Web_11.Models.data.Tintuc>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TieuDe)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Avatar)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TomTat)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LuotTuongTac)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LuotXem)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TrangThaiHienThi)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TieuDe)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Avatar)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TomTat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LuotTuongTac)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LuotXem)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TrangThaiHienThi)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdTinTuc">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdTinTuc">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdTinTuc">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</body>
+</html>
