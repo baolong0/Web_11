@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
@@ -45,7 +45,6 @@ namespace Web_11.Models.data
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
                 optionsBuilder.UseSqlServer("Server=LONGPC;Database=FootballNews;User Id=admin;Password=amdin;Trusted_Connection=True;");
             }
         }
@@ -55,7 +54,9 @@ namespace Web_11.Models.data
             modelBuilder.Entity<Banthang>(entity =>
             {
                 entity.HasKey(e => e.IdBanThang)
+
                     .HasName("PK__BANTHANG__7FEA4928DC6E5B0E");
+
 
                 entity.ToTable("BANTHANG");
 
@@ -191,7 +192,8 @@ namespace Web_11.Models.data
             modelBuilder.Entity<Hashtag>(entity =>
             {
                 entity.HasKey(e => e.IdHashtag)
-                    .HasName("PK__HASHTAG__4E71A0E92F7FF567");
+
+                    .HasName("PK__HASHTAG__4E71A0E90622C104");
 
                 entity.ToTable("HASHTAG");
 
@@ -206,7 +208,6 @@ namespace Web_11.Models.data
             {
                 entity.HasKey(e => e.IdHinhAnh)
                     .HasName("PK__HINHANH__17EE7076DF46E164");
-
                 entity.ToTable("HINHANH");
 
                 entity.Property(e => e.IdHinhAnh).HasColumnName("ID_HinhAnh");
@@ -440,7 +441,6 @@ namespace Web_11.Models.data
             {
                 entity.HasKey(e => e.IdTaiTro)
                     .HasName("PK__TAITRO__7411763CC0A9C2C8");
-
                 entity.ToTable("TAITRO");
 
                 entity.Property(e => e.IdTaiTro)
@@ -561,7 +561,6 @@ namespace Web_11.Models.data
             {
                 entity.HasKey(e => e.IdThongTin)
                     .HasName("PK__THONGTIN__BB9645AFF3AA43CF");
-
                 entity.ToTable("THONGTINCOBAN");
 
                 entity.Property(e => e.IdThongTin)
@@ -711,7 +710,6 @@ namespace Web_11.Models.data
             {
                 entity.HasKey(e => e.IdTinTuc)
                     .HasName("PK__TINTUC__D3B238FE3B9B6CA8");
-
                 entity.ToTable("TINTUC");
 
                 entity.Property(e => e.IdTinTuc)
