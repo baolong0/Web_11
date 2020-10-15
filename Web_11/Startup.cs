@@ -175,13 +175,10 @@ namespace Web_11
                     name: "default",
 
                     pattern: "{controller=TrangChu}/{action=Index}/{id?}");
+
+                // Đến Razor Page    
+                endpoints.MapRazorPages();
             });
-            //app.UseEndpoints(endpoints =>
-            //{
-            //    endpoints.MapControllerRoute(
-            //        name: "default",
-            //        pattern: "{controller=Home}/{action=Index}/{id?}");
-            //});
 
         }
     }
