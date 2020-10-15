@@ -1,10 +1,4 @@
-*{
-    margin: 0;
-    padding: 0;
-    
-}
-
-h1{
+h3{
     text-align: center;
     padding: 10px;
 }
@@ -16,37 +10,41 @@ h1{
     background: green;
     color:white;
 }
-.SAN_SALE{
-    text-align: center;
-    color: red;
-}
- tbody tr:hover{
-    background-color:gainsboro;
-}
-
 
 .card img{
     width: 100%;
 }
-@media only screen and (min-width:375px) and (max-width:767px){
-    .container .hide{
+
+@media only screen and (min-width:375px) and (max-width:700px){
+    .hide{
         display: none;
+    }
+    .title{
+        font-size: 0.6rem;
+        padding: 0;
     }
     
 }
-@media only screen and (min-width:768px) and (max-width:1024px) {
+@media only screen and (min-width:768px) and (max-width:1000px){
+    .hide{
+        display: none;
+    }
+}
+@media only screen and (min-width:1020px) {
     .container .hien{
         display: none;
     }
 }
 
-.jumbotron{
-    margin-top: 20px;
+.img{
+    margin: auto;
+  }
+.row .mt-3 .mb-3
+  {
+    border-bottom: 1px solid black;
+  } 
+  tbody tr:hover{
+    background-color: gainsboro;
 }
-.Lien-He{
-    text-align: right;
-    padding-top: 65px;
-}
-
 
 

@@ -14,5 +14,7 @@ namespace Web_11.Models
         public List<Trandau> trandaus { get; set; }
         public List<Ticket> tickets { get; set; }
         public List<Doibong> doibongs { get; set; }
+        public List<Loaive> loaives { get; set; }
+        public List<CartItem> cartItems { get; set; }
     }
 }

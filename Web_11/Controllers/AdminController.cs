@@ -1,12 +1,12 @@
-﻿ using System;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using Web_11.Models;
 using Web_11.Models.data;
 
@@ -22,8 +22,10 @@ namespace Web_11.Controllers
         }
         public IActionResult TinTuc()
         {
-            TinTucModel tinTuc = new TinTucModel();
-            tinTuc.Tintucs = _context.Tintuc.ToArray();
+            TinTucModel tinTuc = new TinTucModel
+            {
+                Tintucs = _context.Tintuc.ToArray()
+            };
             return View(tinTuc);
         }
         public async Task<IActionResult> Details(string id)
@@ -44,7 +46,23 @@ namespace Web_11.Controllers
         }
 
         // GET: Tintucs/Create
-        public IActionResult Create()
+        public IActionResult CreateTinTuc()
+        {
+            return View();
+        }
+        public IActionResult CreateNoiDung()
+        {
+            return View();
+        }
+        public IActionResult CreateHinhAnh()
+        {
+            return View();
+        }
+        public IActionResult CreateSubTinTuc()
+        {
+            return View();
+        }
+        public IActionResult CreateHashTag()
         {
             return View();
         }
@@ -54,7 +72,7 @@ namespace Web_11.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IdTinTuc,TieuDe,Avatar,TomTat,LuotTuongTac,LuotXem,TrangThaiHienThi")] Tintuc tintuc)
+        public async Task<IActionResult> CreateTinTuc([Bind("IdTinTuc,TieuDe,Avatar,TomTat,LuotTuongTac,LuotXem,TrangThaiHienThi,")] Tintuc  tintuc)
         {
             if (ModelState.IsValid)
             {
@@ -64,7 +82,12 @@ namespace Web_11.Controllers
             }
             return View(tintuc);
         }
-
+        public IActionResult CreateTinTucTemp([Bind("IdTinTuc,TieuDe,Avatar,TomTat,LuotTuongTac,LuotXem,TrangThaiHienThi")] TinTucTemp tintuc)
+        {
+            
+            return View(tintuc);
+        }
+       
         // GET: Tintucs/Edit/5
         public async Task<IActionResult> Edit(string id)
         {
