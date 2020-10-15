@@ -54,7 +54,7 @@ namespace Web_11
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=TrangChu}/{action=Index}/{id?}");
             });
         }
     }
