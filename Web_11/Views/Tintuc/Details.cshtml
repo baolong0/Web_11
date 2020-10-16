@@ -29,18 +29,6 @@
 
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-10">
                     <article>
-                        <p>
-                        <p>
-                            @foreach (var item in Model.HashtagTin)
-                            {
-                                if (item.value != null)
-                                {
-                                    <a href="" type="button" class="btn btn-outline-primary btn-sm">@item.display</a>
-                                }
-
-                            }
-                        </p>
-                        </p>
 
                     </article>
                 </div>
@@ -60,35 +48,34 @@
                 <div class="row">
                     <section>
                         <div class="row">
-                            <h1>@Model.Tintucs.TieuDe</h1>
+                            <h1> @Html.Raw(Model.Tintucs.TieuDe)</h1>
                             <br>
-                            <h4 class="">@Model.Tintucs.TomTat</h4>
+                            <h4 class=""> @Html.Raw(Model.Tintucs.TomTat)</h4>
                         </div>
                         <div class="row">
-                            @foreach (var item in Model.NoiDungTin)
+                            @Html.Raw(Model.Tintucs.TextNoiDung)
+                            @foreach (var itemm in Model.subTintucs)
                             {
-                                <p>@item.display</p>
-
-                            }
-                            @foreach (var itemm in Model.HinhAnhTin)
-                            {
-                                <img src="@itemm.display" class="img-fluid mt-3 mb-3 img" alt="">
+                                if (itemm.IdTintuc == Model.Tintucs.IdTinTuc && itemm.IdHinhAnh != null)
+                                {
+                                    <img src="@itemm.IdHinhAnhNavigation.SourceHinhAnh" class="img-fluid mt-3 mb-3 img" alt="">
+                                }
                             }
                         </div>
                     </section>
                     @*<section>
-                        <div class="row">
-                            <h1>@Model.TinVideo.TieuDeVideo</h1>
-                            <br>
-                            <h4 class="">@Model.TinVideo.TomTatVideo</h4>
-                        </div>
-                        <div class="row">
-                            @foreach (var itemm in Model.VideoTinVideo)
-                            {
-                                <img src="@itemm.display" class="img-fluid mt-3 mb-3 img" alt="">
-                            }
-                        </div>
-                    </section>*@
+                            <div class="row">
+                                <h1>@Model.TinVideo.TieuDeVideo</h1>
+                                <br>
+                                <h4 class="">@Model.TinVideo.TomTatVideo</h4>
+                            </div>
+                            <div class="row">
+                                @foreach (var itemm in Model.VideoTinVideo)
+                                {
+                                    <img src="@itemm.display" class="img-fluid mt-3 mb-3 img" alt="">
+                                }
+                            </div>
+                        </section>*@
                 </div>
                 <!-- Comment -->
                 <div class="row mt-3 ml-5 mr-5 comment">

@@ -37,6 +37,7 @@ namespace Web_11.Controllers
         public (string IDve, string srcLogoDoiNha, string srcLogoDoiKhach, DateTime? Thoigian)[] GetListVe()
         {
             List<Ticket> tempTicket = _context.Ticket.ToList();
+            
             int temp = 0;
             ListVeVsLogo = new (string IDve, string srcLogoDoiNha, string srcLogoDoiKhach, DateTime? Thoigian)[100];
             foreach (var item in tempTicket)

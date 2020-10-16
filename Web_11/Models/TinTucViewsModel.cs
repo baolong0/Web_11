@@ -16,6 +16,5 @@ namespace Web_11.Models
         public IList<Tintuc> TintucHots { get; set; }
         public IList<Tintuc> TintucTrongTuans { get; set; }
         public IList<Tintuc> TintucChuyenNhuongs { get; set; }
-        public IList<Noidung> NoiDungs { get; set; }
     }
 }
