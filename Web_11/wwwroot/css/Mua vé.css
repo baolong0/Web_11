@@ -7,6 +7,26 @@ html, body {
     color: black;
     /* margin: 0 75px 0 75px; */
 }
+/* navbar */
+.navbar-brand img{
+    height: 4rem;
+    }
+    .navbar{
+      font-size: 1.15rem;
+      font-weight: 700;
+      box-shadow: 0 0.5rem 0.5rem rgba(0, 0,0, .2);
+      z-index: 1;
+    }
+    nav-item{
+      padding: .5rem;
+    }
+    .nav-link{
+      color:white !important;
+    }
+    .nav-link.active,
+    .nav-link:hover{
+      color:#32CD32 !important;
+    }
 
 
 
