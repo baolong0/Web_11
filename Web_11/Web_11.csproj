@@ -25,6 +25,10 @@
     <PackageReference Include="MimeKit" Version="2.9.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Migrations\" />
+  </ItemGroup>
+
 
 
 </Project>

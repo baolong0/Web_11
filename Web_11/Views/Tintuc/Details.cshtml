@@ -48,15 +48,15 @@
                 <div class="row">
                     <section>
                         <div class="row">
-                            <h1>@Model.Tintucs.TieuDe</h1>
+                            <h1> @Html.Raw(Model.Tintucs.TieuDe)</h1>
                             <br>
-                            <h4 class="">@Model.Tintucs.TomTat</h4>
+                            <h4 class=""> @Html.Raw(Model.Tintucs.TomTat)</h4>
                         </div>
                         <div class="row">
-                            @Model.Tintucs.TextNoiDung
+                            @Html.Raw(Model.Tintucs.TextNoiDung)
                             @foreach (var itemm in Model.subTintucs)
                             {
-                                if (itemm.IdTintuc == Model.Tintucs.IdTinTuc && itemm.IdHinhAnh!=null)
+                                if (itemm.IdTintuc == Model.Tintucs.IdTinTuc && itemm.IdHinhAnh != null)
                                 {
                                     <img src="@itemm.IdHinhAnhNavigation.SourceHinhAnh" class="img-fluid mt-3 mb-3 img" alt="">
                                 }
