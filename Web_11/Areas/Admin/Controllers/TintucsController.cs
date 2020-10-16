@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -10,6 +11,7 @@ using Web_11.Models.data;
 
 namespace Web_11.Areas.Admin.Controllers
 {
+    [Authorize(Roles = "Admin")]
     [Area("Admin")]
     public class TintucsController : Controller
     {
@@ -63,6 +65,7 @@ namespace Web_11.Areas.Admin.Controllers
             if (ModelState.IsValid)
             {
                 tintuc.LuotXem = 0;tintuc.LuotTuongTac = 0;
+                tintuc.TrangThaiHienThi = "Hiển Thị";
                 _context.Add(tintuc);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));

@@ -10,8 +10,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Web_11.Pages.Blog {
+    [Authorize(Roles = "Admin")]
     public class EditModel : PageModel {
         private readonly AppDbContext _context;
         private readonly RoleManager<IdentityRole> _roleManager;

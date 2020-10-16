@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using Web_11.Binder;
 
 namespace Web_11.Models.data
 {
@@ -30,6 +33,10 @@ namespace Web_11.Models.data
         public int AccessFailedCount { get; set; }
         public string FullName { get; set; }
         public string Address { get; set; }
+        [DataType(DataType.Date)]
+        [Display(Name = "Ngày sinh d/m/y")]
+        [ModelBinder(BinderType = typeof(DayMonthYearBinder))]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime? Birthday { get; set; }
 
         public virtual ICollection<UserClaims> UserClaims { get; set; }

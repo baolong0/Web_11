@@ -9,9 +9,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Web_11.Areas.Admin.Pages.Role
 {
+    [Authorize(Roles = "Admin")]
     public class AddUserRole : PageModel
     {
         private readonly RoleManager<IdentityRole> _roleManager;

@@ -9,8 +9,10 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Web_11.Pages.Blog {
+    [Authorize(Roles = "Admin")]
     public class DeleteModel : PageModel {
         private readonly AppDbContext _context;
         private readonly RoleManager<IdentityRole> _roleManager;

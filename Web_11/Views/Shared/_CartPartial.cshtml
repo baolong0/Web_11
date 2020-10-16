@@ -5,7 +5,7 @@
 
 @{
     var session = HttpContextAccessor.HttpContext.Session;
-    string jsoncart = session.GetString(Web_11.Controllers.ProductController.CARTKEY);
+    string jsoncart = session.GetString(Web_11.Controllers.TicketsController.CARTKEY);
     if (jsoncart != null)
     {
         var cart = JsonConvert.DeserializeObject<List<CartItem>>(jsoncart);
