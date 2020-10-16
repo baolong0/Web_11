@@ -1,6 +1,5 @@
-.nav-link:hover{
-    background-color: royalblue;
-}
+
+
 /* navbar */
 .navbar-brand img{
     height: 4rem;
@@ -44,3 +43,16 @@
    
     text-align: center;
 }
+/* footer */
+div.container-fluid.text-center.text-md-left{
+  background-color: #3399ff !important ;
+}
+div.footer-copyright.text-center.py-3{
+  background-color:  #338ffa!important;
+  color: white;
+}
+div.footer-copyright.text-center.py-3 a:hover{
+color: #000 !important;
+text-decoration: none;
+}
+/* ------------- */

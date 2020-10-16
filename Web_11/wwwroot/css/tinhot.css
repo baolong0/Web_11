@@ -60,15 +60,18 @@ nav-item{
 .row .QC{
   margin-top: auto;
 }
-
-/* .hidden-lg{ 
-      display: none;
-    }
-@media only screen and (min-width:740px) and (max-width:1023px){
-  .hidden-md{ 
-    display: none;
-  }
+/* footer */
+div.container-fluid.text-center.text-md-left{
+  background-color: #3399ff !important ;
 }
-@media only screen and (max-width: 739px){
-  
-} */
+div.footer-copyright.text-center.py-3{
+  background-color:  #338ffa!important;
+  color: white;
+}
+div.footer-copyright.text-center.py-3 a:hover{
+color: #000 !important;
+text-decoration: none;
+}
+/* ------------- */
+
+

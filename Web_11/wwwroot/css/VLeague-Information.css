@@ -5,20 +5,20 @@
 .navbar-brand img{
     height: 4rem;
     }
-    .navbar{
+.navbar{
       font-size: 1.15rem;
       font-weight: 700;
       box-shadow: 0 0.5rem 0.5rem rgba(0, 0,0, .2);
       z-index: 1;
     }
-    nav-item{
+nav-item{
       padding: .5rem;
     }
-    .nav-link{
+.nav-link{
       color:white !important;
     }
-    .nav-link.active,
-    .nav-link:hover{
+.nav-link.active,
+.nav-link:hover{
       color:#32CD32 !important;
     }
     /* ---------------------------- */
@@ -99,4 +99,17 @@
       text-decoration: none;
       }
       /* --------------------- */
+/* footer */
+div.container-fluid.text-center.text-md-left{
+    background-color: #3399ff !important ;
+  }
+  div.footer-copyright.text-center.py-3{
+    background-color:  #338ffa!important;
+    color: white;
+  }
+  div.footer-copyright.text-center.py-3 a:hover{
+  color: #000 !important;
+  text-decoration: none;
+  }
+  /* ------------- */
     

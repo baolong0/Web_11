@@ -21,17 +21,6 @@ margin: 10px 50px;
     .nav-link:hover{
       color:#32CD32 !important;
     }
-.body-1{
-    /* background: linear-gradient(270deg,#ff2882 30%,#963cff) #963cff !important; */
-   
-    /* background-color: red; */
-}
-.margin-KM{
-    /* background: linear-gradient(270deg,#ff2882 30%,#963cff) #963cff !important; */
-}
-.alert{
-
-}
 .HA_KM{
     background: linear-gradient(270deg,#ff2882 30%,#963cff) #963cff !important;
     /* margin: 10px 10px; */
@@ -467,3 +456,16 @@ margin: 10px 50px;
         width: 100%
     }
 }
+/* footer */
+div.container-fluid.text-center.text-md-left{
+    background-color: #3399ff !important ;
+  }
+  div.footer-copyright.text-center.py-3{
+    background-color:  #338ffa!important;
+    color: white;
+  }
+  div.footer-copyright.text-center.py-3 a:hover{
+  color: #000 !important;
+  text-decoration: none;
+  }
+  /* ------------- */

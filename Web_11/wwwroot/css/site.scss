@@ -178,3 +178,16 @@ body {
 .categorysidebar .active {
   color: red;
   font-weight: bold; }
+  /* footer */
+div.container-fluid.text-center.text-md-left{
+  background-color: #3399ff !important ;
+}
+div.footer-copyright.text-center.py-3{
+  background-color:  #338ffa!important;
+  color: white;
+}
+div.footer-copyright.text-center.py-3 a:hover{
+color: #000 !important;
+text-decoration: none;
+}
+/* ------------- */
