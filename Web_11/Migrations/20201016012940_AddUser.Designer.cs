@@ -10,7 +10,7 @@ using Web_11.Data;
 namespace Web_11.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20201015181023_AddUser")]
+    [Migration("20201016012940_AddUser")]
     partial class AddUser
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

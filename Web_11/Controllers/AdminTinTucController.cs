@@ -70,10 +70,8 @@ namespace Web_11.Controllers
             try
             {
                 Tintuc tintuc = GetTintucVoDanh();
-                List<Noidung> noidungs = GetListNoiDungVoDanh();
                 List<Hinhanh> hinhanhs = GetListHinhAnhVoDanh();
                 List<Hashtag> hashtags = GetListhashtagVoDanh();
-                CreateNewTinFull(tintuc, noidungs, hinhanhs, hashtags);
                 mess = "Thêm tin thành công";
             }
             catch (Exception)
@@ -110,17 +108,6 @@ namespace Web_11.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult CreateND([Bind("IdNoiDung,TextNoiDung")] Noidung noidung)
-        {
-            if (ModelState.IsValid)
-            {
-                _context.Noidung.Add(noidung);
-                _context.SaveChanges();
-            }
-            return View(noidung);
-        }
-        [HttpPost]
-        [ValidateAntiForgeryToken]
         public async Task<IActionResult> CreateHA([Bind("IdHinhAnh,SourceHinhAnh")] Hinhanh hinhanh)
         {
             if (ModelState.IsValid)
@@ -131,79 +118,13 @@ namespace Web_11.Controllers
             return View(hinhanh);
         }
 
-        public void CreateNewTinFull(Tintuc tintuc, List<Noidung> noidungs, List<Hinhanh> hinhanhs, List<Hashtag> hashtags)
-        {
-            LinkSubTinTuc(tintuc, noidungs, hinhanhs, hashtags);
-
-        }
-        public void LinkSubTinTuc(Tintuc tintuc, List<Noidung> noidungs, List<Hinhanh> hinhanhs, List<Hashtag> hashtag)
-        {
-            
-            foreach (var item in noidungs)
-            {
-                SubTintuc sub = new SubTintuc();
-                sub.IdTintuc = tintuc.IdTinTuc;
-                sub.IdNoiDung = item.IdNoiDung;
-                _context.SubTintuc.Add(sub);
-                //noidungs.Remove(item);
-            }
-            foreach (var item in hinhanhs)
-            {
-                SubTintuc sub = new SubTintuc();
-                sub.IdTintuc = tintuc.IdTinTuc;
-                sub.IdHinhAnh = item.IdHinhAnh;
-                _context.SubTintuc.Add(sub);
-                //hinhanhs.Remove(item);
-            }
-            foreach (var item in hashtag)
-            {
-                SubTintuc sub = new SubTintuc();
-                sub.IdTintuc = tintuc.IdTinTuc;
-                sub.IdHashtag = item.IdHashtag;
-                _context.SubTintuc.Add(sub);
-                //hashtag.Remove(item);
-            }
-            _context.SaveChanges();
-        }
         public void CreateNewTin(Tintuc tintuc)
         {
             _context.Tintuc.Add(tintuc);
             _context.SaveChanges();
 
         }
-        public void HuyThem()
-        {
-            List<Noidung> noidungs = _context.Noidung.ToList();
-            int [] ListNoidungFull = new int[noidungs.Count()];
-
-            for (int i = 0; i < noidungs.Count(); i++)
-            {
-                ListNoidungFull[i] = noidungs[i].IdNoiDung;
-            }
-            List<SubTintuc> subTintucs = _context.SubTintuc.ToList();
-            int?[] NoidungsTTkhongNull = new int?[subTintucs.Count()];
-            int temp = 0;
-            for (int i = 0; i < subTintucs.Count(); i++)
-            {
-                if (subTintucs[i].IdNoiDung!=null)
-                {
-                    NoidungsTTkhongNull[temp] = subTintucs[i].IdNoiDung;
-                    temp++;
-                }
-            }
-            foreach (var item in ListNoidungFull)
-            {
-                if (Array.Exists(NoidungsTTkhongNull, element => element == item))
-                {
-                }
-                else
-                {
-                   Noidung tempNoidung= _context.Noidung.First(m => m.IdNoiDung == item);
-                    _context.Noidung.Remove(tempNoidung);
-                    _context.SaveChanges();
-                }
-            }
-        }
+        
         public Tintuc GetTintucVoDanh()
         {
             Tintuc kq = new Tintuc();
@@ -231,40 +152,6 @@ namespace Web_11.Controllers
             }
             return kq;
         }
-        public List<Noidung> GetListNoiDungVoDanh()
-        {
-            List<Noidung> Kq = new List<Noidung>();
-            List<Noidung> noidungs = _context.Noidung.ToList();
-            int[] ListNoidungFull = new int[noidungs.Count()];
-
-            for (int i = 0; i < noidungs.Count(); i++)
-            {
-                ListNoidungFull[i] = noidungs[i].IdNoiDung;
-            }
-            List<SubTintuc> subTintucs = _context.SubTintuc.ToList();
-            int?[] NoidungsTTkhongNull = new int?[subTintucs.Count()];
-            int temp = 0;
-            for (int i = 0; i < subTintucs.Count(); i++)
-            {
-                if (subTintucs[i].IdNoiDung != null)
-                {
-                    NoidungsTTkhongNull[temp] = subTintucs[i].IdNoiDung;
-                    temp++;
-                }
-            }
-            foreach (var item in ListNoidungFull)
-            {
-                if (Array.Exists(NoidungsTTkhongNull, element => element == item))
-                {
-                }
-                else
-                {
-                    Noidung tempNoidung = _context.Noidung.First(m => m.IdNoiDung == item);
-                    Kq.Add(tempNoidung);
-                }
-            }
-            return Kq;
-        }       
         public List<Hinhanh> GetListHinhAnhVoDanh()
         {
             List<Hinhanh> Kq = new List<Hinhanh>();

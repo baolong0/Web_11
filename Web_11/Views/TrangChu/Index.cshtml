@@ -20,7 +20,7 @@
                                 {
                                     <div class="row margin-Hot-news">
                                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                            <a class="Tiltle-Left" asp-action="Details" asp-route-id="@Model.TintucHots[i].IdTinTuc">
+                                            <a class="Tiltle-Left" asp-controller="TinTuc" asp-action="Details" asp-route-id="@Model.TintucHots[i].IdTinTuc">
                                                 <div class="card card-hot-news">
                                                     <img class="card-img-top" src="@Model.TintucHots[i].Avatar" alt="Card image cap">
                                                     <div class="card-body ">
@@ -42,7 +42,7 @@
                             <div class="Tieu-De ml-3">
                                 <h5>Tin tức tổng quát</h5>
                             </div>
-                            <a class="Item-Beetween-F" asp-action="Details" asp-route-id="@Model.TintucTrongTuans[0].IdTinTuc" >
+                            <a class="Item-Beetween-F" asp-controller="TinTuc" asp-action="Details" asp-route-id="@Model.TintucTrongTuans[0].IdTinTuc" >
                                 <div class="card">
                                     <img class="img-responsive img-news-common-F " src="@Model.TintucTrongTuans[0].Avatar" class="rounded-sm" alt="Quế Trân">
                                     <div class="TiTile-news-common-F">
@@ -58,7 +58,7 @@
                         {
                             <div class="col-lg-4 col-md-12 ">
                                 <div class="card card-Common">
-                                    <a asp-action="Details" asp-route-id="@Model.TintucTrongTuans[i].IdTinTuc">
+                                    <a asp-controller="TinTuc" asp-action="Details" asp-route-id="@Model.TintucTrongTuans[i].IdTinTuc">
                                         <img class="img-news-common-S" src="@Model.TintucTrongTuans[i].Avatar" class="card-img-top" alt="Quế Trân">
                                         <div class="card-body">
                                             <h5 class="card-title">@Model.TintucTrongTuans[i].TieuDe</h5>

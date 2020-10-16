@@ -3,15 +3,15 @@ using System.Collections.Generic;
 
 namespace Web_11.Models.data
 {
-    public partial class Noidung
+    public partial class Loaitin
     {
-        public Noidung()
+        public Loaitin()
         {
             SubTintuc = new HashSet<SubTintuc>();
         }
 
-        public int IdNoiDung { get; set; }
-        public string TextNoiDung { get; set; }
+        public string IdLoaiTin { get; set; }
+        public string TenLoaiTin { get; set; }
 
         public virtual ICollection<SubTintuc> SubTintuc { get; set; }
     }

@@ -26,18 +26,6 @@ namespace Web_11.Controllers
         public IList<ThongTinXepHang> thongTinXepHangs { get; set; }
         public (string TranDau, string srcDoiNha, string srcDoiKhach, DateTime? Thoigian, TimeSpan? Gio)[] listLTD { get; set; }
 
-        private IList<Hashtag> Hashtags { get; set; }
-        private Tintuc Tintucs { get; set; }
-        public Video[] Video { get; private set; }
-        private IList<Noidung> NoiDungs { get; set; }
-        private IList<Hinhanh> Hinhanhs { get; set; }
-        int?[] listIDnoiDung = new int?[100];
-        int?[] listIDHinhAnh = new int?[100];
-        int?[] listIDHashtag = new int?[100];
-        public (string value, string display)[] NoiDungTin { get; set; }
-        public (string value, string display)[] HashtagTin { get; set; }
-        public (string value, string display)[] HinhAnhTin { get; set; }
-
         public async Task<IActionResult> Index()
         {
             TrangchuViewModel trangchuViewModel = new TrangchuViewModel();
@@ -57,100 +45,8 @@ namespace Web_11.Controllers
             }
 
             TinTucChiTietModel tinTucChiTietModel = new TinTucChiTietModel();
-            tinTucChiTietModel.Tintucs = GetTintuc(id);
-            tinTucChiTietModel.NoiDungTin = GetNoiDungTintuc(id);
-            tinTucChiTietModel.HinhAnhTin = GetHinhAnhTintuc(id);
-            tinTucChiTietModel.HashtagTin = GetHashTagTintuc(id);
+            tinTucChiTietModel.Tintucs = _context.Tintuc.FirstOrDefault(m => m.IdTinTuc == id);
             return View(tinTucChiTietModel);
-        }
-
-        public Tintuc GetTintuc(string id)
-        {
-            foreach (var item in _context.Tintuc)
-            {
-                if (item.IdTinTuc == id)
-                {
-                    Tintucs = item;
-                }
-            }
-            return Tintucs;
-        }
-        public (string value, string display)[] GetNoiDungTintuc(string id)
-        {
-            int temp = 0;
-           
-            NoiDungs = _context.Noidung.ToArray();
-            NoiDungTin = new (string value, string display)[100];
-            foreach (var item in _context.SubTintuc)
-            {
-                if (item.IdTintuc == id & item.IdNoiDung != null)
-                {
-                    listIDnoiDung[temp] = item.IdNoiDung;
-                    temp++;
-                }
-            }
-            temp = 0;
-            foreach (var item in NoiDungs)
-            {
-                if (item.IdNoiDung == listIDnoiDung[temp])
-                {
-                    NoiDungTin[temp] = (item.IdNoiDung.ToString(), item.TextNoiDung);
-                    temp++;
-                }
-            }
-            return NoiDungTin;
-        }
-        public (string value, string display)[] GetHinhAnhTintuc(string id)
-        {
-            int temp = 0;
-            HinhAnhTin = new (string value, string display)[100];
-           
-            Hinhanhs = _context.Hinhanh.ToArray();
-            foreach (var item in _context.SubTintuc)
-            {
-                if (item.IdTintuc == id & item.IdHinhAnh != null)
-                {
-                    listIDHinhAnh[temp] = item.IdHinhAnh;
-                    temp++;
-                }
-            }
-
-            temp = 0;
-            foreach (var item in Hinhanhs)
-            {
-                if (item.IdHinhAnh == listIDHinhAnh[temp])
-                {
-                    temp++;
-                    HinhAnhTin[temp] = (item.IdHinhAnh.ToString(), item.SourceHinhAnh);
-                }
-            }
-            return HinhAnhTin;
-        }
-        public (string value, string display)[] GetHashTagTintuc(string id)
-        {
-            int temp = 0;
-            HashtagTin = new (string value, string display)[100];
-            //subTintucs = _context.SubTintuc.ToArray();
-            Hashtags = _context.Hashtag.ToArray();
-            foreach (var item in _context.SubTintuc)
-            {
-                if (item.IdTintuc == id & item.IdHashtag != null)
-                {
-                    listIDHashtag[temp] = item.IdHashtag;
-                    temp++;
-                }
-            }
-
-            temp = 0;
-            foreach (var item in Hashtags)
-            {
-                if (item.IdHashtag == listIDHashtag[temp])
-                {
-                    temp++;
-                    HashtagTin[temp] = (item.IdHashtag.ToString(), item.Hashtag1);
-                }
-            }
-            return HashtagTin;
         }
         public (string TranDau, string srcDoiNha, string srcDoiKhach, DateTime? Thoigian, TimeSpan? Gio)[] GetLTD()
         {

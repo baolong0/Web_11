@@ -23,7 +23,6 @@ namespace Web_11.Controllers
         private IList<Hashtag> Hashtags { get; set; }
         private Tintuc Tintucs { get; set; }
         public Video[] Video { get; private set; }
-        private IList<Noidung> NoiDungs { get; set; }
         private IList<Hinhanh> Hinhanhs { get; set; }
         int?[] listIDVideo = new int?[100];
         int?[] listIDnoiDung = new int?[100];
@@ -132,9 +131,6 @@ namespace Web_11.Controllers
 
             TinTucChiTietModel tinTucChiTietModel = new TinTucChiTietModel();
             tinTucChiTietModel.Tintucs = GetTintuc(id);
-            tinTucChiTietModel.NoiDungTin = GetNoiDungTintuc(id);
-            tinTucChiTietModel.HinhAnhTin = GetHinhAnhTintuc(id);
-            tinTucChiTietModel.HashtagTin = GetHashTagTintuc(id);
             return View(tinTucChiTietModel);
         }
         public TinVideo GetTinVideo(string id)
@@ -158,31 +154,6 @@ namespace Web_11.Controllers
                 }
             }
             return Tintucs;
-        }
-        public (string value, string display)[] GetNoiDungTintuc(string id)
-        {
-            int temp = 0;
-            subTintucs = _context.SubTintuc.ToArray();
-            NoiDungs = _context.Noidung.ToArray();
-            NoiDungTin = new (string value, string display)[100];
-            foreach (var item in _context.SubTintuc)
-            {
-                if (item.IdTintuc == id & item.IdNoiDung != null)
-                {
-                    listIDnoiDung[temp] = item.IdNoiDung;
-                    temp++;
-                }
-            }
-            temp = 0;
-            foreach (var item in NoiDungs)
-            {
-                if (item.IdNoiDung == listIDnoiDung[temp])
-                {
-                    NoiDungTin[temp] = (item.IdNoiDung.ToString(), item.TextNoiDung);
-                    temp++;
-                }
-            }
-            return NoiDungTin;
         }
         public (string value, string display)[] GetHinhAnhTintuc(string id)
         {

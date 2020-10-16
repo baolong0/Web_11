@@ -13,7 +13,6 @@ namespace Web_11.Controllers
     public class LichThiDauController : Controller
     {
         private Tintuc Tintucs { get; set; }
-        private IList<Noidung> Noidungs { get; set; }
         private IList<Hinhanh> Hinhanhs { get; set; }
         private IList<Hashtag> Hashtags { get; set; }
         DateTime?[] ListTime = new DateTime?[100];
@@ -50,9 +49,6 @@ namespace Web_11.Controllers
 
             TinTucChiTietModel tinTucChiTietModel = new TinTucChiTietModel();
             tinTucChiTietModel.Tintucs = GetTintuc(id);
-            tinTucChiTietModel.NoiDungTin = GetNoiDungTintuc(id);
-            tinTucChiTietModel.HinhAnhTin = GetHinhAnhTintuc(id);
-            tinTucChiTietModel.HashtagTin = GetHashTagTintuc(id);
             return View(tinTucChiTietModel);
         }
         public Tintuc GetTintuc(string id)
@@ -101,30 +97,6 @@ namespace Web_11.Controllers
 
             }
             return temp;
-        }
-        public (string value, string display)[] GetNoiDungTintuc(string id)
-        {
-            int temp = 0;
-            Noidungs = _context.Noidung.ToArray();
-            NoiDungTin = new (string value, string display)[100];
-            foreach (var item in _context.SubTintuc)
-            {
-                if (item.IdTintuc == id & item.IdNoiDung != null)
-                {
-                    listIDnoiDung[temp] = item.IdNoiDung;
-                    temp++;
-                }
-            }
-            temp = 0;
-            foreach (var item in Noidungs)
-            {
-                if (item.IdNoiDung == listIDnoiDung[temp])
-                {
-                    NoiDungTin[temp] = (item.IdNoiDung.ToString(), item.TextNoiDung);
-                    temp++;
-                }
-            }
-            return NoiDungTin;
         }
         public (string value, string display)[] GetHinhAnhTintuc(string id)
         {

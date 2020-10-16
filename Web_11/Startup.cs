@@ -104,27 +104,14 @@ namespace Web_11
 
                 options.AddPolicy("AdminDropdown", policy =>
                 {
-                    policy.RequireClaim("permission", "manage.user");
+                    policy.RequireRole("Admin");
                 });
 
 
-                options.AddPolicy("MyPolicy1", policy =>
+                options.AddPolicy("User", policy =>
                 {
-                    policy.RequireRole("Vip");
+                    policy.RequireRole("User");
                 });
-
-                options.AddPolicy("CanViewTest", policy =>
-                {
-                    policy.RequireRole("VipMember", "Editor");
-                });
-
-
-                options.AddPolicy("CanView", policy =>
-                {
-                    // policy.RequireRole("Editor");
-                    policy.RequireClaim("permision", "post.view");
-                });
-
 
             });
             services.AddDistributedMemoryCache();           // Đăng ký dịch vụ lưu cache trong bộ nhớ (Session sẽ sử dụng nó)
